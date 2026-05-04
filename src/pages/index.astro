@@ -20,8 +20,6 @@ import '../styles/global.css';
       background-color: #ffffff;
       color: #1e293b; /* Slate 800 */
     }
-    
-    
   </style>
 </head>
 
@@ -54,34 +52,44 @@ import '../styles/global.css';
       </linearGradient>
     </defs>
 
-    <!-- The Protein Chain (Drawn dynamically via JS) -->
-    <path id="nascent-protein" fill="none" stroke="url(#proteinGrad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+    <!-- 
+      We wrap the active elements in a Scene group. 
+      This allows us to move the scene relative to the scroll position,
+      keeping the mathematics of the bases and the ribosome perfectly in sync.
+    -->
+    <g id="scene">
+      <!-- The Protein Chain -->
+      <path id="nascent-protein" fill="none" stroke="url(#proteinGrad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
 
-    <!-- The mRNA Line (Right 1/3) -->
-    <!-- X-position is around 83% of the screen width -->
-    <line id="mrna-backbone" x1="83%" y1="0" x2="83%" y2="100%" stroke="#cbd5e1" stroke-width="4" />
-    
-    <!-- Group to hold dynamically generated A/C/U/G bases -->
-    <g id="mrna-bases"></g>
+      <!-- The mRNA Line -->
+      <line id="mrna-backbone" x1="83%" y1="0" x2="83%" y2="100%" stroke="#cbd5e1" stroke-width="4" />
+      
+      <!-- Group to hold dynamically generated A/C/U/G bases -->
+      <g id="mrna-bases"></g>
 
-    <!-- The Ribosome Group (Moves with scroll, rotated -90deg CCW in JS) -->
-    <!-- Pre-rotation coords: x-axis → screen Y after rotate(-90), y-axis → screen -X -->
-    <!-- Boxes stack along pre-rot x-axis → screen vertical (along mRNA) -->
-    <!-- E bottom, P middle, A top on screen -->
-    <g id="ribosome">
-      <!-- Large Subunit (ellipse, 15nt, left on screen) -->
-      <ellipse cx="0" cy="-30" rx="225" ry="110" fill="#6b21a8" opacity="0.15" stroke="#7e22ce" stroke-width="2.5"/>
-      <!-- Small Subunit (ellipse, 9nt, right on screen) -->
-      <ellipse cx="0" cy="30" rx="150" ry="85" fill="#1e3a8a" opacity="0.15" stroke="#1d4ed8" stroke-width="2.5"/>
+      <!-- The Ribosome Group -->
+      <g id="ribosome">
+        <!-- Large Subunit (Left on screen -> cy=-30 due to rotate) -->
+        <ellipse cx="0" cy="-30" rx="225" ry="110" fill="#6b21a8" opacity="0.15" stroke="#7e22ce" stroke-width="2.5"/>
+        <!-- Small Subunit (Right on screen -> cy=30 due to rotate) -->
+        <ellipse cx="0" cy="30" rx="150" ry="85" fill="#1e3a8a" opacity="0.15" stroke="#1d4ed8" stroke-width="2.5"/>
 
-      <rect x="-135" y="-25" width="90" height="50" rx="6" fill="#e9d5ff" opacity="0.35" stroke="#7e22ce" stroke-width="1"/>
-      <rect x="-45" y="-25" width="90" height="50" rx="6" fill="#bfdbfe" opacity="0.35" stroke="#1d4ed8" stroke-width="1"/>
-      <rect x="45" y="-25" width="90" height="50" rx="6" fill="#fbcfe8" opacity="0.35" stroke="#be185d" stroke-width="1"/>
+        <!-- A site (Bottom on screen, enters first) -->
+        <rect x="-135" y="-25" width="90" height="50" rx="6" fill="#fbcfe8" opacity="0.35" stroke="#be185d" stroke-width="1"/>
+        <text transform="translate(-90, 0) rotate(90)" fill="#be185d" font-weight="bold" font-size="14" text-anchor="middle" dominant-baseline="middle">A</text>
+        
+        <!-- P site (Middle) -->
+        <rect x="-45" y="-25" width="90" height="50" rx="6" fill="#bfdbfe" opacity="0.35" stroke="#1d4ed8" stroke-width="1"/>
+        <text transform="translate(0, 0) rotate(90)" fill="#1d4ed8" font-weight="bold" font-size="14" text-anchor="middle" dominant-baseline="middle">P</text>
+        
+        <!-- E site (Top on screen, exits last) -->
+        <rect x="45" y="-25" width="90" height="50" rx="6" fill="#e9d5ff" opacity="0.35" stroke="#7e22ce" stroke-width="1"/>
+        <text transform="translate(90, 0) rotate(90)" fill="#7e22ce" font-weight="bold" font-size="14" text-anchor="middle" dominant-baseline="middle">E</text>
+      </g>
     </g>
   </svg>
 
   <!-- Main Content Layout (2/3 Left Width) -->
-  <!-- We wrap sections in a div with a translucent bg so the protein can be seen behind but text is readable -->
   <main class="w-full lg:w-2/3 pl-8 pr-12 lg:pl-24 pt-32 pb-32 space-y-32 z-10">
 
     <!-- HOME SECTION -->
@@ -263,16 +271,23 @@ import '../styles/global.css';
   </main>
 
   <script>
-    // --- ANIMATION LOGIC ---
     document.addEventListener("DOMContentLoaded", () => {
       
-      // 1. Generation of mRNA Sequence
+      const scene = document.getElementById("scene");
       const basesGroup = document.getElementById("mrna-bases");
-      const pageHeight = document.body.scrollHeight;
-      const baseSpacing = 30; // Distance between letters
-      const totalBases = Math.floor(pageHeight / baseSpacing);
+      const ribosome = document.getElementById("ribosome");
+      const proteinPath = document.getElementById("nascent-protein");
+      const mrnaBackbone = document.getElementById("mrna-backbone");
       
-      // Biology note: RNA uses U, DNA uses T. Array can be changed to 'A','C','T','G' if strictly requested!
+      const baseSpacing = 30; // Distance between letters
+      const codonSize = baseSpacing * 3; // 90px blocks perfectly match the E/P/A boxes
+      
+      // Calculate how many bases are needed to cover the entire scrolled page securely
+      const totalBases = Math.floor(document.body.scrollHeight / baseSpacing) + 50; 
+      
+      // Adjust backbone height so it covers entirely
+      mrnaBackbone.setAttribute("y2", (totalBases * baseSpacing).toString());
+
       const nucleotides = [
         { letter: 'A', color: '#3b82f6', bg: '#eff6ff' }, // Blue
         { letter: 'C', color: '#059669', bg: '#ecfdf5' }, // Emerald
@@ -281,10 +296,10 @@ import '../styles/global.css';
       ];
 
       for (let i = 0; i < totalBases; i++) {
-        const yPos = i * baseSpacing;
+        // Offset by 15px so that bases land dead-center in the 90px boxes, never on the borders
+        const yPos = i * baseSpacing + 15; 
         const nuc = nucleotides[Math.floor(Math.random() * nucleotides.length)];
         
-        // Create circle
         const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
         circle.setAttribute("cx", "83%");
         circle.setAttribute("cy", yPos.toString());
@@ -293,10 +308,9 @@ import '../styles/global.css';
         circle.setAttribute("stroke", nuc.color);
         circle.setAttribute("stroke-width", "2");
         
-        // Create text
         const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
         text.setAttribute("x", "83%");
-        text.setAttribute("y", (yPos + 4).toString()); // offset for vertical centering
+        text.setAttribute("y", (yPos + 4).toString());
         text.setAttribute("text-anchor", "middle");
         text.setAttribute("font-size", "10");
         text.setAttribute("font-weight", "bold");
@@ -307,56 +321,61 @@ import '../styles/global.css';
         basesGroup.appendChild(text);
       }
 
-      // 2. Ribosome and Protein Scrolling Logic
-      const ribosome = document.getElementById("ribosome");
-      const proteinPath = document.getElementById("nascent-protein");
-      const viewportHeight = window.innerHeight;
-      
-      // Calculate responsive X positions
-      const getRibosomeX = () => window.innerWidth * 0.83; 
-      const getProteinMiddleX = () => window.innerWidth * 0.3; // Wanders into the left 1/3 of screen behind text
-      
+      // Initialize the Ribosome's visual Y coordinate.
+      // Starts exactly at the first mathematically correct frame (45px)
+      let currentRibosomeY = codonSize / 2; 
+
       function updateAnimation() {
         const scrollY = window.scrollY;
+        const viewportHeight = window.innerHeight;
         
-        // Ribosome stays vertically centered in the viewport, which means it moves DOWN the page
-        const ribosomeY = scrollY + (viewportHeight / 2);
+        // 1. Scene moves opposite to scroll, putting bases in 'document space'
+        scene.setAttribute("transform", `translate(0, -${scrollY})`);
         
-        // Move Ribosome Group
-        const riboX = getRibosomeX();
-        ribosome.setAttribute("transform", `translate(${riboX}, ${ribosomeY}) rotate(-90)`);
+        // 2. Determine where the visual center of the screen currently is
+        const centerPoint = scrollY + viewportHeight / 2;
+        
+        // 3. Mathematical lock: Compute the nearest 90px codon block (k * 90 + 45)
+        const k = Math.round((centerPoint - (codonSize / 2)) / codonSize);
+        
+        // Clamp K so the ribosome doesn't fall off the top or bottom of the mRNA
+        const maxK = Math.floor(totalBases / 3) - 2;
+        const clampedK = Math.max(0, Math.min(k, maxK));
+        
+        // This target ensures there are ALWAYS exactly 9 letters grouped inside the E, P, A sites!
+        const targetRibosomeY = clampedK * codonSize + (codonSize / 2);
+        
+        // 4. Lerp (Linear Interpolation) to smoothly animate the "hop" to the target codon
+        currentRibosomeY += (targetRibosomeY - currentRibosomeY) * 0.1;
+        
+        // 5. Update Ribosome transform
+        const riboX = window.innerWidth * 0.83; 
+        ribosome.setAttribute("transform", `translate(${riboX}, ${currentRibosomeY}) rotate(-90)`);
 
-        // 3. Draw the Nascent Protein
-        // The protein starts from top left, snakes down in a Sine wave, and ends at the Ribosome's P-site
-        let pathD = `M ${getProteinMiddleX()} 0 `;
+        // 6. Draw the Nascent Protein
+        const proteinMiddleX = window.innerWidth * 0.3; 
+        // Start the path drawing dynamically so it doesn't calculate 3000px of lines offscreen
+        const startY = Math.max(0, scrollY - 200); 
         
-        // Generate a smooth curving snake path down to the ribosome
-        // We calculate points every 100px down the page
-        for (let y = 100; y < ribosomeY - 50; y += 100) {
-          // Math.sin creates a beautiful back-and-forth snake effect
+        let pathD = `M ${proteinMiddleX} ${startY} `;
+        
+        for (let y = startY + 100; y < currentRibosomeY - 50; y += 100) {
           const xOffset = Math.sin(y / 200) * (window.innerWidth * 0.15); 
-          const currentX = getProteinMiddleX() + xOffset;
-          
-          // Use Smooth curve 'S' SVG command for organic folding
+          const currentX = proteinMiddleX + xOffset;
           pathD += `S ${currentX} ${y - 50}, ${currentX} ${y} `;
         }
         
-        // Finally, connect the end of the snake directly into the Ribosome's P-site
-        pathD += `Q ${riboX - 120} ${ribosomeY}, ${riboX - 80} ${ribosomeY}`;
+        // Connect accurately to the Large Subunit (-30 offset because of rotate(-90))
+        pathD += `Q ${riboX - 120} ${currentRibosomeY}, ${riboX - 30} ${currentRibosomeY}`;
         
         proteinPath.setAttribute("d", pathD);
-      }
 
-      // Trigger animation on scroll and on initial load
-      window.addEventListener("scroll", () => {
-        window.requestAnimationFrame(updateAnimation);
-      });
-      window.addEventListener("resize", () => {
-        window.requestAnimationFrame(updateAnimation);
-      });
+        // Keep loop running
+        requestAnimationFrame(updateAnimation);
+      }
       
-      // Initial call
-      updateAnimation();
+      // Kick off Animation Loop
+      requestAnimationFrame(updateAnimation);
     });
   </script>
 </body>
