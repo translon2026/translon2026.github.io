@@ -1,0 +1,363 @@
+---
+import '../styles/global.css';
+---
+
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Translon Symposium 2026 | At the Molecular Crossroads</title>
+  
+  <!-- Import Lato Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: #ffffff;
+      color: #1e293b; /* Slate 800 */
+    }
+    
+    
+  </style>
+</head>
+
+<body class="relative min-h-screen flex flex-col">
+
+  <!-- Floating Navigation Bar -->
+  <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="font-bold text-xl text-blue-900 tracking-wide">Translon 2026</div>
+      <nav class="space-x-6 font-medium text-sm text-slate-600">
+        <a href="#home" class="hover:text-purple-600 transition">Home</a>
+        <a href="#about" class="hover:text-purple-600 transition">About</a>
+        <a href="#speakers" class="hover:text-purple-600 transition">Speakers</a>
+        <a href="#programme" class="hover:text-purple-600 transition">Programme</a>
+        <a href="#practical" class="hover:text-purple-600 transition">Practical Info</a>
+      </nav>
+      <div class="space-x-3 text-sm">
+        <button class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition shadow">Register</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Background SVG Animation Layer -->
+  <svg id="animation-canvas" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none">
+    <defs>
+      <!-- Gradient for the emerging protein chain -->
+      <linearGradient id="proteinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#3b82f6" /> <!-- Blue -->
+        <stop offset="100%" stop-color="#9333ea" /> <!-- Purple -->
+      </linearGradient>
+    </defs>
+
+    <!-- The Protein Chain (Drawn dynamically via JS) -->
+    <path id="nascent-protein" fill="none" stroke="url(#proteinGrad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+
+    <!-- The mRNA Line (Right 1/3) -->
+    <!-- X-position is around 83% of the screen width -->
+    <line id="mrna-backbone" x1="83%" y1="0" x2="83%" y2="100%" stroke="#cbd5e1" stroke-width="4" />
+    
+    <!-- Group to hold dynamically generated A/C/U/G bases -->
+    <g id="mrna-bases"></g>
+
+    <!-- The Ribosome Group (Moves with scroll, rotated -90deg CCW in JS) -->
+    <!-- Pre-rotation coords: x-axis → screen Y after rotate(-90), y-axis → screen -X -->
+    <!-- Boxes stack along pre-rot x-axis → screen vertical (along mRNA) -->
+    <!-- E bottom, P middle, A top on screen -->
+    <g id="ribosome">
+      <!-- Large Subunit (ellipse, 15nt, left on screen) -->
+      <ellipse cx="0" cy="-30" rx="225" ry="110" fill="#6b21a8" opacity="0.15" stroke="#7e22ce" stroke-width="2.5"/>
+      <!-- Small Subunit (ellipse, 9nt, right on screen) -->
+      <ellipse cx="0" cy="30" rx="150" ry="85" fill="#1e3a8a" opacity="0.15" stroke="#1d4ed8" stroke-width="2.5"/>
+
+      <rect x="-135" y="-25" width="90" height="50" rx="6" fill="#e9d5ff" opacity="0.35" stroke="#7e22ce" stroke-width="1"/>
+      <rect x="-45" y="-25" width="90" height="50" rx="6" fill="#bfdbfe" opacity="0.35" stroke="#1d4ed8" stroke-width="1"/>
+      <rect x="45" y="-25" width="90" height="50" rx="6" fill="#fbcfe8" opacity="0.35" stroke="#be185d" stroke-width="1"/>
+    </g>
+  </svg>
+
+  <!-- Main Content Layout (2/3 Left Width) -->
+  <!-- We wrap sections in a div with a translucent bg so the protein can be seen behind but text is readable -->
+  <main class="w-full lg:w-2/3 pl-8 pr-12 lg:pl-24 pt-32 pb-32 space-y-32 z-10">
+
+    <!-- HOME SECTION -->
+    <section id="home" class="bg-white/80 backdrop-blur p-8 rounded-2xl shadow-sm border border-slate-100">
+      <h1 class="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-purple-700 mb-4 leading-tight">
+        Translon Symposium
+      </h1>
+      <h2 class="text-2xl text-slate-500 mb-8 font-light tracking-wide">At the Molecular Crossroads</h2>
+      
+      <div class="space-y-2 mb-10 text-lg font-medium text-slate-700">
+        <p>📅 29–30 June 2026</p>
+        <p>📍 University of Oslo, Department of Biosciences<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oslo, Norway</p>
+      </div>
+
+      <p class="text-lg text-slate-600 mb-10 leading-relaxed">
+        A two-day meeting dedicated to the operational units of translation: translated regions of RNA — their regulation, architecture, ribosome-associated activities, products, detection, annotation, technologies, and representation in biological resources.
+      </p>
+
+      <div class="flex gap-4">
+        <button class="bg-purple-600 text-white px-8 py-3 rounded-full font-bold hover:bg-purple-700 transition shadow-lg">Register Form</button>
+        <button class="bg-blue-50 text-blue-700 border border-blue-200 px-8 py-3 rounded-full font-bold hover:bg-blue-100 transition">Abstract Book (Coming Soon)</button>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="bg-white/80 backdrop-blur p-8 rounded-2xl shadow-sm border border-slate-100">
+      <h2 class="text-4xl font-bold text-blue-900 mb-6">1. About</h2>
+      <div class="space-y-6 text-slate-600 leading-relaxed">
+        <p>
+          Modern translation biology has moved beyond a simple one-transcript, one-ORF, one-protein view. Multiple fields, including translatomics, proteogenomics, and comparative genomics, now point to a complex architecture of translated regions that can share the same RNA molecules. Beyond coding for proteins, these regions can contribute to regulation, generate short peptides or antigens, shape ribosome behaviour, or produce molecular outcomes whose functions remain unknown.
+        </p>
+        <p>
+          The term <strong>translon</strong> provides a shared conceptual unit for this diversity: a translated region considered as a functional unit of translation, independent of whether it produces a stable protein, a short peptide, an antigen, a regulatory event, or multiple context-dependent outputs.
+        </p>
+        <p>
+          The symposium subtitle, <em>At the Molecular Crossroads</em>, reflects the central position of translons in gene expression. Translons connect RNA sequence and structure with ribosome dynamics, peptide and protein production with regulatory events, and molecular mechanisms with annotation and biological resources.
+        </p>
+      </div>
+      
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-5 bg-blue-50 rounded-xl border border-blue-100">
+          <h3 class="font-bold text-blue-800 mb-2">Regulation & Architecture</h3>
+          <p class="text-sm text-slate-600">How translons are organized and controlled, including biology affecting the RNA template.</p>
+        </div>
+        <div class="p-5 bg-purple-50 rounded-xl border border-purple-100">
+          <h3 class="font-bold text-purple-800 mb-2">Ribosome & Its Outputs</h3>
+          <p class="text-sm text-slate-600">Translons as functional events on the ribosome, nascent-chain interactions, and stalling.</p>
+        </div>
+        <div class="p-5 bg-indigo-50 rounded-xl border border-indigo-100">
+          <h3 class="font-bold text-indigo-800 mb-2">Discovery & Annotation</h3>
+          <p class="text-sm text-slate-600">How translons are detected, validated, classified, visualized, and shared.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPEAKERS SECTION -->
+    <section id="speakers" class="bg-white/80 backdrop-blur p-8 rounded-2xl shadow-sm border border-slate-100">
+      <h2 class="text-4xl font-bold text-blue-900 mb-8">2. Speakers</h2>
+      
+      <h3 class="text-2xl font-semibold text-purple-800 mb-6">Invited Speakers</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <!-- Speaker Cards -->
+        {[
+          { name: "Pavel Baranov", aff: "University College Cork", city: "Cork, Ireland" },
+          { name: "Tomasz Włodarski", aff: "Institute of Biochemistry and Biophysics, PAS", city: "Warsaw, Poland" },
+          { name: "Jon Mudge", aff: "EMBL-EBI", city: "United Kingdom" },
+          { name: "Martina Yordanova", aff: "University College Cork", city: "Cork, Ireland" },
+          { name: "To be announced", aff: "TBA", city: "TBA" }
+        ].map(speaker => (
+          <div class="flex items-center gap-4 p-4 border border-slate-100 rounded-xl bg-white">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center text-purple-500 font-bold text-xl shadow-inner">
+              {speaker.name.charAt(0)}
+            </div>
+            <div>
+              <div class="font-bold text-lg text-slate-800">{speaker.name}</div>
+              <div class="text-sm text-slate-500">{speaker.aff}</div>
+              <div class="text-xs text-slate-400 mt-1">{speaker.city}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h3 class="text-2xl font-semibold text-purple-800 mb-6">Organizers</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+         {[
+          { name: "Eivind Valen", aff: "University of Oslo", city: "Oslo, Norway" },
+          { name: "Michał Świrski", aff: "University of Oslo", city: "Oslo, Norway" }
+        ].map(org => (
+          <div class="flex items-center gap-4 p-4 border border-slate-100 rounded-xl bg-white">
+            <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-500 font-bold shadow-inner">
+              {org.name.charAt(0)}
+            </div>
+            <div>
+              <div class="font-bold text-slate-800">{org.name}</div>
+              <div class="text-sm text-slate-500">{org.aff}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- PROGRAMME SECTION -->
+    <section id="programme" class="bg-white/80 backdrop-blur p-8 rounded-2xl shadow-sm border border-slate-100">
+      <h2 class="text-4xl font-bold text-blue-900 mb-6">3. Programme</h2>
+      <p class="mb-8 text-slate-600">The symposium will take place over two days, from Monday 29 June to Tuesday 30 June 2026, and will be organized around three thematic sessions.</p>
+      
+      <!-- Day 1 -->
+      <h3 class="text-2xl font-bold text-purple-700 border-b border-purple-100 pb-2 mb-4">Monday, 29 June 2026</h3>
+      <div class="space-y-4 mb-10">
+        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm border-b border-slate-50 pb-2">
+          <div class="font-semibold text-slate-500">8:30 - 9:00</div>
+          <div class="col-span-2 md:col-span-3 text-slate-700">Registration</div>
+        </div>
+        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm border-b border-slate-50 pb-2">
+          <div class="font-semibold text-slate-500">9:00 - 9:15</div>
+          <div class="col-span-2 md:col-span-3 text-slate-700">Welcome and opening remarks</div>
+        </div>
+        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm bg-blue-50 p-2 rounded">
+          <div class="font-semibold text-blue-800">9:15 - 12:30</div>
+          <div class="col-span-2 md:col-span-3 font-bold text-blue-900">Session 1: Regulation & Architecture</div>
+        </div>
+        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm border-b border-slate-50 pb-2">
+          <div class="font-semibold text-slate-500">9:15 - 10:00</div>
+          <div class="col-span-2 md:col-span-3 text-slate-700 font-medium">Keynote lecture 1: Pavel Baranov</div>
+        </div>
+        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm border-b border-slate-50 pb-2">
+          <div class="font-semibold text-slate-500">10:00 - 10:30</div>
+          <div class="col-span-2 md:col-span-3 text-slate-700">Short talks TBA</div>
+        </div>
+        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm border-b border-slate-50 pb-2">
+          <div class="font-semibold text-slate-500">10:30 - 11:00</div>
+          <div class="col-span-2 md:col-span-3 text-slate-500 italic">Coffee break</div>
+        </div>
+      </div>
+
+      <!-- Day 2 -->
+      <h3 class="text-2xl font-bold text-purple-700 border-b border-purple-100 pb-2 mb-4">Tuesday, 30 June 2026</h3>
+      <div class="space-y-4">
+        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm border-b border-slate-50 pb-2">
+          <div class="font-semibold text-slate-500">TBA</div>
+          <div class="col-span-2 md:col-span-3 text-slate-700">Session 2 continued / invited talks</div>
+        </div>
+        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm bg-purple-50 p-2 rounded">
+          <div class="font-semibold text-purple-800">TBA</div>
+          <div class="col-span-2 md:col-span-3 font-bold text-purple-900">Session 3: Discovery, Annotation & Resources</div>
+        </div>
+        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm border-b border-slate-50 pb-2">
+          <div class="font-semibold text-slate-500">TBA</div>
+          <div class="col-span-2 md:col-span-3 text-slate-700">Round-table discussion & closing remarks</div>
+        </div>
+      </div>
+      <p class="text-sm text-slate-400 mt-6 italic">Detailed programme coming soon.</p>
+    </section>
+
+    <!-- PRACTICAL INFO SECTION -->
+    <section id="practical" class="bg-white/80 backdrop-blur p-8 rounded-2xl shadow-sm border border-slate-100 mb-32">
+      <h2 class="text-4xl font-bold text-blue-900 mb-6">4. Practical Information</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h4 class="font-bold text-slate-800 mb-2">📍 Venue</h4>
+          <p class="text-sm text-slate-600">Department of Biosciences<br>University of Oslo<br>Oslo, Norway<br><span class="italic text-slate-400">Room details TBA</span></p>
+        </div>
+        <div>
+          <h4 class="font-bold text-slate-800 mb-2">🚆 Getting There</h4>
+          <p class="text-sm text-slate-600">Easily accessible via public transport from central Oslo and Oslo Airport. Detailed routes will be provided closer to the event.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-slate-800 mb-2">🏨 Accommodation</h4>
+          <p class="text-sm text-slate-600">Participants are kindly asked to arrange their own accommodation. Suggested nearby areas include Blindern, Majorstuen, and central Oslo.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-slate-800 mb-2">✉️ Contact</h4>
+          <p class="text-sm text-slate-600">For questions, please contact:<br><a href="#" class="text-blue-600 hover:underline">translonssymposium@TBA.com</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // --- ANIMATION LOGIC ---
+    document.addEventListener("DOMContentLoaded", () => {
+      
+      // 1. Generation of mRNA Sequence
+      const basesGroup = document.getElementById("mrna-bases");
+      const pageHeight = document.body.scrollHeight;
+      const baseSpacing = 30; // Distance between letters
+      const totalBases = Math.floor(pageHeight / baseSpacing);
+      
+      // Biology note: RNA uses U, DNA uses T. Array can be changed to 'A','C','T','G' if strictly requested!
+      const nucleotides = [
+        { letter: 'A', color: '#3b82f6', bg: '#eff6ff' }, // Blue
+        { letter: 'C', color: '#059669', bg: '#ecfdf5' }, // Emerald
+        { letter: 'U', color: '#0ea5e9', bg: '#f0f9ff' }, // Light Blue
+        { letter: 'G', color: '#7e22ce', bg: '#f3e8ff' }  // Dark Purple
+      ];
+
+      for (let i = 0; i < totalBases; i++) {
+        const yPos = i * baseSpacing;
+        const nuc = nucleotides[Math.floor(Math.random() * nucleotides.length)];
+        
+        // Create circle
+        const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        circle.setAttribute("cx", "83%");
+        circle.setAttribute("cy", yPos.toString());
+        circle.setAttribute("r", "10");
+        circle.setAttribute("fill", nuc.bg);
+        circle.setAttribute("stroke", nuc.color);
+        circle.setAttribute("stroke-width", "2");
+        
+        // Create text
+        const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        text.setAttribute("x", "83%");
+        text.setAttribute("y", (yPos + 4).toString()); // offset for vertical centering
+        text.setAttribute("text-anchor", "middle");
+        text.setAttribute("font-size", "10");
+        text.setAttribute("font-weight", "bold");
+        text.setAttribute("fill", nuc.color);
+        text.textContent = nuc.letter;
+
+        basesGroup.appendChild(circle);
+        basesGroup.appendChild(text);
+      }
+
+      // 2. Ribosome and Protein Scrolling Logic
+      const ribosome = document.getElementById("ribosome");
+      const proteinPath = document.getElementById("nascent-protein");
+      const viewportHeight = window.innerHeight;
+      
+      // Calculate responsive X positions
+      const getRibosomeX = () => window.innerWidth * 0.83; 
+      const getProteinMiddleX = () => window.innerWidth * 0.3; // Wanders into the left 1/3 of screen behind text
+      
+      function updateAnimation() {
+        const scrollY = window.scrollY;
+        
+        // Ribosome stays vertically centered in the viewport, which means it moves DOWN the page
+        const ribosomeY = scrollY + (viewportHeight / 2);
+        
+        // Move Ribosome Group
+        const riboX = getRibosomeX();
+        ribosome.setAttribute("transform", `translate(${riboX}, ${ribosomeY}) rotate(-90)`);
+
+        // 3. Draw the Nascent Protein
+        // The protein starts from top left, snakes down in a Sine wave, and ends at the Ribosome's P-site
+        let pathD = `M ${getProteinMiddleX()} 0 `;
+        
+        // Generate a smooth curving snake path down to the ribosome
+        // We calculate points every 100px down the page
+        for (let y = 100; y < ribosomeY - 50; y += 100) {
+          // Math.sin creates a beautiful back-and-forth snake effect
+          const xOffset = Math.sin(y / 200) * (window.innerWidth * 0.15); 
+          const currentX = getProteinMiddleX() + xOffset;
+          
+          // Use Smooth curve 'S' SVG command for organic folding
+          pathD += `S ${currentX} ${y - 50}, ${currentX} ${y} `;
+        }
+        
+        // Finally, connect the end of the snake directly into the Ribosome's P-site
+        pathD += `Q ${riboX - 120} ${ribosomeY}, ${riboX - 80} ${ribosomeY}`;
+        
+        proteinPath.setAttribute("d", pathD);
+      }
+
+      // Trigger animation on scroll and on initial load
+      window.addEventListener("scroll", () => {
+        window.requestAnimationFrame(updateAnimation);
+      });
+      window.addEventListener("resize", () => {
+        window.requestAnimationFrame(updateAnimation);
+      });
+      
+      // Initial call
+      updateAnimation();
+    });
+  </script>
+</body>
+</html>
