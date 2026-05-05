@@ -19,6 +19,7 @@ import '../styles/global.css';
       font-family: 'Lato', sans-serif;
       background-color: #f8fafc;
       color: #1e293b;
+      overflow-x: hidden; /* Prevent horizontal scroll on mobile */
     }
 
     .reveal {
@@ -56,19 +57,44 @@ import '../styles/global.css';
 <body class="relative min-h-screen flex flex-col">
 
   <!-- Floating Navigation Bar -->
-  <header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-lg shadow-sm border-b border-slate-100 z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+  <header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-lg shadow-sm border-b border-slate-100 z-50 transition-all">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
       <div class="font-bold text-xl text-blue-900 tracking-wide">Translon 2026</div>
-      <nav class="space-x-6 font-medium text-sm text-slate-600">
+      
+      <!-- Mobile Menu Button (Hamburger) -->
+      <button id="mobile-menu-toggle" class="md:hidden text-slate-600 hover:text-blue-600 focus:outline-none p-2 -mr-2 transition">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-6 font-medium text-sm text-slate-600">
         <a href="#home" class="hover:text-purple-600 transition">Home</a>
         <a href="#about" class="hover:text-purple-600 transition">About</a>
         <a href="#speakers" class="hover:text-purple-600 transition">Speakers</a>
         <a href="#programme" class="hover:text-purple-600 transition">Programme</a>
         <a href="#practical" class="hover:text-purple-600 transition">Practical Info</a>
       </nav>
-      <div class="space-x-3 text-sm">
+      
+      <!-- Desktop CTA -->
+      <div class="hidden md:block space-x-3 text-sm">
         <a href="#practical" class="btn-shine inline-block bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Register</a>
       </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-slate-100 absolute top-full left-0 w-full flex-col shadow-xl">
+      <nav class="flex flex-col font-medium text-slate-600 p-6 space-y-5 text-lg">
+        <a href="#home" class="mobile-link hover:text-purple-600 transition">Home</a>
+        <a href="#about" class="mobile-link hover:text-purple-600 transition">About</a>
+        <a href="#speakers" class="mobile-link hover:text-purple-600 transition">Speakers</a>
+        <a href="#programme" class="mobile-link hover:text-purple-600 transition">Programme</a>
+        <a href="#practical" class="mobile-link hover:text-purple-600 transition">Practical Info</a>
+        <div class="pt-4 border-t border-slate-100">
+          <a href="#practical" class="mobile-link inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-bold hover:bg-blue-700 transition shadow-md text-center w-full">Register Now</a>
+        </div>
+      </nav>
     </div>
   </header>
 
@@ -93,11 +119,10 @@ import '../styles/global.css';
       <!-- 1. The underlying peptide backbone string -->
       <path id="nascent-protein-thread" fill="none" stroke="#64748b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
       
-      <!-- 2. The round amino acid balls. 
-           CHANGED: stroke-dasharray from "0 40" to "0 28" for tighter spacing! -->
+      <!-- 2. The round amino acid balls -->
       <path id="nascent-protein-balls" fill="none" stroke="url(#proteinGrad)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 28" filter="url(#bead-shadow)" opacity="0.95"/>
       
-      <line id="mrna-backbone" x1="83%" y1="0" x2="83%" y2="100%" stroke="#cbd5e1" stroke-width="4" />
+      <line id="mrna-backbone" y1="0" y2="100%" stroke="#cbd5e1" stroke-width="4" />
       <g id="mrna-bases"></g>
       <g id="ribosome">
         <ellipse cx="0" cy="-30" rx="225" ry="110" fill="#6b21a8" opacity="0.15" stroke="#7e22ce" stroke-width="2.5"/>
@@ -109,21 +134,21 @@ import '../styles/global.css';
     </g>
   </svg>
 
-  <!-- Main Content Layout (2/3 Left Width) -->
-  <main class="w-full lg:w-2/3 pl-8 pr-12 lg:pl-24 pt-40 pb-32 space-y-32 z-10">
+  <!-- Main Content Layout (Adjusted padding for mobile so text doesn't overlap animation) -->
+  <main class="w-full lg:w-2/3 pl-6 pr-20 md:pr-32 md:pl-12 lg:pr-12 lg:pl-24 pt-40 pb-32 space-y-32 z-10">
     <!-- HOME SECTION -->
-    <section id="home" class="scroll-mt-28 bg-white/70 backdrop-blur-xl p-8 lg:p-12 rounded-3xl shadow-xl shadow-slate-200/50 border border-white/80 reveal">
+    <section id="home" class="scroll-mt-28 bg-white/70 backdrop-blur-xl p-6 lg:p-12 rounded-3xl shadow-xl shadow-slate-200/50 border border-white/80 reveal">
       <h1 class="text-5xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-purple-700 to-indigo-700 mb-4 leading-tight tracking-tight">
         Translon Symposium
       </h1>
       <h2 class="text-2xl text-slate-500 mb-8 font-light tracking-wider">At the Molecular Crossroads</h2>
       
-      <div class="space-y-3 mb-10 text-lg font-medium text-slate-700 bg-white/50 inline-block p-6 rounded-2xl border border-slate-100/50">
+      <div class="space-y-3 mb-10 text-base md:text-lg font-medium text-slate-700 bg-white/50 inline-block p-6 rounded-2xl border border-slate-100/50">
         <p class="flex items-center gap-3"><span class="text-xl">📅</span> 29–30 June 2026</p>
-        <p class="flex items-start gap-3 leading-tight"><span class="text-xl mt-1">📍</span> <span>University of Oslo, Department of Biosciences<br><span class="text-slate-500 text-base font-normal">Oslo, Norway</span></span></p>
+        <p class="flex items-start gap-3 leading-tight"><span class="text-xl mt-1">📍</span> <span>University of Oslo, Department of Biosciences<br><span class="text-slate-500 text-sm md:text-base font-normal">Oslo, Norway</span></span></p>
       </div>
 
-      <p class="text-xl text-slate-600 mb-10 leading-relaxed font-light">
+      <p class="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed font-light">
         A two-day meeting dedicated to the operational units of translation: translated regions of RNA — their regulation, architecture, ribosome-associated activities, products, detection, annotation, technologies, and representation in biological resources.
       </p>
 
@@ -134,11 +159,11 @@ import '../styles/global.css';
     </section>
 
     <!-- ABOUT SECTION -->
-    <section id="about" class="scroll-mt-28 bg-white/70 backdrop-blur-xl p-8 lg:p-12 rounded-3xl shadow-xl shadow-slate-200/50 border border-white/80 reveal">
-      <h2 class="text-4xl font-bold text-blue-900 mb-8 flex items-center gap-4">
-        <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-lg">1</span> About
+    <section id="about" class="scroll-mt-28 bg-white/70 backdrop-blur-xl p-6 lg:p-12 rounded-3xl shadow-xl shadow-slate-200/50 border border-white/80 reveal">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-8 flex items-center gap-4">
+        <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-lg shrink-0">1</span> About
       </h2>
-      <div class="space-y-6 text-slate-600 leading-relaxed text-lg font-light">
+      <div class="space-y-6 text-slate-600 leading-relaxed text-base md:text-lg font-light">
         <p>
           Modern translation biology has moved beyond a simple one-transcript, one-ORF, one-protein view. Multiple fields, including translatomics, proteogenomics, and comparative genomics, now point to a complex architecture of translated regions that can share the same RNA molecules. Beyond coding for proteins, these regions can contribute to regulation, generate short peptides or antigens, shape ribosome behaviour, or produce molecular outcomes whose functions remain unknown.
         </p>
@@ -155,9 +180,9 @@ import '../styles/global.css';
     </section>
 
     <!-- SPEAKERS SECTION -->
-    <section id="speakers" class="scroll-mt-28 bg-white/70 backdrop-blur-xl p-8 lg:p-12 rounded-3xl shadow-xl shadow-slate-200/50 border border-white/80 reveal">
-      <h2 class="text-4xl font-bold text-blue-900 mb-10 flex items-center gap-4">
-        <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-lg">2</span> Speakers
+    <section id="speakers" class="scroll-mt-28 bg-white/70 backdrop-blur-xl p-6 lg:p-12 rounded-3xl shadow-xl shadow-slate-200/50 border border-white/80 reveal">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-10 flex items-center gap-4">
+        <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-lg shrink-0">2</span> Speakers
       </h2>
       
       <h3 class="text-2xl font-bold text-purple-800 mb-6">Invited Speakers</h3>
@@ -169,14 +194,14 @@ import '../styles/global.css';
           { name: "Martina Yordanova", aff: "University College Cork", city: "Cork, Ireland" },
           { name: "To be announced", aff: "TBA", city: "TBA" }
         ].map((speaker, index) => (
-          <div class="reveal flex items-center gap-5 p-5 border border-slate-100 rounded-2xl bg-white/60 hover:bg-white hover:-translate-y-1 hover:shadow-xl hover:border-purple-100 transition-all duration-300 group" style={`transition-delay: ${index * 100}ms`}>
-            <div class="w-16 h-16 min-w-[4rem] bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center text-purple-600 font-black text-xl shadow-inner group-hover:scale-110 transition-transform duration-300">
+          <div class="reveal flex items-center gap-4 md:gap-5 p-4 md:p-5 border border-slate-100 rounded-2xl bg-white/60 hover:bg-white hover:-translate-y-1 hover:shadow-xl hover:border-purple-100 transition-all duration-300 group" style={`transition-delay: ${index * 100}ms`}>
+            <div class="w-14 h-14 md:w-16 md:h-16 min-w-[3.5rem] md:min-w-[4rem] bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center text-purple-600 font-black text-xl shadow-inner group-hover:scale-110 transition-transform duration-300">
               {speaker.name !== "To be announced" ? speaker.name.charAt(0) : "?"}
             </div>
-            <div class="flex-1">
-              <div class="font-bold text-lg text-slate-800">{speaker.name}</div>
-              <div class="text-sm text-slate-500 font-medium">{speaker.aff}</div>
-              <div class="flex justify-between items-end mt-2">
+            <div class="flex-1 min-w-0">
+              <div class="font-bold text-base md:text-lg text-slate-800 truncate">{speaker.name}</div>
+              <div class="text-xs md:text-sm text-slate-500 font-medium truncate">{speaker.aff}</div>
+              <div class="flex flex-wrap justify-between items-end mt-2 gap-2">
                 <div class="text-xs text-slate-400 uppercase tracking-wide">{speaker.city}</div>
                 <div class="text-xs text-purple-500/80 italic">Talk: TBA</div>
               </div>
@@ -191,13 +216,13 @@ import '../styles/global.css';
           { name: "Eivind Valen", aff: "University of Oslo", city: "Oslo, Norway" },
           { name: "Michał Świrski", aff: "University of Oslo", city: "Oslo, Norway" }
         ].map((org, index) => (
-          <div class="reveal flex items-center gap-5 p-5 border border-slate-100 rounded-2xl bg-white/60 hover:bg-white hover:-translate-y-1 hover:shadow-lg hover:border-blue-100 transition-all duration-300" style={`transition-delay: ${index * 100}ms`}>
-            <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 font-bold shadow-inner border border-blue-100">
+          <div class="reveal flex items-center gap-5 p-4 md:p-5 border border-slate-100 rounded-2xl bg-white/60 hover:bg-white hover:-translate-y-1 hover:shadow-lg hover:border-blue-100 transition-all duration-300" style={`transition-delay: ${index * 100}ms`}>
+            <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 font-bold shadow-inner border border-blue-100 shrink-0">
               {org.name.charAt(0)}
             </div>
-            <div>
-              <div class="font-bold text-slate-800">{org.name}</div>
-              <div class="text-sm text-slate-500">{org.aff}</div>
+            <div class="min-w-0">
+              <div class="font-bold text-slate-800 truncate">{org.name}</div>
+              <div class="text-sm text-slate-500 truncate">{org.aff}</div>
             </div>
           </div>
         ))}
@@ -205,11 +230,11 @@ import '../styles/global.css';
     </section>
 
     <!-- PROGRAMME SECTION -->
-    <section id="programme" class="scroll-mt-28 bg-white/70 backdrop-blur-xl p-8 lg:p-12 rounded-3xl shadow-xl shadow-slate-200/50 border border-white/80 reveal">
-      <h2 class="text-4xl font-bold text-blue-900 mb-6 flex items-center gap-4">
-        <span class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-lg">3</span> Programme
+    <section id="programme" class="scroll-mt-28 bg-white/70 backdrop-blur-xl p-6 lg:p-12 rounded-3xl shadow-xl shadow-slate-200/50 border border-white/80 reveal">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6 flex items-center gap-4">
+        <span class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-lg shrink-0">3</span> Programme
       </h2>
-      <p class="mb-12 text-slate-600 text-lg">The symposium will take place over two days, from Monday 29 June to Tuesday 30 June 2026, and will be organized around three thematic sessions.</p>
+      <p class="mb-12 text-slate-600 text-base md:text-lg">The symposium will take place over two days, from Monday 29 June to Tuesday 30 June 2026, and will be organized around three thematic sessions.</p>
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
         <div class="reveal p-6 bg-gradient-to-br from-blue-50 to-white rounded-2xl border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
@@ -235,74 +260,74 @@ import '../styles/global.css';
       <!-- Day 1 Schedule -->
       <h3 class="text-2xl font-bold text-purple-800 border-b-2 border-purple-100 pb-3 mb-6">Monday, 29 June 2026</h3>
       <div class="space-y-3 mb-16 reveal">
-        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
           <div class="font-semibold text-slate-500 bg-slate-100 inline-block px-3 py-1 rounded-full w-max">8:30 - 9:00</div>
-          <div class="col-span-2 md:col-span-3 text-slate-700">Registration</div>
+          <div class="text-slate-700">Registration</div>
         </div>
-        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
           <div class="font-semibold text-slate-500 bg-slate-100 inline-block px-3 py-1 rounded-full w-max">9:00 - 9:15</div>
-          <div class="col-span-2 md:col-span-3 text-slate-700">Welcome and opening remarks</div>
+          <div class="text-slate-700">Welcome and opening remarks</div>
         </div>
-        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm bg-blue-50/80 border border-blue-100 p-3 rounded-lg items-center">
+        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm bg-blue-50/80 border border-blue-100 p-3 rounded-lg items-center">
           <div class="font-bold text-blue-800">9:15 - 12:30</div>
-          <div class="col-span-2 md:col-span-3 font-bold text-blue-900 text-base">Session 1: Regulation & Architecture</div>
+          <div class="font-bold text-blue-900 md:text-base">Session 1: Regulation & Architecture</div>
         </div>
-        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm border-b border-slate-100 pb-3 items-center pl-4">
+        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
           <div class="font-semibold text-slate-500">9:15 - 10:00</div>
-          <div class="col-span-2 md:col-span-3 text-slate-800 font-medium"><span class="text-purple-600 font-bold mr-2">Keynote:</span> Pavel Baranov</div>
+          <div class="text-slate-800 font-medium"><span class="text-purple-600 font-bold md:mr-2 block md:inline">Keynote:</span> Pavel Baranov</div>
         </div>
-        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm border-b border-slate-100 pb-3 items-center pl-4">
+        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
           <div class="font-semibold text-slate-500">10:00 - 10:30</div>
-          <div class="col-span-2 md:col-span-3 text-slate-600">Short talks TBA</div>
+          <div class="text-slate-600">Short talks TBA</div>
         </div>
-        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
           <div class="font-semibold text-orange-500 bg-orange-50 px-3 py-1 rounded-full w-max">10:30 - 11:00</div>
-          <div class="col-span-2 md:col-span-3 text-orange-600 font-medium flex items-center gap-2">☕ Coffee break</div>
+          <div class="text-orange-600 font-medium flex items-center gap-2">☕ Coffee break</div>
         </div>
-        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm border-b border-slate-100 pb-3 items-center pl-4">
+        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
           <div class="font-semibold text-slate-500">11:00 - 11:30</div>
-          <div class="col-span-2 md:col-span-3 text-slate-800 font-medium">Invited speaker 1: TBA</div>
+          <div class="text-slate-800 font-medium">Invited speaker 1: TBA</div>
         </div>
-        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm border-b border-slate-100 pb-3 items-center pl-4">
+        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
           <div class="font-semibold text-slate-500">11:30 - 12:30</div>
-          <div class="col-span-2 md:col-span-3 text-slate-600">Short talks TBA</div>
+          <div class="text-slate-600">Short talks TBA</div>
         </div>
-        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
           <div class="font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full w-max">12:30 - 14:30</div>
-          <div class="col-span-2 md:col-span-3 text-green-700 font-medium flex items-center gap-2">🍽️ Lunch break <span class="text-xs font-normal text-slate-500 italic ml-2">(Not served, attendees welcome to use canteen)</span></div>
+          <div class="text-green-700 font-medium flex flex-col md:flex-row md:items-center gap-1 md:gap-2">🍽️ Lunch break <span class="text-xs font-normal text-slate-500 italic">(Not served, attendees welcome to use canteen)</span></div>
         </div>
       </div>
 
       <!-- Day 2 Schedule -->
       <h3 class="text-2xl font-bold text-purple-800 border-b-2 border-purple-100 pb-3 mb-6">Tuesday, 30 June 2026</h3>
       <div class="space-y-3 reveal">
-        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
           <div class="font-semibold text-slate-400 bg-slate-50 px-3 py-1 rounded-full w-max border border-slate-200">TBA</div>
-          <div class="col-span-2 md:col-span-3 text-slate-700">Session 2 continued / invited talks</div>
+          <div class="text-slate-700">Session 2 continued / invited talks</div>
         </div>
-        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm bg-purple-50/80 border border-purple-100 p-3 rounded-lg items-center">
+        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm bg-purple-50/80 border border-purple-100 p-3 rounded-lg items-center">
           <div class="font-bold text-purple-800">TBA</div>
-          <div class="col-span-2 md:col-span-3 font-bold text-purple-900 text-base">Session 3: Discovery, Annotation & Resources</div>
+          <div class="font-bold text-purple-900 md:text-base">Session 3: Discovery, Annotation & Resources</div>
         </div>
-        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
           <div class="font-semibold text-slate-400 bg-slate-50 px-3 py-1 rounded-full w-max border border-slate-200">TBA</div>
-          <div class="col-span-2 md:col-span-3 text-slate-600">Coffee / lunch / breaks</div>
+          <div class="text-slate-600">Coffee / lunch / breaks</div>
         </div>
-        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
           <div class="font-semibold text-slate-400 bg-slate-50 px-3 py-1 rounded-full w-max border border-slate-200">TBA</div>
-          <div class="col-span-2 md:col-span-3 text-slate-700 font-medium">Round-table discussion & closing remarks</div>
+          <div class="text-slate-700 font-medium">Round-table discussion & closing remarks</div>
         </div>
       </div>
       <p class="text-sm text-slate-400 mt-8 italic font-medium bg-slate-50 inline-block px-4 py-2 rounded-lg">Detailed programme coming soon.</p>
     </section>
 
     <!-- PRACTICAL INFO SECTION -->
-    <section id="practical" class="scroll-mt-28 bg-white/70 backdrop-blur-xl p-8 lg:p-12 rounded-3xl shadow-xl shadow-slate-200/50 border border-white/80 mb-32 reveal">
-      <h2 class="text-4xl font-bold text-blue-900 mb-10 flex items-center gap-4">
-        <span class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center text-lg">4</span> Practical Information
+    <section id="practical" class="scroll-mt-28 bg-white/70 backdrop-blur-xl p-6 lg:p-12 rounded-3xl shadow-xl shadow-slate-200/50 border border-white/80 mb-32 reveal">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-10 flex items-center gap-4">
+        <span class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center text-lg shrink-0">4</span> Practical Information
       </h2>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
         <div class="reveal bg-gradient-to-br from-purple-50 to-white p-6 rounded-2xl border border-purple-100 shadow-sm">
           <h4 class="font-bold text-purple-900 mb-3 text-lg">🎟️ Registration</h4>
           <p class="text-sm text-slate-600 mb-4">Registration status (free / paid / limited capacity) will be announced soon.</p>
@@ -332,7 +357,7 @@ import '../styles/global.css';
         
         <div class="reveal p-6 border border-slate-100 rounded-2xl bg-white/50" style="transition-delay: 500ms">
           <h4 class="font-bold text-slate-800 mb-3 text-lg">✉️ Contact</h4>
-          <p class="text-sm text-slate-600">For questions, please contact:<br><a href="mailto:translonssymposium@TBA.com" class="inline-block mt-2 text-blue-600 font-medium hover:text-blue-800 hover:underline transition">translonssymposium@TBA.com</a></p>
+          <p class="text-sm text-slate-600">For questions, please contact:<br><a href="mailto:translonssymposium@TBA.com" class="inline-block mt-2 text-blue-600 font-medium hover:text-blue-800 hover:underline transition truncate break-all">translonssymposium@TBA.com</a></p>
         </div>
       </div>
     </section>
@@ -342,6 +367,26 @@ import '../styles/global.css';
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       
+      // --- MOBILE NAVIGATION LOGIC ---
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      function toggleMenu() {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+        if (mobileMenu.classList.contains('hidden')) {
+          menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'); // Hamburger Icon
+        } else {
+          menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // X Close Icon
+        }
+      }
+
+      mobileMenuToggle.addEventListener('click', toggleMenu);
+      mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+
       // --- INTERSECTION OBSERVER FOR FADE IN EFFECTS ---
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -358,6 +403,7 @@ import '../styles/global.css';
 
 
       // --- SVG ANIMATION LOGIC ---
+      const svgCanvas = document.getElementById("animation-canvas"); 
       const scene = document.getElementById("scene");
       const basesGroup = document.getElementById("mrna-bases");
       const ribosome = document.getElementById("ribosome");
@@ -367,11 +413,21 @@ import '../styles/global.css';
       const proteinBalls = document.getElementById("nascent-protein-balls");
       
       const baseSpacing = 30; // Distance between letters
-      const codonSize = baseSpacing * 3; 
+      const codonSize = baseSpacing * 3; // EXACTLY 90px (Perfect match to E, P, A site rectangles)
       
-      // Calculate how many bases are needed to cover the entire scrolled page securely
       const totalBases = Math.floor(document.body.scrollHeight / baseSpacing) + 50; 
-      mrnaBackbone.setAttribute("y2", (totalBases * baseSpacing).toString());
+      
+      // Cache dimensions to prevent mobile URL-bar hiding from causing "jumps"
+      let canvasWidth = svgCanvas.clientWidth;
+      let viewportHeight = window.innerHeight;
+      let isMobile = canvasWidth < 768;
+      
+      // Push mRNA strand to 90% on mobile so it doesn't overlap text, keep 83% on desktop
+      let strandXPercent = isMobile ? 0.90 : 0.83; 
+
+      // Initialize base positions
+      mrnaBackbone.setAttribute("x1", `${strandXPercent * 100}%`);
+      mrnaBackbone.setAttribute("x2", `${strandXPercent * 100}%`);
 
       const nucleotides = [
         { letter: 'A', color: '#3b82f6', bg: '#eff6ff' }, 
@@ -385,7 +441,8 @@ import '../styles/global.css';
         const nuc = nucleotides[Math.floor(Math.random() * nucleotides.length)];
         
         const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-        circle.setAttribute("cx", "83%");
+        circle.classList.add("mrna-base-circle");
+        circle.setAttribute("cx", `${strandXPercent * 100}%`);
         circle.setAttribute("cy", yPos.toString());
         circle.setAttribute("r", "10");
         circle.setAttribute("fill", nuc.bg);
@@ -393,7 +450,8 @@ import '../styles/global.css';
         circle.setAttribute("stroke-width", "2");
         
         const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-        text.setAttribute("x", "83%");
+        text.classList.add("mrna-base-text");
+        text.setAttribute("x", `${strandXPercent * 100}%`);
         text.setAttribute("y", (yPos + 4).toString());
         text.setAttribute("text-anchor", "middle");
         text.setAttribute("font-size", "10");
@@ -405,70 +463,79 @@ import '../styles/global.css';
         basesGroup.appendChild(text);
       }
 
+      // Handle Device Rotation / Major Resizing Safely
+      window.addEventListener('resize', () => {
+        // Only update logic if the WIDTH changes significantly (ignores mobile vertical scroll URL bar toggles!)
+        if (Math.abs(svgCanvas.clientWidth - canvasWidth) > 30) {
+          canvasWidth = svgCanvas.clientWidth;
+          viewportHeight = window.innerHeight;
+          isMobile = canvasWidth < 768;
+          strandXPercent = isMobile ? 0.90 : 0.83;
+
+          mrnaBackbone.setAttribute("x1", `${strandXPercent * 100}%`);
+          mrnaBackbone.setAttribute("x2", `${strandXPercent * 100}%`);
+          document.querySelectorAll('.mrna-base-circle').forEach(c => c.setAttribute("cx", `${strandXPercent * 100}%`));
+          document.querySelectorAll('.mrna-base-text').forEach(t => t.setAttribute("x", `${strandXPercent * 100}%`));
+        }
+      });
+
       let currentRibosomeY = codonSize / 2; 
 
       function updateAnimation() {
         const scrollY = window.scrollY;
-        const viewportHeight = window.innerHeight;
-        const maxScroll = Math.max(1, document.body.scrollHeight - viewportHeight);
         
-        // Calculate scroll progress (0.0 at top, 1.0 at bottom)
+        // Calculate maxScroll using the CACHED viewportHeight
+        const maxScroll = Math.max(1, document.body.scrollHeight - viewportHeight);
         const scrollProgress = Math.min(1, Math.max(0, scrollY / maxScroll));
         
-        // --- 1. SCROLLING SCENE ALIGNMENT ---
         scene.setAttribute("transform", `translate(0, -${scrollY})`);
         
-        // --- 2. VERTICAL DRIFT PARALLAX ---
+        // Parallax math uses CACHED viewportHeight, completely eliminating the mobile jump!
         const parallaxY = viewportHeight * 0.35 + (scrollProgress * viewportHeight * 0.3);
         const dynamicCenterPoint = scrollY + parallaxY;
         
-        // --- 3. MATHEMATICAL 3-CODON LOCK ---
+        // 3-CODON LOCK (Guarantees exactly 3 bases sit perfectly inside the 90px E/P/A rectangles)
         const k = Math.round((dynamicCenterPoint - (codonSize / 2)) / codonSize);
         const maxK = Math.floor(totalBases / 3) - 2;
         const clampedK = Math.max(0, Math.min(k, maxK));
         const targetRibosomeY = clampedK * codonSize + (codonSize / 2);
         
-        // Smooth Lerp
         currentRibosomeY += (targetRibosomeY - currentRibosomeY) * 0.1;
         
-        const riboX = window.innerWidth * 0.83; 
+        const riboX = canvasWidth * strandXPercent; 
+        
+        // FIXED: Removed scale() so that the 90px wide rectangles always match the 30px base spacing!
         ribosome.setAttribute("transform", `translate(${riboX}, ${currentRibosomeY}) rotate(-90)`);
 
-        // --- 4. FOLDED PROTEIN GENERATION ---
-        const proteinMiddleX = window.innerWidth * 0.35; 
+        // Update folded protein generation limits based on screen size
+        const proteinMiddleX = canvasWidth * (isMobile ? 0.20 : 0.35); 
         let pathD = `M ${proteinMiddleX} 0 `;
         
-        // Step size dictates how often we drop a folding coordinate. 
-        // Smaller steps = tighter loops and higher detail.
         const step = 80;
         
         for (let y = step; y < currentRibosomeY - 120; y += step) {
+          // Tone down the wave intensity slightly on mobile screens
+          const waveAmp = canvasWidth * (isMobile ? 0.06 : 0.12);
           
-          // Combine multiple sine waves at different frequencies to create unpredictable "folds"
-          const slowWave = Math.sin(y / 180) * (window.innerWidth * 0.12); // Broad sweeping left/right
-          const midWave = Math.cos(y / 70) * 90; // Secondary folding pattern
-          const fastWave = Math.sin(y / 30) * 40; // Tight localized coils
+          const slowWave = Math.sin(y / 180) * waveAmp; 
+          const midWave = Math.cos(y / 70) * (isMobile ? 50 : 90); 
+          const fastWave = Math.sin(y / 30) * (isMobile ? 25 : 40); 
           
           const xOffset = slowWave + midWave + fastWave;
-          
-          // Add a localized vertical overlap so the protein genuinely bunches up
           const yOffset = Math.sin(y / 60) * 50; 
 
           const currentX = proteinMiddleX + xOffset;
           const currentY = y + yOffset;
 
-          // Generate an outward-flaring control point to force smooth, looping curves
-          const cpX = currentX - Math.sin(y / 50) * 120;
+          const cpX = currentX - Math.sin(y / 50) * (isMobile ? 70 : 120);
           const cpY = currentY - (step * 0.8);
 
-          // SVG Smooth Cubic Bezier command
           pathD += `S ${cpX} ${cpY}, ${currentX} ${currentY} `;
         }
         
-        // Gracefully connect the wildly folded chain to the static ribosome tunnel
+        // Connect the folded chain back to the exit tunnel
         pathD += `Q ${riboX - 150} ${currentRibosomeY}, ${riboX - 30} ${currentRibosomeY}`;
         
-        // Apply calculated path to both layers
         proteinThread.setAttribute("d", pathD);
         proteinBalls.setAttribute("d", pathD);
 
