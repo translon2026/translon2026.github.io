@@ -107,10 +107,13 @@ import '../styles/global.css';
         <stop offset="50%" stop-color="#8b5cf6" /> <!-- Violet -->
         <stop offset="100%" stop-color="#ec4899" /> <!-- Pink -->
       </linearGradient>
-      
+
       <!-- Stronger drop shadow to make the amino acids pop out as 3D spheres -->
       <filter id="bead-shadow" x="-50%" y="-50%" width="200%" height="200%">
         <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.25"/>
+      </filter>
+      <filter id="trna-shadow" x="-50%" y="-50%" width="200%" height="200%">
+        <feDropShadow dx="1.5" dy="3" stdDeviation="2.5" flood-color="#7c2d12" flood-opacity="0.22"/>
       </filter>
     </defs>
 
@@ -124,6 +127,7 @@ import '../styles/global.css';
       
       <line id="mrna-backbone" y1="0" y2="100%" stroke="#cbd5e1" stroke-width="4" />
       <g id="mrna-bases"></g>
+      <g id="trna-layer"></g>
       <g id="ribosome">
         <ellipse cx="0" cy="-30" rx="225" ry="110" fill="#6b21a8" opacity="0.15" stroke="#7e22ce" stroke-width="2.5"/>
         <ellipse cx="0" cy="30" rx="150" ry="85" fill="#1e3a8a" opacity="0.15" stroke="#1d4ed8" stroke-width="2.5"/>
@@ -189,9 +193,10 @@ import '../styles/global.css';
         {[
           { name: "Pavel Baranov", aff: "University College Cork", city: "Cork, Ireland" },
           { name: "Tomasz Włodarski", aff: "Institute of Biochemistry and Biophysics, PAS", city: "Warsaw, Poland" },
-          { name: "Jon Mudge", aff: "EBI, Hinxton, UK", city: "Hinxton, UK" },
-          { name: "To be announced", aff: "TBA", city: "TBA" },
+          { name: "Jon Mudge", aff: "European Bioinformatics Institute", city: "Hinxton, UK" },
+          { name: "Jack Tierney", aff: "European Bioinformatics Institute", city: "Hinxton, UK" },
           { name: "Martina Yordanova", aff: "University College Cork", city: "Cork, Ireland" },
+          { name: "Maria Bożko", aff: "University of Warsaw", city: "Warsaw, Poland" },
           { name: "To be announced", aff: "TBA", city: "TBA" }
         ].map((speaker, index) => (
           <div class="reveal flex items-center gap-4 md:gap-5 p-4 md:p-5 border border-slate-100 rounded-2xl bg-white/60 hover:bg-white hover:-translate-y-1 hover:shadow-xl hover:border-purple-100 transition-all duration-300 group" style={`transition-delay: ${index * 100}ms`}>
@@ -406,6 +411,7 @@ import '../styles/global.css';
       const svgCanvas = document.getElementById("animation-canvas"); 
       const scene = document.getElementById("scene");
       const basesGroup = document.getElementById("mrna-bases");
+      const trnaLayer = document.getElementById("trna-layer");
       const ribosome = document.getElementById("ribosome");
       const mrnaBackbone = document.getElementById("mrna-backbone");
       
@@ -414,6 +420,7 @@ import '../styles/global.css';
       
       const baseSpacing = 30; // Distance between letters
       const codonSize = baseSpacing * 3; // EXACTLY 90px (Perfect match to E, P, A site rectangles)
+      const trnaCycleDuration = 1100;
       
       const totalBases = Math.floor(document.body.scrollHeight / baseSpacing) + 50; 
       
@@ -463,6 +470,100 @@ import '../styles/global.css';
         basesGroup.appendChild(text);
       }
 
+      function createSvgElement(tag, attrs = {}) {
+        const element = document.createElementNS("http://www.w3.org/2000/svg", tag);
+        Object.entries(attrs).forEach(([key, value]) => element.setAttribute(key, value));
+        return element;
+      }
+
+      const trnaLocal = {
+        amino: { x: 38, y: -58 },
+        anticodon: { x: -22, y: 36 }
+      };
+      const dockedTRNARotation = -90;
+
+      function createTRNA(className, color) {
+        const group = createSvgElement("g", { class: className });
+
+        const backbone = createSvgElement("path", {
+          d: "M 38 -58 C 18 -59, 2 -54, -10 -44 C -23 -32, -29 -16, -29 3 L -29 29 C -29 43, -15 51, -4 42 C 5 35, 4 24, -8 24 C -19 24, -25 31, -22 36 C -24 16, -22 -4, -14 -20 C -8 -33, -4 -40, -10 -44 C 1 -31, 16 -22, 33 -17 C 47 -13, 50 4, 39 15 C 29 25, 11 22, -1 10",
+          fill: "none",
+          stroke: color,
+          "stroke-width": "9.5",
+          "stroke-linecap": "round",
+          "stroke-linejoin": "round",
+          filter: "url(#trna-shadow)",
+          opacity: "0.84",
+          "vector-effect": "non-scaling-stroke"
+        });
+
+        const highlight = createSvgElement("path", {
+          d: "M 29 -54 C 14 -54, 1 -50, -10 -39 C -20 -27, -24 -11, -24 8 M -2 -38 C 8 -29, 21 -22, 35 -18",
+          fill: "none",
+          stroke: "#ffffff",
+          "stroke-width": "2.5",
+          "stroke-linecap": "round",
+          "stroke-linejoin": "round",
+          opacity: "0.5",
+          "vector-effect": "non-scaling-stroke"
+        });
+
+        const aminoLink = createSvgElement("line", {
+          class: "trna-amino-link",
+          x1: "25",
+          y1: "-58",
+          x2: trnaLocal.amino.x.toString(),
+          y2: trnaLocal.amino.y.toString(),
+          stroke: "#64748b",
+          "stroke-width": "2",
+          "stroke-linecap": "round",
+          "vector-effect": "non-scaling-stroke"
+        });
+
+        const aminoAcid = createSvgElement("circle", {
+          class: "trna-amino-acid",
+          cx: trnaLocal.amino.x.toString(),
+          cy: trnaLocal.amino.y.toString(),
+          r: "7",
+          fill: color,
+          stroke: "#ffffff",
+          "stroke-width": "2.2",
+          filter: "url(#bead-shadow)"
+        });
+
+        group.append(backbone, highlight, aminoLink, aminoAcid);
+        trnaLayer.appendChild(group);
+
+        return { group, aminoLink, aminoAcid, coloredElements: [backbone] };
+      }
+
+      const trnas = {
+        incoming: createTRNA("trna-incoming", "#f97316"),
+        peptidyl: createTRNA("trna-peptidyl", "#8b5cf6"),
+        exiting: createTRNA("trna-exiting", "#0ea5e9")
+      };
+      const trnaPalette = ["#f97316", "#8b5cf6", "#0ea5e9", "#10b981", "#eab308"];
+
+      const peptideBondBridge = createSvgElement("path", {
+        fill: "none",
+        stroke: "#ec4899",
+        "stroke-width": "3",
+        "stroke-linecap": "round",
+        "stroke-dasharray": "5 7",
+        opacity: "0"
+      });
+      trnaLayer.appendChild(peptideBondBridge);
+
+      const chainTerminus = createSvgElement("circle", {
+        r: "8",
+        fill: "#ec4899",
+        stroke: "#ffffff",
+        "stroke-width": "2.5",
+        filter: "url(#bead-shadow)",
+        opacity: "0"
+      });
+      trnaLayer.appendChild(chainTerminus);
+
       // Handle Device Rotation / Major Resizing Safely
       window.addEventListener('resize', () => {
         // Only update logic if the WIDTH changes significantly (ignores mobile vertical scroll URL bar toggles!)
@@ -480,8 +581,62 @@ import '../styles/global.css';
       });
 
       let currentRibosomeY = codonSize / 2; 
+      let lastCodonIndex = 0;
+      let trnaCycleStart = performance.now();
+
+      function lerp(start, end, amount) {
+        return start + (end - start) * amount;
+      }
+
+      function easeInOut(t) {
+        return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+      }
+
+      function clamp01(value) {
+        return Math.min(1, Math.max(0, value));
+      }
+
+      function setTRNAState(trna, x, y, scale, rotation, opacity, aminoOpacity = 1) {
+        trna.group.setAttribute("transform", `translate(${x}, ${y}) rotate(${rotation}) scale(${scale})`);
+        trna.group.setAttribute("opacity", opacity.toString());
+        trna.aminoLink.setAttribute("opacity", aminoOpacity.toString());
+        trna.aminoAcid.setAttribute("opacity", aminoOpacity.toString());
+        trna.state = { x, y, scale, rotation };
+      }
+
+      function setTRNAColor(trna, color) {
+        trna.coloredElements.forEach(element => element.setAttribute("stroke", color));
+        trna.aminoAcid.setAttribute("fill", color);
+      }
+
+      function localPointToCanvas(trna, point) {
+        const state = trna.state || { x: 0, y: 0, scale: 1, rotation: 0 };
+        return localPointWithState(point, state);
+      }
+
+      function localPointWithState(point, state) {
+        const radians = state.rotation * Math.PI / 180;
+        const scaledX = point.x * state.scale;
+        const scaledY = point.y * state.scale;
+        return {
+          x: state.x + scaledX * Math.cos(radians) - scaledY * Math.sin(radians),
+          y: state.y + scaledX * Math.sin(radians) + scaledY * Math.cos(radians)
+        };
+      }
+
+      function translationForLocalPoint(point, target, scale, rotation) {
+        const radians = rotation * Math.PI / 180;
+        const scaledX = point.x * scale;
+        const scaledY = point.y * scale;
+
+        return {
+          x: target.x - (scaledX * Math.cos(radians) - scaledY * Math.sin(radians)),
+          y: target.y - (scaledX * Math.sin(radians) + scaledY * Math.cos(radians))
+        };
+      }
 
       function updateAnimation() {
+        const now = performance.now();
         const scrollY = window.scrollY;
         
         // Calculate maxScroll using the CACHED viewportHeight
@@ -499,6 +654,11 @@ import '../styles/global.css';
         const maxK = Math.floor(totalBases / 3) - 2;
         const clampedK = Math.max(0, Math.min(k, maxK));
         const targetRibosomeY = clampedK * codonSize + (codonSize / 2);
+
+        if (clampedK !== lastCodonIndex) {
+          lastCodonIndex = clampedK;
+          trnaCycleStart = now;
+        }
         
         currentRibosomeY += (targetRibosomeY - currentRibosomeY) * 0.1;
         
@@ -507,37 +667,122 @@ import '../styles/global.css';
         // FIXED: Removed scale() so that the 90px wide rectangles always match the 30px base spacing!
         ribosome.setAttribute("transform", `translate(${riboX}, ${currentRibosomeY}) rotate(-90)`);
 
-        // Update folded protein generation limits based on screen size
+        const cycleProgress = Math.min(1, (now - trnaCycleStart) / trnaCycleDuration);
+        const approachEase = easeInOut(clamp01(cycleProgress / 0.34));
+        const transferStart = 0.34;
+        const transferEnd = 0.54;
+        const transferProgress = clamp01((cycleProgress - transferStart) / (transferEnd - transferStart));
+        const transferEase = easeInOut(transferProgress);
+        const translocEase = easeInOut(clamp01((cycleProgress - 0.58) / 0.30));
+        const leaveEase = easeInOut(clamp01((cycleProgress - 0.88) / 0.12));
+
+        const trnaScale = isMobile ? 0.54 : 0.68;
+        const siteOffset = codonSize;
+        const anticodonContactX = riboX - (isMobile ? 13 : 16);
+        const aSiteY = currentRibosomeY - siteOffset;
+        const pSiteY = currentRibosomeY;
+        const eSiteY = currentRibosomeY + siteOffset;
+        const aDock = translationForLocalPoint(trnaLocal.anticodon, { x: anticodonContactX, y: aSiteY }, trnaScale, dockedTRNARotation);
+        const pDock = translationForLocalPoint(trnaLocal.anticodon, { x: anticodonContactX, y: pSiteY }, trnaScale, dockedTRNARotation);
+        const eDock = translationForLocalPoint(trnaLocal.anticodon, { x: anticodonContactX, y: eSiteY }, trnaScale, dockedTRNARotation);
+
+        const incomingStartX = aDock.x - (isMobile ? 78 : 115);
+        const incomingStartY = aDock.y - (isMobile ? 52 : 72);
+        const incomingDockX = lerp(incomingStartX, aDock.x, approachEase);
+        const incomingDockY = lerp(incomingStartY, aDock.y, approachEase);
+        const incomingX = lerp(incomingDockX, pDock.x, translocEase);
+        const incomingY = lerp(incomingDockY, pDock.y, translocEase);
+        const peptidylDockX = lerp(pDock.x, eDock.x, translocEase);
+        const peptidylDockY = lerp(pDock.y, eDock.y, translocEase);
+        const peptidylExitX = eDock.x - (isMobile ? 78 : 112);
+        const peptidylExitY = eDock.y + (isMobile ? 42 : 58);
+        const peptidylX = lerp(peptidylDockX, peptidylExitX, leaveEase);
+        const peptidylY = lerp(peptidylDockY, peptidylExitY, leaveEase);
+        const peptidylColor = trnaPalette[clampedK % trnaPalette.length];
+        const incomingColor = trnaPalette[(clampedK + 1) % trnaPalette.length];
+
+        setTRNAColor(trnas.incoming, incomingColor);
+        setTRNAColor(trnas.peptidyl, peptidylColor);
+        setTRNAColor(trnas.exiting, peptidylColor);
+
+        setTRNAState(
+          trnas.incoming,
+          incomingX,
+          incomingY,
+          trnaScale,
+          lerp(-56, dockedTRNARotation, approachEase),
+          Math.min(1, cycleProgress / 0.16),
+          1
+        );
+
+        setTRNAState(
+          trnas.peptidyl,
+          peptidylX,
+          peptidylY,
+          trnaScale,
+          lerp(dockedTRNARotation, dockedTRNARotation - 18, leaveEase),
+          0.86 * (1 - leaveEase),
+          1 - transferEase
+        );
+
+        setTRNAState(
+          trnas.exiting,
+          eDock.x,
+          eDock.y,
+          trnaScale,
+          dockedTRNARotation,
+          0,
+          0
+        );
+
+        const oldPeptidylAnchor = localPointToCanvas(trnas.peptidyl, trnaLocal.amino);
+        const incomingAnchor = localPointToCanvas(trnas.incoming, trnaLocal.amino);
+        const pSitePeptideAnchor = localPointWithState(trnaLocal.amino, {
+          x: pDock.x,
+          y: pDock.y,
+          scale: trnaScale,
+          rotation: dockedTRNARotation
+        });
+        const bridgeControlX = (oldPeptidylAnchor.x + incomingAnchor.x) / 2 - (isMobile ? 18 : 28);
+        const bridgeControlY = (oldPeptidylAnchor.y + incomingAnchor.y) / 2 - (isMobile ? 22 : 34);
+        const bridgeOpacity = transferProgress > 0 && transferProgress < 1 ? 0.55 : 0;
+
+        peptideBondBridge.setAttribute("d", `M ${oldPeptidylAnchor.x} ${oldPeptidylAnchor.y} Q ${bridgeControlX} ${bridgeControlY}, ${incomingAnchor.x} ${incomingAnchor.y}`);
+        peptideBondBridge.setAttribute("opacity", bridgeOpacity.toString());
+
+        // Keep the visible nascent chain fixed sideways at the P-site exit point;
+        // elongation is shown by the growing chain while the tRNAs move through the sites.
         const proteinMiddleX = canvasWidth * (isMobile ? 0.20 : 0.35); 
         let pathD = `M ${proteinMiddleX} 0 `;
-        
         const step = 80;
         
         for (let y = step; y < currentRibosomeY - 120; y += step) {
-          // Tone down the wave intensity slightly on mobile screens
           const waveAmp = canvasWidth * (isMobile ? 0.06 : 0.12);
-          
           const slowWave = Math.sin(y / 180) * waveAmp; 
           const midWave = Math.cos(y / 70) * (isMobile ? 50 : 90); 
           const fastWave = Math.sin(y / 30) * (isMobile ? 25 : 40); 
-          
           const xOffset = slowWave + midWave + fastWave;
           const yOffset = Math.sin(y / 60) * 50; 
 
           const currentX = proteinMiddleX + xOffset;
           const currentY = y + yOffset;
-
           const cpX = currentX - Math.sin(y / 50) * (isMobile ? 70 : 120);
           const cpY = currentY - (step * 0.8);
 
           pathD += `S ${cpX} ${cpY}, ${currentX} ${currentY} `;
         }
         
-        // Connect the folded chain back to the exit tunnel
-        pathD += `Q ${riboX - 150} ${currentRibosomeY}, ${riboX - 30} ${currentRibosomeY}`;
+        const tunnelX = riboX - (isMobile ? 42 : 72);
+        const tunnelY = currentRibosomeY - (isMobile ? 24 : 38);
+        const chainAnchor = pSitePeptideAnchor;
+        const tunnelPath = `Q ${riboX - (isMobile ? 95 : 150)} ${currentRibosomeY - (isMobile ? 12 : 20)}, ${tunnelX} ${tunnelY} `;
+        const ballsPathD = pathD + tunnelPath;
+        pathD += tunnelPath;
+        pathD += `Q ${(tunnelX + chainAnchor.x) / 2} ${Math.min(tunnelY, chainAnchor.y) - (isMobile ? 10 : 14)}, ${chainAnchor.x} ${chainAnchor.y}`;
         
         proteinThread.setAttribute("d", pathD);
-        proteinBalls.setAttribute("d", pathD);
+        proteinBalls.setAttribute("d", ballsPathD);
+        chainTerminus.setAttribute("opacity", "0");
 
         requestAnimationFrame(updateAnimation);
       }
