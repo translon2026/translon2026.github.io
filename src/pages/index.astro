@@ -582,10 +582,19 @@ import '../styles/global.css';
       const trnaCycleDuration = 1100;
       
       const totalBases = Math.floor(document.body.scrollHeight / baseSpacing) + 50; 
+
+      function getViewportWidth() {
+        return window.innerWidth || document.documentElement.clientWidth || svgCanvas.getBoundingClientRect().width || 0;
+      }
+
+      function getViewportHeight() {
+        return window.innerHeight || document.documentElement.clientHeight || svgCanvas.getBoundingClientRect().height || 0;
+      }
       
-      // Cache dimensions to prevent mobile URL-bar hiding from causing "jumps"
-      let canvasWidth = svgCanvas.clientWidth;
-      let viewportHeight = window.innerHeight;
+      // Cache viewport dimensions to prevent mobile URL-bar hiding from causing "jumps".
+      // Use viewport/document metrics instead of SVG clientWidth, which is unreliable in Safari.
+      let canvasWidth = getViewportWidth();
+      let viewportHeight = getViewportHeight();
       let isMobile = canvasWidth < 768;
 
       function getStrandXPercent() {
@@ -739,9 +748,10 @@ import '../styles/global.css';
       // Handle Device Rotation / Major Resizing Safely
       window.addEventListener('resize', () => {
         // Only update logic if the WIDTH changes significantly (ignores mobile vertical scroll URL bar toggles!)
-        if (Math.abs(svgCanvas.clientWidth - canvasWidth) > 30) {
-          canvasWidth = svgCanvas.clientWidth;
-          viewportHeight = window.innerHeight;
+        const nextCanvasWidth = getViewportWidth();
+        if (Math.abs(nextCanvasWidth - canvasWidth) > 30) {
+          canvasWidth = nextCanvasWidth;
+          viewportHeight = getViewportHeight();
           isMobile = canvasWidth < 768;
           strandXPercent = getStrandXPercent();
           animationScale = getAnimationScale();
