@@ -185,7 +185,7 @@ import '../styles/global.css';
       
       <!-- Desktop CTA -->
       <div class="hidden md:block space-x-3 text-sm">
-        <a href="https://forms.gle/WFGbpDe3ohwNFnW16" class="btn-shine inline-block bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Register</a>
+        <a href="https://forms.gle/WFGbpDe3ohwNFnW16" target="_blank" rel="noopener noreferrer" class="btn-shine inline-block bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Register</a>
       </div>
     </div>
 
@@ -198,7 +198,7 @@ import '../styles/global.css';
         <a href="#programme" class="mobile-link hover:text-purple-600 transition">Programme</a>
         <a href="#practical" class="mobile-link hover:text-purple-600 transition">Practical Info</a>
         <div class="pt-4 border-t border-slate-100">
-          <a href="https://forms.gle/WFGbpDe3ohwNFnW16" class="mobile-link inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-bold hover:bg-blue-700 transition shadow-md text-center w-full">Register Now</a>
+          <a href="https://forms.gle/WFGbpDe3ohwNFnW16" target="_blank" rel="noopener noreferrer" class="mobile-link inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-bold hover:bg-blue-700 transition shadow-md text-center w-full">Register Now</a>
         </div>
       </nav>
     </div>
@@ -263,7 +263,7 @@ import '../styles/global.css';
       </p>
 
       <div class="hero-actions flex flex-col sm:flex-row gap-4">
-        <a href="https://forms.gle/WFGbpDe3ohwNFnW16" class="hero-action btn-shine text-center bg-purple-600 text-white px-8 py-4 rounded-full font-bold hover:bg-purple-700 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-purple-500/30">Register</a>
+        <a href="https://forms.gle/WFGbpDe3ohwNFnW16" target="_blank" rel="noopener noreferrer" class="hero-action btn-shine text-center bg-purple-600 text-white px-8 py-4 rounded-full font-bold hover:bg-purple-700 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-purple-500/30">Register</a>
         <button class="hero-action bg-white/80 backdrop-blur text-blue-700 border-2 border-blue-100 px-8 py-4 rounded-full font-bold hover:bg-blue-50 hover:border-blue-200 transition-all duration-300 shadow-sm">Abstract Book (Coming Soon)</button>
       </div>
     </section>
@@ -278,7 +278,7 @@ import '../styles/global.css';
           Modern translation biology has moved beyond a simple one-transcript, one-protein view. Multiple fields, including translatomics, proteogenomics, and comparative genomics, now point to a complex architecture of translated regions that can share the same RNA molecules. Beyond coding for proteins, these regions can contribute to regulation, generate short peptides or antigens, shape ribosome behaviour, or produce molecular outcomes whose functions remain unknown.
         </p>
         <p>
-          The term <strong class="text-purple-700 font-bold">translon</strong> provides a shared conceptual unit for this diversity: a translated region considered as a functional unit of translation, independent of whether it produces a stable protein, a short peptide, an antigen, a regulatory event, or multiple context-dependent outputs.
+          The term <strong class="text-purple-700 font-bold">translon</strong> provides a shared conceptual unit for this diversity: a translated region considered as an operational unit of translation, independent of whether it produces a stable protein, a short peptide, an antigen, whether it serves a critical regulatory role or is phenotypically insignificant.
         </p>
         <p>
           The symposium subtitle, <em class="text-slate-800">At the Molecular Crossroads</em>, reflects the central position of translons in gene expression. Translons connect RNA sequence and structure with ribosome dynamics, peptide and protein production with regulatory events, and molecular mechanisms with annotation and biological resources. They provide a way to discuss translation not only as a route to protein synthesis, but as a decision-rich process in which multiple molecular outcomes can emerge from the same RNA.
@@ -310,8 +310,7 @@ import '../styles/global.css';
           { name: "Jon Mudge", aff: "European Bioinformatics Institute", city: "Hinxton, UK", detailTitle: "Talk", talk: "TBA" },
           { name: "Jack Tierney", aff: "European Bioinformatics Institute", city: "Hinxton, UK", photo: "/photos/Jack_Tierney.jpg", photoPosition: "50% 35%", detailTitle: "Talk", talk: "Representing Translation Within Genome Annotation" },
           { name: "Martina Yordanova", aff: "University College Cork", city: "Cork, Ireland", photo: "/photos/Martina_Yordanova.png", photoPosition: "50% 28%", detailTitle: "Talk", talk: "An evolutionary conserved translon mediates start site selection in BAG1 mRNA." },
-          { name: "Maria Bożko", aff: "University of Warsaw", city: "Warsaw, Poland", photo: "/photos/Maria_Bozko.jpeg", photoPosition: "42% 52%", photoScale: "1.12", detailTitle: "Talk", talk: "" },
-          { name: "To be announced", aff: "TBA", city: "TBA", detailTitle: "Talk", talk: "TBA" }
+          { name: "Maria Bożko", aff: "University of Warsaw", city: "Warsaw, Poland", photo: "/photos/Maria_Bozko.jpeg", photoPosition: "42% 52%", photoScale: "1.12", detailTitle: "Talk", talk: "" }
         ].map((speaker, index) => (
           <div
             class="speaker-card reveal p-4 md:p-5 border border-slate-100 rounded-2xl bg-white/60 hover:bg-white hover:-translate-y-1 hover:shadow-xl hover:border-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-300 transition-all duration-300 group cursor-pointer"
@@ -325,16 +324,16 @@ import '../styles/global.css';
             <div class="flex items-center gap-4 md:gap-5">
               <div class="w-14 h-14 md:w-16 md:h-16 min-w-[3.5rem] md:min-w-[4rem] bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center text-purple-600 font-black text-xl shadow-inner overflow-hidden border border-white/80 group-hover:scale-110 transition-transform duration-300">
                 {speaker.photo ? (
-                  <img
-                    src={speaker.photo}
-                    alt={speaker.name}
-                    class="w-full h-full object-cover"
+	                  <img
+	                    src={speaker.photo}
+	                    alt={speaker.name}
+	                    class="w-full h-full object-cover"
 	                    style={`object-position: ${speaker.photoPosition}; transform: scale(${speaker.photoScale || "1"});`}
-                    loading="lazy"
-                  />
-                ) : (
-                  speaker.name !== "To be announced" ? speaker.name.charAt(0) : "?"
-                )}
+	                    loading="lazy"
+	                  />
+	                ) : (
+	                  speaker.name.charAt(0)
+	                )}
               </div>
               <div class="flex-1 min-w-0">
                 <div class="font-bold text-base md:text-lg text-slate-800 truncate">{speaker.name}</div>
@@ -452,8 +451,8 @@ import '../styles/global.css';
           <div class="text-slate-600">Short talks TBA</div>
         </div>
         <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-          <div class="font-semibold text-orange-500 bg-orange-50 px-3 py-1 rounded-full w-max">10:30 - 11:00</div>
-          <div class="text-orange-600 font-medium flex items-center gap-2">☕ Coffee break</div>
+          <div class="font-semibold text-amber-800 bg-amber-50 px-3 py-1 rounded-full w-max">10:30 - 11:00</div>
+          <div class="text-amber-900 font-medium flex items-center gap-2">☕ Coffee break</div>
         </div>
         <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
           <div class="font-semibold text-slate-500">11:00 - 11:30</div>
@@ -480,8 +479,8 @@ import '../styles/global.css';
 	          <div class="text-slate-600">Short talks TBA</div>
 	        </div>
 	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-	          <div class="font-semibold text-orange-500 bg-orange-50 px-3 py-1 rounded-full w-max">16:00 - 16:30</div>
-	          <div class="text-orange-600 font-medium flex items-center gap-2">☕ Coffee break</div>
+	          <div class="font-semibold text-amber-800 bg-amber-50 px-3 py-1 rounded-full w-max">16:00 - 16:30</div>
+	          <div class="text-amber-900 font-medium flex items-center gap-2">☕ Coffee break</div>
 	        </div>
 	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
 	          <div class="font-semibold text-slate-500">16:30 - 17:30</div>
@@ -493,37 +492,41 @@ import '../styles/global.css';
 	      <h3 class="text-2xl font-bold text-purple-800 border-b-2 border-purple-100 pb-3 mb-6">Tuesday, 30 June 2026</h3>
 	      <div class="space-y-3 reveal">
 	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-	          <div class="font-semibold text-slate-500 bg-slate-100 inline-block px-3 py-1 rounded-full w-max">9:00 - 9:15</div>
-	          <div class="text-slate-700">Welcome and opening remarks</div>
-	        </div>
-	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm bg-indigo-50/80 border border-indigo-100 p-3 rounded-lg items-center">
-	          <div class="font-bold text-indigo-800">9:15 - 12:30</div>
-	          <div class="font-bold text-indigo-900 md:text-base">Session 3: Annotation and Resources</div>
-	        </div>
-	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-	          <div class="font-semibold text-slate-500">9:15 - 10:00</div>
-	          <div class="text-slate-800 font-medium"><span class="text-purple-600 font-bold md:mr-2 block md:inline">Keynote Lecture:</span> TBA</div>
-	        </div>
-	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-	          <div class="font-semibold text-slate-500">10:00 - 10:30</div>
-	          <div class="text-slate-600">Short talks TBA</div>
-	        </div>
-	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-	          <div class="font-semibold text-orange-500 bg-orange-50 px-3 py-1 rounded-full w-max">10:30 - 11:00</div>
-	          <div class="text-orange-600 font-medium flex items-center gap-2">☕ Coffee break</div>
-	        </div>
-	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-	          <div class="font-semibold text-slate-500">11:00 - 11:30</div>
-	          <div class="text-slate-800 font-medium">Jack Tierney <span class="block text-slate-500 font-normal mt-1">Representing Translation Within Genome Annotation</span></div>
-	        </div>
-	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-	          <div class="font-semibold text-slate-500">11:30 - 12:30</div>
-	          <div class="text-slate-600">Short talks TBA</div>
-	        </div>
-	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-	          <div class="font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-max">12:30 - 13:30</div>
-	          <div class="text-slate-700 font-medium">Roundtable discussion and closing remarks</div>
-	        </div>
+		          <div class="font-semibold text-slate-500 bg-slate-100 inline-block px-3 py-1 rounded-full w-max">10:00 - 10:15</div>
+		          <div class="text-slate-700">Welcome and opening remarks</div>
+		        </div>
+		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm bg-indigo-50/80 border border-indigo-100 p-3 rounded-lg items-center">
+		          <div class="font-bold text-indigo-800">10:15 - 13:30</div>
+		          <div class="font-bold text-indigo-900 md:text-base">Session 3: Annotation and Resources</div>
+		        </div>
+		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+		          <div class="font-semibold text-slate-500">10:15 - 11:00</div>
+		          <div class="text-slate-800 font-medium"><span class="text-purple-600 font-bold md:mr-2 block md:inline">Keynote Lecture:</span> TBA</div>
+		        </div>
+		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+		          <div class="font-semibold text-slate-500">11:00 - 11:30</div>
+		          <div class="text-slate-600">Short talks TBA</div>
+		        </div>
+		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+		          <div class="font-semibold text-amber-800 bg-amber-50 px-3 py-1 rounded-full w-max">11:30 - 12:00</div>
+		          <div class="text-amber-900 font-medium flex items-center gap-2">☕ Coffee break</div>
+		        </div>
+		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+		          <div class="font-semibold text-slate-500">12:00 - 12:30</div>
+		          <div class="text-slate-800 font-medium">Jack Tierney <span class="block text-slate-500 font-normal mt-1">Representing Translation Within Genome Annotation</span></div>
+		        </div>
+		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+		          <div class="font-semibold text-slate-500">12:30 - 13:00</div>
+		          <div class="text-slate-600">Short talks TBA</div>
+		        </div>
+		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+		          <div class="font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full w-max">13:00 - 14:00</div>
+		          <div class="text-green-700 font-medium flex items-center gap-2">🍽️ Lunch break</div>
+		        </div>
+		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+		          <div class="font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-max">14:00 - 15:00</div>
+		          <div class="text-slate-700 font-medium">Roundtable discussion and closing remarks</div>
+		        </div>
 	      </div>
 	    </section>
 
@@ -537,12 +540,11 @@ import '../styles/global.css';
         <div class="reveal bg-gradient-to-br from-purple-50 to-white p-6 rounded-2xl border border-purple-100 shadow-sm">
           <h4 class="font-bold text-purple-900 mb-3 text-lg">🎟️ Registration</h4>
           <p class="text-sm text-slate-600 mb-4">Registration free but required due to limited capacity.</p>
-          <a href="https://forms.gle/WFGbpDe3ohwNFnW16" class="inline-block bg-purple-600 text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-purple-700 transition shadow">Registration Form</a>
+          <a href="https://forms.gle/WFGbpDe3ohwNFnW16" target="_blank" rel="noopener noreferrer" class="inline-block bg-purple-600 text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-purple-700 transition shadow">Registration Form</a>
         </div>
 
         <div class="reveal bg-gradient-to-br from-blue-50 to-white p-6 rounded-2xl border border-blue-100 shadow-sm" style="transition-delay: 100ms">
           <h4 class="font-bold text-blue-900 mb-3 text-lg">📄 Abstracts</h4>
-          <p class="text-sm text-slate-600 mb-4">Abstract submission details TBA.</p>
           <button disabled class="inline-block bg-white text-blue-600 border border-blue-200 px-5 py-2 rounded-full text-sm font-bold opacity-70 cursor-not-allowed">Abstract Book (Coming Soon)</button>
         </div>
 
