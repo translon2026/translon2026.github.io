@@ -185,7 +185,7 @@ import '../styles/global.css';
       
       <!-- Desktop CTA -->
       <div class="hidden md:block space-x-3 text-sm">
-        <a href="#practical" class="btn-shine inline-block bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Register</a>
+        <a href="https://forms.gle/WFGbpDe3ohwNFnW16" class="btn-shine inline-block bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Register</a>
       </div>
     </div>
 
@@ -198,7 +198,7 @@ import '../styles/global.css';
         <a href="#programme" class="mobile-link hover:text-purple-600 transition">Programme</a>
         <a href="#practical" class="mobile-link hover:text-purple-600 transition">Practical Info</a>
         <div class="pt-4 border-t border-slate-100">
-          <a href="#practical" class="mobile-link inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-bold hover:bg-blue-700 transition shadow-md text-center w-full">Register Now</a>
+          <a href="https://forms.gle/WFGbpDe3ohwNFnW16" class="mobile-link inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-bold hover:bg-blue-700 transition shadow-md text-center w-full">Register Now</a>
         </div>
       </nav>
     </div>
@@ -263,7 +263,7 @@ import '../styles/global.css';
       </p>
 
       <div class="hero-actions flex flex-col sm:flex-row gap-4">
-        <a href="#practical" class="hero-action btn-shine text-center bg-purple-600 text-white px-8 py-4 rounded-full font-bold hover:bg-purple-700 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-purple-500/30">Register Form</a>
+        <a href="https://forms.gle/WFGbpDe3ohwNFnW16" class="hero-action btn-shine text-center bg-purple-600 text-white px-8 py-4 rounded-full font-bold hover:bg-purple-700 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-purple-500/30">Register</a>
         <button class="hero-action bg-white/80 backdrop-blur text-blue-700 border-2 border-blue-100 px-8 py-4 rounded-full font-bold hover:bg-blue-50 hover:border-blue-200 transition-all duration-300 shadow-sm">Abstract Book (Coming Soon)</button>
       </div>
     </section>
@@ -275,7 +275,7 @@ import '../styles/global.css';
       </h2>
       <div class="space-y-6 text-slate-600 leading-relaxed text-base md:text-lg font-light">
         <p>
-          Modern translation biology has moved beyond a simple one-transcript, one-ORF, one-protein view. Multiple fields, including translatomics, proteogenomics, and comparative genomics, now point to a complex architecture of translated regions that can share the same RNA molecules. Beyond coding for proteins, these regions can contribute to regulation, generate short peptides or antigens, shape ribosome behaviour, or produce molecular outcomes whose functions remain unknown.
+          Modern translation biology has moved beyond a simple one-transcript, one-protein view. Multiple fields, including translatomics, proteogenomics, and comparative genomics, now point to a complex architecture of translated regions that can share the same RNA molecules. Beyond coding for proteins, these regions can contribute to regulation, generate short peptides or antigens, shape ribosome behaviour, or produce molecular outcomes whose functions remain unknown.
         </p>
         <p>
           The term <strong class="text-purple-700 font-bold">translon</strong> provides a shared conceptual unit for this diversity: a translated region considered as a functional unit of translation, independent of whether it produces a stable protein, a short peptide, an antigen, a regulatory event, or multiple context-dependent outputs.
@@ -301,14 +301,16 @@ import '../styles/global.css';
             name: "Pavel Baranov",
             aff: "University College Cork",
             city: "Cork, Ireland",
+            photo: "/photos/Pavel_Baranov.png",
+            photoPosition: "50% 38%",
             detailTitle: "Keynote lecture",
-            talk: "Monday 29 June, 9:15 - 10:00, Enigmatic Translons – Animalcules of Molecular Biology?"
+            talk: "Enigmatic Translons - Animalcules of Molecular Biology?"
           },
-          { name: "Tomasz Włodarski", aff: "Institute of Biochemistry and Biophysics, PAS", city: "Warsaw, Poland", detailTitle: "Talk", talk: "TBA" },
+          { name: "Tomasz Włodarski", aff: "Institute of Biochemistry and Biophysics, PAS", city: "Warsaw, Poland", photo: "/photos/Tomasz_Wlodarski.png", photoPosition: "50% 36%", detailTitle: "Talk", talk: "Co-translational protein folding in the light of ribosome evolution" },
           { name: "Jon Mudge", aff: "European Bioinformatics Institute", city: "Hinxton, UK", detailTitle: "Talk", talk: "TBA" },
-          { name: "Jack Tierney", aff: "European Bioinformatics Institute", city: "Hinxton, UK", detailTitle: "Talk", talk: "TBA" },
-          { name: "Martina Yordanova", aff: "University College Cork", city: "Cork, Ireland", detailTitle: "Talk", talk: "TBA" },
-          { name: "Maria Bożko", aff: "University of Warsaw", city: "Warsaw, Poland", detailTitle: "Talk", talk: "TBA" },
+          { name: "Jack Tierney", aff: "European Bioinformatics Institute", city: "Hinxton, UK", photo: "/photos/Jack_Tierney.jpg", photoPosition: "50% 35%", detailTitle: "Talk", talk: "Representing Translation Within Genome Annotation" },
+          { name: "Martina Yordanova", aff: "University College Cork", city: "Cork, Ireland", photo: "/photos/Martina_Yordanova.png", photoPosition: "50% 28%", detailTitle: "Talk", talk: "An evolutionary conserved translon mediates start site selection in BAG1 mRNA." },
+          { name: "Maria Bożko", aff: "University of Warsaw", city: "Warsaw, Poland", photo: "/photos/Maria_Bozko.jpeg", photoPosition: "42% 52%", photoScale: "1.12", detailTitle: "Talk", talk: "" },
           { name: "To be announced", aff: "TBA", city: "TBA", detailTitle: "Talk", talk: "TBA" }
         ].map((speaker, index) => (
           <div
@@ -321,8 +323,18 @@ import '../styles/global.css';
             data-detail-card
           >
             <div class="flex items-center gap-4 md:gap-5">
-              <div class="w-14 h-14 md:w-16 md:h-16 min-w-[3.5rem] md:min-w-[4rem] bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center text-purple-600 font-black text-xl shadow-inner group-hover:scale-110 transition-transform duration-300">
-                {speaker.name !== "To be announced" ? speaker.name.charAt(0) : "?"}
+              <div class="w-14 h-14 md:w-16 md:h-16 min-w-[3.5rem] md:min-w-[4rem] bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center text-purple-600 font-black text-xl shadow-inner overflow-hidden border border-white/80 group-hover:scale-110 transition-transform duration-300">
+                {speaker.photo ? (
+                  <img
+                    src={speaker.photo}
+                    alt={speaker.name}
+                    class="w-full h-full object-cover"
+	                    style={`object-position: ${speaker.photoPosition}; transform: scale(${speaker.photoScale || "1"});`}
+                    loading="lazy"
+                  />
+                ) : (
+                  speaker.name !== "To be announced" ? speaker.name.charAt(0) : "?"
+                )}
               </div>
               <div class="flex-1 min-w-0">
                 <div class="font-bold text-base md:text-lg text-slate-800 truncate">{speaker.name}</div>
@@ -344,8 +356,8 @@ import '../styles/global.css';
       <h3 class="text-2xl font-bold text-blue-800 mb-6 border-t border-slate-200/50 pt-10">Organizers</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
          {[
-          { name: "Eivind Valen", aff: "University of Oslo", city: "Oslo, Norway", email: "eivind.valen@ibv.uio.no" },
-          { name: "Michał Świrski", aff: "University of Oslo", city: "Oslo, Norway", email: "michal.swirski@ibv.uio.no" }
+          { name: "Eivind Valen", aff: "University of Oslo", city: "Oslo, Norway", email: "eivind.valen@ibv.uio.no", photo: "/photos/Eivind_Valen.png", photoPosition: "56% 38%" },
+          { name: "Michał Świrski", aff: "University of Oslo", city: "Oslo, Norway", email: "michal.swirski@ibv.uio.no", photo: "/photos/Michal_Swirski.png", photoPosition: "45% 35%" }
         ].map((org, index) => (
           <div
             class="reveal p-4 md:p-5 border border-slate-100 rounded-2xl bg-white/60 hover:bg-white hover:-translate-y-1 hover:shadow-lg hover:border-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all duration-300 group cursor-pointer"
@@ -357,8 +369,18 @@ import '../styles/global.css';
             data-detail-card
           >
             <div class="flex items-center gap-5">
-              <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 font-bold shadow-inner border border-blue-100 shrink-0">
-                {org.name.charAt(0)}
+              <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 font-bold shadow-inner border border-white/80 shrink-0 overflow-hidden">
+                {org.photo ? (
+                  <img
+                    src={org.photo}
+                    alt={org.name}
+                    class="w-full h-full object-cover"
+                    style={`object-position: ${org.photoPosition};`}
+                    loading="lazy"
+                  />
+                ) : (
+                  org.name.charAt(0)
+                )}
               </div>
               <div class="min-w-0 flex-1">
                 <div class="font-bold text-slate-800 truncate">{org.name}</div>
@@ -400,7 +422,7 @@ import '../styles/global.css';
         </div>
         <div class="reveal p-6 bg-gradient-to-br from-indigo-50 to-white rounded-2xl border border-indigo-100 shadow-sm hover:shadow-md transition-shadow" style="transition-delay: 200ms">
           <h3 class="font-bold text-indigo-800 mb-3 flex items-center gap-2">
-            <span class="bg-indigo-600 text-white text-xs px-2 py-1 rounded">3</span> Discovery & Resources
+            <span class="bg-indigo-600 text-white text-xs px-2 py-1 rounded">3</span> Annotation and Resources
           </h3>
           <p class="text-sm text-slate-600 leading-relaxed"><strong>Focus:</strong> ribosome profiling, proteogenomics, immunopeptidomics, computational prediction, comparative annotation, visualization, databases, and community resources.</p>
         </div>
@@ -423,7 +445,7 @@ import '../styles/global.css';
         </div>
         <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
           <div class="font-semibold text-slate-500">9:15 - 10:00</div>
-          <div class="text-slate-800 font-medium"><span class="text-purple-600 font-bold md:mr-2 block md:inline">Keynote:</span> Pavel Baranov</div>
+	          <div class="text-slate-800 font-medium"><span class="text-purple-600 font-bold md:mr-2 block md:inline">Keynote Lecture:</span> Pavel Baranov <span class="block text-slate-500 font-normal mt-1">Enigmatic Translons - Animalcules of Molecular Biology?</span></div>
         </div>
         <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
           <div class="font-semibold text-slate-500">10:00 - 10:30</div>
@@ -435,40 +457,75 @@ import '../styles/global.css';
         </div>
         <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
           <div class="font-semibold text-slate-500">11:00 - 11:30</div>
-          <div class="text-slate-800 font-medium">Invited speaker 1: TBA</div>
+	          <div class="text-slate-800 font-medium">Martina Yordanova <span class="block text-slate-500 font-normal mt-1">An evolutionary conserved translon mediates start site selection in BAG1 mRNA.</span></div>
         </div>
         <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
           <div class="font-semibold text-slate-500">11:30 - 12:30</div>
           <div class="text-slate-600">Short talks TBA</div>
         </div>
-        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-          <div class="font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full w-max">12:30 - 14:30</div>
-          <div class="text-green-700 font-medium flex flex-col md:flex-row md:items-center gap-1 md:gap-2">🍽️ Lunch break <span class="text-xs font-normal text-slate-500 italic">(Not served, attendees welcome to use canteen)</span></div>
-        </div>
-      </div>
+	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+	          <div class="font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full w-max">12:30 - 14:30</div>
+	          <div class="text-green-700 font-medium flex items-center gap-2">🍽️ Lunch break</div>
+	        </div>
+	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm bg-purple-50/80 border border-purple-100 p-3 rounded-lg items-center">
+	          <div class="font-bold text-purple-800">14:30 - 17:30</div>
+	          <div class="font-bold text-purple-900 md:text-base">Session 2: Ribosome & Outputs</div>
+	        </div>
+	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+	          <div class="font-semibold text-slate-500">14:30 - 15:00</div>
+	          <div class="text-slate-800 font-medium">Tomasz Włodarski <span class="block text-slate-500 font-normal mt-1">Co-translational protein folding in the light of ribosome evolution</span></div>
+	        </div>
+	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+	          <div class="font-semibold text-slate-500">15:00 - 16:00</div>
+	          <div class="text-slate-600">Short talks TBA</div>
+	        </div>
+	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+	          <div class="font-semibold text-orange-500 bg-orange-50 px-3 py-1 rounded-full w-max">16:00 - 16:30</div>
+	          <div class="text-orange-600 font-medium flex items-center gap-2">☕ Coffee break</div>
+	        </div>
+	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+	          <div class="font-semibold text-slate-500">16:30 - 17:30</div>
+	          <div class="text-slate-600">Short talks TBA</div>
+	        </div>
+	      </div>
 
-      <!-- Day 2 Schedule -->
-      <h3 class="text-2xl font-bold text-purple-800 border-b-2 border-purple-100 pb-3 mb-6">Tuesday, 30 June 2026</h3>
-      <div class="space-y-3 reveal">
-        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-          <div class="font-semibold text-slate-400 bg-slate-50 px-3 py-1 rounded-full w-max border border-slate-200">TBA</div>
-          <div class="text-slate-700">Session 2 continued / invited talks</div>
-        </div>
-        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm bg-purple-50/80 border border-purple-100 p-3 rounded-lg items-center">
-          <div class="font-bold text-purple-800">TBA</div>
-          <div class="font-bold text-purple-900 md:text-base">Session 3: Discovery, Annotation & Resources</div>
-        </div>
-        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-          <div class="font-semibold text-slate-400 bg-slate-50 px-3 py-1 rounded-full w-max border border-slate-200">TBA</div>
-          <div class="text-slate-600">Coffee / lunch / breaks</div>
-        </div>
-        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-          <div class="font-semibold text-slate-400 bg-slate-50 px-3 py-1 rounded-full w-max border border-slate-200">TBA</div>
-          <div class="text-slate-700 font-medium">Round-table discussion & closing remarks</div>
-        </div>
-      </div>
-      <p class="text-sm text-slate-400 mt-8 italic font-medium bg-slate-50 inline-block px-4 py-2 rounded-lg">Detailed programme coming soon.</p>
-    </section>
+	      <!-- Day 2 Schedule -->
+	      <h3 class="text-2xl font-bold text-purple-800 border-b-2 border-purple-100 pb-3 mb-6">Tuesday, 30 June 2026</h3>
+	      <div class="space-y-3 reveal">
+	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+	          <div class="font-semibold text-slate-500 bg-slate-100 inline-block px-3 py-1 rounded-full w-max">9:00 - 9:15</div>
+	          <div class="text-slate-700">Welcome and opening remarks</div>
+	        </div>
+	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm bg-indigo-50/80 border border-indigo-100 p-3 rounded-lg items-center">
+	          <div class="font-bold text-indigo-800">9:15 - 12:30</div>
+	          <div class="font-bold text-indigo-900 md:text-base">Session 3: Annotation and Resources</div>
+	        </div>
+	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+	          <div class="font-semibold text-slate-500">9:15 - 10:00</div>
+	          <div class="text-slate-800 font-medium"><span class="text-purple-600 font-bold md:mr-2 block md:inline">Keynote Lecture:</span> TBA</div>
+	        </div>
+	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+	          <div class="font-semibold text-slate-500">10:00 - 10:30</div>
+	          <div class="text-slate-600">Short talks TBA</div>
+	        </div>
+	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+	          <div class="font-semibold text-orange-500 bg-orange-50 px-3 py-1 rounded-full w-max">10:30 - 11:00</div>
+	          <div class="text-orange-600 font-medium flex items-center gap-2">☕ Coffee break</div>
+	        </div>
+	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+	          <div class="font-semibold text-slate-500">11:00 - 11:30</div>
+	          <div class="text-slate-800 font-medium">Jack Tierney <span class="block text-slate-500 font-normal mt-1">Representing Translation Within Genome Annotation</span></div>
+	        </div>
+	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+	          <div class="font-semibold text-slate-500">11:30 - 12:30</div>
+	          <div class="text-slate-600">Short talks TBA</div>
+	        </div>
+	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+	          <div class="font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-max">12:30 - 13:30</div>
+	          <div class="text-slate-700 font-medium">Roundtable discussion and closing remarks</div>
+	        </div>
+	      </div>
+	    </section>
 
     <!-- PRACTICAL INFO SECTION -->
     <section id="practical" class="scroll-mt-28 bg-white/70 backdrop-blur-xl p-6 lg:p-12 rounded-3xl shadow-xl shadow-slate-200/50 border border-white/80 mb-32 reveal">
@@ -479,8 +536,8 @@ import '../styles/global.css';
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
         <div class="reveal bg-gradient-to-br from-purple-50 to-white p-6 rounded-2xl border border-purple-100 shadow-sm">
           <h4 class="font-bold text-purple-900 mb-3 text-lg">🎟️ Registration</h4>
-          <p class="text-sm text-slate-600 mb-4">Registration status (free / paid / limited capacity) will be announced soon.</p>
-          <a href="#" class="inline-block bg-purple-600 text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-purple-700 transition shadow">Registration Form</a>
+          <p class="text-sm text-slate-600 mb-4">Registration free but required due to limited capacity.</p>
+          <a href="https://forms.gle/WFGbpDe3ohwNFnW16" class="inline-block bg-purple-600 text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-purple-700 transition shadow">Registration Form</a>
         </div>
 
         <div class="reveal bg-gradient-to-br from-blue-50 to-white p-6 rounded-2xl border border-blue-100 shadow-sm" style="transition-delay: 100ms">
@@ -896,15 +953,15 @@ import '../styles/global.css';
         const trnaScale = (isMobile ? 0.54 : 0.68) * Math.sqrt(animationScale);
         const siteOffset = codonSize;
         const anticodonContactX = riboX - (isMobile ? 13 : 16) * animationScale;
-        const aSiteY = currentRibosomeY - siteOffset;
+        const aSiteY = currentRibosomeY + siteOffset;
         const pSiteY = currentRibosomeY;
-        const eSiteY = currentRibosomeY + siteOffset;
+        const eSiteY = currentRibosomeY - siteOffset;
         const aDock = translationForLocalPoint(trnaLocal.anticodon, { x: anticodonContactX, y: aSiteY }, trnaScale, dockedTRNARotation);
         const pDock = translationForLocalPoint(trnaLocal.anticodon, { x: anticodonContactX, y: pSiteY }, trnaScale, dockedTRNARotation);
         const eDock = translationForLocalPoint(trnaLocal.anticodon, { x: anticodonContactX, y: eSiteY }, trnaScale, dockedTRNARotation);
 
         const incomingStartX = aDock.x - (isMobile ? 78 : 115) * animationScale;
-        const incomingStartY = aDock.y - (isMobile ? 52 : 72) * animationScale;
+        const incomingStartY = aDock.y + (isMobile ? 52 : 72) * animationScale;
         const incomingDockX = lerp(incomingStartX, aDock.x, approachEase);
         const incomingDockY = lerp(incomingStartY, aDock.y, approachEase);
         const incomingX = lerp(incomingDockX, pDock.x, translocEase);
@@ -912,7 +969,7 @@ import '../styles/global.css';
         const peptidylDockX = lerp(pDock.x, eDock.x, translocEase);
         const peptidylDockY = lerp(pDock.y, eDock.y, translocEase);
         const peptidylExitX = eDock.x - (isMobile ? 78 : 112) * animationScale;
-        const peptidylExitY = eDock.y + (isMobile ? 42 : 58) * animationScale;
+        const peptidylExitY = eDock.y - (isMobile ? 42 : 58) * animationScale;
         const peptidylX = lerp(peptidylDockX, peptidylExitX, leaveEase);
         const peptidylY = lerp(peptidylDockY, peptidylExitY, leaveEase);
         const peptidylColor = trnaPalette[clampedK % trnaPalette.length];
