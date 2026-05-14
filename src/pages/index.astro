@@ -309,7 +309,7 @@ import '../styles/global.css';
           { name: "Tomasz Włodarski", aff: "Institute of Biochemistry and Biophysics, PAS", city: "Warsaw, Poland", photo: "/photos/Tomasz_Wlodarski.png", photoPosition: "50% 36%", detailTitle: "Talk", talk: "Co-translational protein folding in the light of ribosome evolution" },
           { name: "Jon Mudge", aff: "European Bioinformatics Institute", city: "Hinxton, UK", detailTitle: "Talk", talk: "TBA" },
           { name: "Jack Tierney", aff: "European Bioinformatics Institute", city: "Hinxton, UK", photo: "/photos/Jack_Tierney.jpg", photoPosition: "50% 35%", detailTitle: "Talk", talk: "Representing Translation Within Genome Annotation" },
-          { name: "Martina Yordanova", aff: "University College Cork", city: "Cork, Ireland", photo: "/photos/Martina_Yordanova.png", photoPosition: "50% 28%", detailTitle: "Talk", talk: "An evolutionary conserved translon mediates start site selection in BAG1 mRNA." },
+          { name: "Martina Yordanova", aff: "University College Cork", city: "Cork, Ireland", photo: "/photos/Martina_Yordanova.png", photoPosition: "50% 28%", detailTitle: "Talk", talk: "An evolutionarily conserved translon mediates start-site selection in BAG1 mRNA." },
           { name: "Maria Bożko", aff: "University of Warsaw", city: "Warsaw, Poland", photo: "/photos/Maria_Bozko.jpeg", photoPosition: "42% 52%", photoScale: "1.12", detailTitle: "Talk", talk: "" }
         ].map((speaker, index) => (
           <div
@@ -404,9 +404,9 @@ import '../styles/global.css';
       <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6 flex items-center gap-4">
         <span class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-lg shrink-0">3</span> Programme
       </h2>
-      <p class="mb-12 text-slate-600 text-base md:text-lg">The symposium will take place over two days, from Monday 29 June to Tuesday 30 June 2026, and will be organized around three thematic sessions.</p>
+      <p class="mb-12 text-slate-600 text-base md:text-lg">The symposium will take place over two days, from Monday 29 June to Tuesday 30 June 2026, and will be organized around four thematic sessions.</p>
       
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-16">
         <div class="reveal p-6 bg-gradient-to-br from-blue-50 to-white rounded-2xl border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
           <h3 class="font-bold text-blue-800 mb-3 flex items-center gap-2">
             <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">1</span> Regulation & Architecture
@@ -415,15 +415,21 @@ import '../styles/global.css';
         </div>
         <div class="reveal p-6 bg-gradient-to-br from-purple-50 to-white rounded-2xl border border-purple-100 shadow-sm hover:shadow-md transition-shadow" style="transition-delay: 100ms">
           <h3 class="font-bold text-purple-800 mb-3 flex items-center gap-2">
-            <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">2</span> Ribosome & Outputs
+            <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">2</span> Ribosome & Products
           </h3>
-          <p class="text-sm text-slate-600 leading-relaxed"><strong>Focus:</strong> nascent-chain biology, exit-tunnel events, pausing, stalling, elongation dynamics, termination, quality control, and ribosome-mediated translon functions.</p>
+          <p class="text-sm text-slate-600 leading-relaxed"><strong>Focus:</strong> nascent-chain biology, exit-tunnel events, pausing, stalling, elongation dynamics, termination, quality control, microproteins, peptides, antigens, and ribosome-mediated translon functions.</p>
         </div>
         <div class="reveal p-6 bg-gradient-to-br from-indigo-50 to-white rounded-2xl border border-indigo-100 shadow-sm hover:shadow-md transition-shadow" style="transition-delay: 200ms">
           <h3 class="font-bold text-indigo-800 mb-3 flex items-center gap-2">
-            <span class="bg-indigo-600 text-white text-xs px-2 py-1 rounded">3</span> Annotation and Resources
+            <span class="bg-indigo-600 text-white text-xs px-2 py-1 rounded">3</span> Detection & Annotation
           </h3>
-          <p class="text-sm text-slate-600 leading-relaxed"><strong>Focus:</strong> ribosome profiling, proteogenomics, immunopeptidomics, computational prediction, comparative annotation, visualization, databases, and community resources.</p>
+          <p class="text-sm text-slate-600 leading-relaxed"><strong>Focus:</strong> ribosome profiling, initiation mapping, proteogenomics, immunopeptidomics, computational prediction, comparative genomics, evidence standards, translated-region calling, and reference annotation.</p>
+        </div>
+        <div class="reveal p-6 bg-gradient-to-br from-cyan-50 to-white rounded-2xl border border-cyan-100 shadow-sm hover:shadow-md transition-shadow" style="transition-delay: 300ms">
+          <h3 class="font-bold text-cyan-800 mb-3 flex items-center gap-2">
+            <span class="bg-cyan-600 text-white text-xs px-2 py-1 rounded">4</span> Technology & Resources
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed"><strong>Focus:</strong> visualization, databases, genome browsers, computational tools, reproducible workflows, FAIR data, metadata, benchmarking, infrastructure, and community resources.</p>
         </div>
       </div>
 
@@ -456,77 +462,101 @@ import '../styles/global.css';
         </div>
         <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
           <div class="font-semibold text-slate-500">11:00 - 11:30</div>
-	          <div class="text-slate-800 font-medium">Martina Yordanova <span class="block text-slate-500 font-normal mt-1">An evolutionary conserved translon mediates start site selection in BAG1 mRNA.</span></div>
+	          <div class="text-slate-800 font-medium">Martina Yordanova <span class="block text-slate-500 font-normal mt-1">An evolutionarily conserved translon mediates start-site selection in BAG1 mRNA.</span></div>
         </div>
         <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
           <div class="font-semibold text-slate-500">11:30 - 12:30</div>
           <div class="text-slate-600">Short talks TBA</div>
         </div>
 	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-	          <div class="font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full w-max">12:30 - 14:30</div>
-	          <div class="text-green-700 font-medium flex items-center gap-2">🍽️ Lunch break</div>
-	        </div>
-	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm bg-purple-50/80 border border-purple-100 p-3 rounded-lg items-center">
-	          <div class="font-bold text-purple-800">14:30 - 17:30</div>
-	          <div class="font-bold text-purple-900 md:text-base">Session 2: Ribosome & Outputs</div>
-	        </div>
-	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-	          <div class="font-semibold text-slate-500">14:30 - 15:00</div>
-	          <div class="text-slate-800 font-medium">Tomasz Włodarski <span class="block text-slate-500 font-normal mt-1">Co-translational protein folding in the light of ribosome evolution</span></div>
-	        </div>
-	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-	          <div class="font-semibold text-slate-500">15:00 - 16:00</div>
-	          <div class="text-slate-600">Short talks TBA</div>
-	        </div>
-	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-	          <div class="font-semibold text-amber-800 bg-amber-50 px-3 py-1 rounded-full w-max">16:00 - 16:30</div>
-	          <div class="text-amber-900 font-medium flex items-center gap-2">☕ Coffee break</div>
-	        </div>
-	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-	          <div class="font-semibold text-slate-500">16:30 - 17:30</div>
-	          <div class="text-slate-600">Short talks TBA</div>
-	        </div>
-	      </div>
+		          <div class="font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full w-max">12:30 - 14:00</div>
+		          <div class="text-green-700 font-medium flex items-center gap-2">🍽️ Lunch break</div>
+		        </div>
+		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm bg-purple-50/80 border border-purple-100 p-3 rounded-lg items-center">
+		          <div class="font-bold text-purple-800">14:00 - 17:00</div>
+		          <div class="font-bold text-purple-900 md:text-base">Session 2: Ribosome & Products</div>
+		        </div>
+		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+		          <div class="font-semibold text-slate-500">14:00 - 14:30</div>
+		          <div class="text-slate-800 font-medium">Tomasz Włodarski <span class="block text-slate-500 font-normal mt-1">Co-translational protein folding in the light of ribosome evolution</span></div>
+		        </div>
+		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+		          <div class="font-semibold text-slate-500">14:30 - 15:30</div>
+		          <div class="text-slate-600">Short talks TBA</div>
+		        </div>
+		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+		          <div class="font-semibold text-amber-800 bg-amber-50 px-3 py-1 rounded-full w-max">15:30 - 16:00</div>
+		          <div class="text-amber-900 font-medium flex items-center gap-2">☕ Coffee break</div>
+		        </div>
+		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+		          <div class="font-semibold text-slate-500">16:00 - 17:00</div>
+		          <div class="text-slate-600">Short talks TBA</div>
+		        </div>
+		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+		          <div class="font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-max">17:00 - 18:30</div>
+		          <div class="text-slate-700 font-medium">Poster session and informal discussion</div>
+		        </div>
+		      </div>
 
 	      <!-- Day 2 Schedule -->
 	      <h3 class="text-2xl font-bold text-purple-800 border-b-2 border-purple-100 pb-3 mb-6">Tuesday, 30 June 2026</h3>
 	      <div class="space-y-3 reveal">
 	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-		          <div class="font-semibold text-slate-500 bg-slate-100 inline-block px-3 py-1 rounded-full w-max">10:00 - 10:15</div>
-		          <div class="text-slate-700">Welcome and opening remarks</div>
-		        </div>
-		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm bg-indigo-50/80 border border-indigo-100 p-3 rounded-lg items-center">
-		          <div class="font-bold text-indigo-800">10:15 - 13:30</div>
-		          <div class="font-bold text-indigo-900 md:text-base">Session 3: Annotation and Resources</div>
-		        </div>
-		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-		          <div class="font-semibold text-slate-500">10:15 - 11:00</div>
-		          <div class="text-slate-800 font-medium"><span class="text-purple-600 font-bold md:mr-2 block md:inline">Keynote Lecture:</span> TBA</div>
-		        </div>
-		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-		          <div class="font-semibold text-slate-500">11:00 - 11:30</div>
-		          <div class="text-slate-600">Short talks TBA</div>
-		        </div>
-		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-		          <div class="font-semibold text-amber-800 bg-amber-50 px-3 py-1 rounded-full w-max">11:30 - 12:00</div>
-		          <div class="text-amber-900 font-medium flex items-center gap-2">☕ Coffee break</div>
-		        </div>
-		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-		          <div class="font-semibold text-slate-500">12:00 - 12:30</div>
-		          <div class="text-slate-800 font-medium">Jack Tierney <span class="block text-slate-500 font-normal mt-1">Representing Translation Within Genome Annotation</span></div>
-		        </div>
-		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-		          <div class="font-semibold text-slate-500">12:30 - 13:00</div>
-		          <div class="text-slate-600">Short talks TBA</div>
-		        </div>
-		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-		          <div class="font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full w-max">13:00 - 14:00</div>
-		          <div class="text-green-700 font-medium flex items-center gap-2">🍽️ Lunch break</div>
-		        </div>
-		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-		          <div class="font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-max">14:00 - 15:00</div>
-		          <div class="text-slate-700 font-medium">Roundtable discussion and closing remarks</div>
-		        </div>
+			          <div class="font-semibold text-slate-500 bg-slate-100 inline-block px-3 py-1 rounded-full w-max">9:30 - 9:45</div>
+			          <div class="text-slate-700">Welcome and day 2 introduction</div>
+			        </div>
+			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm bg-indigo-50/80 border border-indigo-100 p-3 rounded-lg items-center">
+			          <div class="font-bold text-indigo-800">9:45 - 13:00</div>
+			          <div class="font-bold text-indigo-900 md:text-base">Session 3: Detection & Annotation</div>
+			        </div>
+			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+			          <div class="font-semibold text-slate-500">9:45 - 10:30</div>
+			          <div class="text-slate-800 font-medium"><span class="text-purple-600 font-bold md:mr-2 block md:inline">Keynote Lecture:</span> TBA</div>
+			        </div>
+			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+			          <div class="font-semibold text-slate-500">10:30 - 11:00</div>
+			          <div class="text-slate-600">Short talks TBA</div>
+			        </div>
+			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+			          <div class="font-semibold text-amber-800 bg-amber-50 px-3 py-1 rounded-full w-max">11:00 - 11:30</div>
+			          <div class="text-amber-900 font-medium flex items-center gap-2">☕ Coffee break</div>
+			        </div>
+			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+			          <div class="font-semibold text-slate-500">11:30 - 12:00</div>
+			          <div class="text-slate-800 font-medium">Jack Tierney <span class="block text-slate-500 font-normal mt-1">Representing Translation Within Genome Annotation</span></div>
+			        </div>
+			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+			          <div class="font-semibold text-slate-500">12:00 - 13:00</div>
+			          <div class="text-slate-600">Short talks TBA</div>
+			        </div>
+			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+			          <div class="font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full w-max">13:00 - 14:00</div>
+			          <div class="text-green-700 font-medium flex items-center gap-2">🍽️ Lunch break</div>
+			        </div>
+			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm bg-cyan-50/80 border border-cyan-100 p-3 rounded-lg items-center">
+			          <div class="font-bold text-cyan-800">14:00 - 17:30</div>
+			          <div class="font-bold text-cyan-900 md:text-base">Session 4: Technology & Resources</div>
+			        </div>
+			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+			          <div class="font-semibold text-slate-500">14:00 - 14:45</div>
+			          <div class="text-slate-800 font-medium"><span class="text-purple-600 font-bold md:mr-2 block md:inline">Keynote Lecture:</span> TBA</div>
+			        </div>
+			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+			          <div class="font-semibold text-slate-500">14:45 - 15:30</div>
+			          <div class="text-slate-600">Short talks TBA</div>
+			        </div>
+			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+			          <div class="font-semibold text-amber-800 bg-amber-50 px-3 py-1 rounded-full w-max">15:30 - 16:00</div>
+			          <div class="text-amber-900 font-medium flex items-center gap-2">☕ Coffee break</div>
+			        </div>
+			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
+			          <div class="font-semibold text-slate-500">16:00 - 16:45</div>
+			          <div class="text-slate-600">Short talks TBA</div>
+			        </div>
+			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+			          <div class="font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-max">16:45 - 17:30</div>
+			          <div class="text-slate-700 font-medium">Roundtable discussion and closing remarks</div>
+			        </div>
 	      </div>
 	    </section>
 

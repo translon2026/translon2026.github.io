@@ -5,8 +5,9 @@ Registration
 Welcome and opening remarks
 9:15 - 12:30
 Session 1: Regulation & Architecture
+Focus: translation initiation, transcript architecture, upstream and overlapping translated regions, regulatory RNA features, recoding, and context-dependent translon activity.
 9:15 - 10:00
-Keynote Lecture: 
+Keynote Lecture:
 Pavel Baranov
 Enigmatic Translons - Animalcules of Molecular Biology?
 10:00 - 10:30
@@ -15,43 +16,57 @@ Short talks TBA
 ☕ Coffee break
 11:00 - 11:30
 Martina Yordanova
-An evolutionary conserved translon mediates start site selection in BAG1 mRNA.
+An evolutionarily conserved translon mediates start-site selection in BAG1 mRNA.
 11:30 - 12:30
 Short talks TBA
-12:30 - 14:30
+12:30 - 14:00
 🍽️ Lunch break 
 
-14:30-17:30
-Session 2: Ribosome & Outputs
-14:30-15:00
+14:00 - 17:00
+Session 2: Ribosome & Products
+Focus: nascent-chain biology, exit-tunnel events, pausing, stalling, elongation dynamics, termination, quality control, microproteins, peptides, antigens, and ribosome-mediated translon functions.
+14:00 - 14:30
 Tomasz Włodarski
 Co-translational protein folding in the light of ribosome evolution
-15:00-16:00
+14:30 - 15:30
 Short talks TBA
-16:00 - 16:30
+15:30 - 16:00
 ☕ Coffee break
-16:30-17:30
+16:00 - 17:00
 Short talks TBA
+17:00 - 18:30
+Poster session and informal discussion
 
 Tuesday, 30 June
-10:00- 10:15
-Welcome and opening remarks
-10:15 - 13:30
-Session 3: Annotation and Resources
-10:15 - 11:00
+9:30 - 9:45
+Welcome and day 2 introduction
+9:45 - 13:00
+Session 3: Detection & Annotation
+Focus: ribosome profiling, initiation mapping, proteogenomics, immunopeptidomics, computational prediction, comparative genomics, evidence standards, translated-region calling, and reference annotation.
+9:45 - 10:30
 Keynote Lecture TBA
-11:00 - 11:30
+10:30 - 11:00
 Short talks TBA
-11:30 - 12:00
+11:00 - 11:30
 ☕ Coffee break
-12:00 - 12:30
+11:30 - 12:00
 Jack Tierney
 Representing Translation Within Genome Annotation
-12:30 - 13:00
+12:00 - 13:00
 Short talks TBA
 13:00 - 14:00
 🍽️ Lunch break 
-14:00-15:00
+
+14:00 - 17:30
+Session 4: Technology & Resources
+Focus: visualization, databases, genome browsers, computational tools, reproducible workflows, FAIR data, metadata, benchmarking, infrastructure, and community resources.
+14:00 - 14:45
+Keynote Lecture TBA
+14:45 - 15:30
+Short talks TBA
+15:30 - 16:00
+☕ Coffee break
+16:00 - 16:45
+Short talks TBA
+16:45 - 17:30
 Roundtable discussion and closing remarks
-
-
