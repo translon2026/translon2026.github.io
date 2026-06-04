@@ -1,5 +1,222 @@
 ---
 import '../styles/global.css';
+
+const talks = {
+  pavel: {
+    id: "pavel-baranov",
+    speakerName: "Pavel Baranov",
+    detailTitle: "Keynote lecture",
+    day: "Monday, 29 June 2026",
+    time: "9:15 - 10:00",
+    title: "Enigmatic Translons - Animalcules of Molecular Biology?",
+    abstract: [
+      `Ribosome profiling has revealed the extensive utilization of multiple start codons in eukaryotic mRNAs, including in humans. Translation initiation at these start codons results in the synthesis of proteoforms with alternative N-termini and also in translated regions (translons) not annotated as protein coding. Some of such enigmatic translons encode microproteins and immunopeptides while many function as critical elements of translation control that sense cellular environment. This regulatory function of translons is often independent of the polypeptide products encoded by them.`,
+      `The emerging picture of RNA translation is in striking contrast with the current data structures for annotating protein coding genes in which a sequence of an RNA molecule could have only a single protein-coding sequence (CDS). To address this limitation, we developed a new abstract representation of mRNA translation termed Ribosome Decision Graphs (RDGs). RDGs allow for a biologically realistic representation of eukaryotic translation complexity, focusing on locations critical for translation regulation. RDGs can be used to depict the mutual organization of translons reflecting the interplay between their translation. RDGs can be used in the analysis of ribosome profiling data to identify critical regulatory events. They also can be used for the interpretation of genetic variants, enabling a mechanistic understanding of pathogenic variants occurring outside of CDS regions.`
+    ]
+  },
+  beata: {
+    id: "beata-grallert",
+    speakerName: "Beáta Grallert",
+    detailTitle: "Talk",
+    day: "Monday, 29 June 2026",
+    time: "10:00 - 10:30",
+    title: "From Stress Responses to Translation Regulation: Notes from the Outskirts",
+    abstract: [
+      `The cellular response to stress often includes translational downregulation, which is widely attributed to phosphorylation of eIF2α. Studies of UV-induced stress responses in fission yeast prompted a re-examination of the relationship between eIF2α phosphorylation and global translational repression. In this talk, I will discuss observations from fission yeast and mammalian systems that challenge this simple model of translation control, briefly touch upon emerging non-canonical links between stress signalling and translation, and present evidence linking translational responses to stress with actin cytoskeleton dynamics.`
+    ]
+  },
+  tomasz: {
+    id: "tomasz-wlodarski",
+    speakerName: "Tomasz Włodarski",
+    detailTitle: "Talk",
+    day: "Monday, 29 June 2026",
+    time: "14:30 - 15:00",
+    title: "Co-translational protein folding in the light of ribosome evolution",
+    abstract: [
+      `In the cell, proteins begin to fold co-translationally as they emerge from the ribosome's exit tunnel during biosynthesis. This process is fundamental to cellular homeostasis; disruptions can drive protein misfolding, which is implicated in severe pathologies including cystic fibrosis, alpha-1 antitrypsin deficiency, and a wide spectrum of protein aggregation diseases. Despite its critical importance, co-translational folding (co-TF) remains poorly understood, as capturing high-resolution structural data using experimental methods alone is a significant challenge. Consequently, integrating accurate computational techniques with experimental data is crucial. Furthermore, because most of our current understanding stems from E. coli, there is a significant knowledge gap regarding evolutionary variations in ribosome structure and their impact on co-TF. In my talk, I will describe an integrative structural biology approach to study co-TF, combining molecular dynamics (MD) simulations with structural restraints from NMR data and cryo-EM maps. I will also demonstrate how we can use bioinformatics and MD simulations to analyse ribosome heterogeneity and its influence on nascent chain pathways inside the ribosomal tunnel. Ultimately, this research sheds light on the intricate dynamics of co-TF and paves the way for a deeper understanding of how evolutionary variations in the ribosome shape protein folding across different organisms.`
+    ]
+  },
+  jon: {
+    id: "jon-mudge",
+    speakerName: "Jon Mudge",
+    detailTitle: "Keynote lecture",
+    day: "Tuesday, 30 June 2026",
+    time: "10:15 - 11:00",
+    title: "Peptideins: a new annotation category for the dark proteome",
+    abstract: [
+      `The drive to interpret human biology and disease is supported by ongoing efforts to elucidate protein function. Today, new scientific insights allow us to understand far more about proteins than was possible when genome annotation efforts began. However, paradigm shifts, while improving the granularity with which proteins are understood, may clash with existing classification systems. This is exemplified by the 'dark proteome', a term sometimes used for unannotated protein-like molecules that are experimentally detected but functionally ambiguous. Advances in ribosome profiling, proteogenomics and immunopeptidomics now provide evidence that such translation products are widespread. Reference annotation projects want to classify such molecules in order to aid their study, especially because they are of emerging interest in disease biology. However, their unusual nature has led to them being held back, even though certain canonical proteins share similar characteristics. Here we see parallels with the case of Pluto, which lost its planetary status as new insights into its unusual nature and the discovery of similar objects made this designation untenable. Thus, we present a unified framework to address this classification problem within protein annotation. While the term 'protein' will still apply to molecules for which function is known or can be confidently predicted, we introduce the new classification of 'peptidein' for experimentally detected translation products that remain functionally obscure at present. Crucially, this framework allows experimentally supported translation products to be incorporated into reference annotation resources, and the implications of this decision will be widespread across science and medicine.`
+    ]
+  },
+  jack: {
+    id: "jack-tierney",
+    speakerName: "Jack Tierney",
+    detailTitle: "Talk",
+    day: "Tuesday, 30 June 2026",
+    time: "12:00 - 12:30",
+    title: "Representing Translation Within Genome Annotation",
+    abstract: [
+      `Large-scale translatomics initiatives, including TransCODE, are rapidly expanding our view of translation across genomes and transcriptomes. At the same time, reference annotation projects such as Ensembl/GENCODE face growing challenges in how these signals can be consistently represented within existing genome annotation frameworks. While current annotation models were largely developed around relatively stable CDS structures, translatomics data increasingly reveal complex and overlapping translational landscapes that are difficult to capture using CDS-centric models.`,
+      `In this talk, I will discuss challenges associated with integrating translation-aware annotation into large-scale genome resources. These include the representation of overlapping and alternative translated regions, transcript-specific translational outcomes, evidence integration, and the relationship between structural translation annotation and downstream biological interpretation.`,
+      `I will present ongoing work within Ensembl/GENCODE and the broader TransCODE initiative towards more explicit representation of translation within reference annotations. This includes the use of translons as structural annotation units for translated regions and the development of Ribosome Decision Graphs (RDGs) as a framework for representing interacting and context-dependent translational architectures within transcripts. Together, these efforts aim to support richer and more scalable integration of translatomics data into future genome annotation resources.`
+    ]
+  },
+  martina: {
+    id: "martina-yordanova",
+    speakerName: "Martina Yordanova",
+    detailTitle: "Talk",
+    day: "Monday, 29 June 2026",
+    time: "11:00 - 11:30",
+    title: "An evolutionary conserved translon mediates start site selection in BAG1 mRNA.",
+    abstract: [
+      `In BAG1 (BCL2-associated athanogene) mRNA, at least three start codons initiate translation within the main protein coding frame, generating protein isoforms with alternative N-termini. The efficiency of start site selection determines the relative abundance of these isoforms, which differ in their subcellular localisation and binding partners. Regulation of start site selection in BAG1 mRNA has been extensively studied under normal and stress conditions, revealing a complex interplay between RNA secondary structure and translon architecture.`,
+      `Leveraging the recent wealth of aggregated ribosome profiling data, we identify a role for a 16-codon translon (nested within the 5′ region of the sequence encoding the longest BAG1 protein isoform, and upstream of the sequence encoding the shorter isoforms) in selection of translation initiation sites within the BAG1 protein coding frame. Aggregated ribosome profiling data reveal extensive translation of this short translon from the AUG most proximal to the 5′ end of BAG1 mRNA. Notably, the sequence conservation of this translon exceeds that of the BAG1 coding sequence across the first part of the coding region.`,
+      `We show that translation of the conserved 16-codon translon exerts complex effects on start site selection in BAG1 mRNA. While its translation inhibits initiation at AUG1 in the BAG1 encoding frame, it also facilitates translation from AUG2 in the BAG1 encoding frame through reinitiation. In addition, the short translon appears to have a stimulatory effect on upstream CUG-initiated translation, as evidenced by TCP-seq data.`,
+      `Taken together, we have characterised a highly conserved, efficient translon and we present evidence for its role in coordinating start site selection in BAG1 mRNA both upstream and downstream of itself.`
+    ]
+  },
+  wiktoria: {
+    id: "wiktoria-orzel",
+    speakerName: "Wiktoria Orzeł",
+    detailTitle: "Talk",
+    day: "Monday, 29 June 2026",
+    time: "11:50 - 12:10",
+    title: "Uncovering a cellular mechanism that enhances mRNA vaccines",
+    abstract: [
+      `TENT5 proteins function as non-canonical poly(A) polymerases that selectively re-adenylate mRNAs encoding secreted proteins, enhancing their stability and translation. Following our previous work on TENT5 function in immunity, we investigated how TENT5A influences the efficacy of mRNA therapeutics. Using primary macrophages and vaccines encoding viral and parasitic antigens, we assessed mRNA poly(A) tail dynamics, antigen output, and immune response. We also evaluated the spatial dependency of re-adenylation in the endoplasmic reticulum (ER) by disrupting the interaction with FNDC3, a docking protein critical for TENT5A localisation. Upon delivery, TENT5A-dependent re-adenylation enhanced mRNA stability, resulting in increased antigen production and elevated IgG levels. The ER localisation of TENT5A via FNDC3 proved essential for this process, highlighting a previously unrecognised spatial dimension of post-transcriptional regulation. To further explore translational outcomes, we applied the ribosome profiling (Ribo-seq) method to quantify ribosome occupancy and distribution across different mRNA constructs. Interestingly, our Ribo-seq data revealed distinct translational dynamics between two clinically approved SARS-CoV-2 vaccines, suggesting that subtle differences in mRNA design affect translational efficiency in vivo.`
+    ]
+  }
+};
+
+const speakers = [
+  {
+    name: "Pavel Baranov",
+    aff: "University College Cork",
+    city: "Cork, Ireland",
+    photo: "/photos/Pavel_Baranov.png",
+    photoPosition: "50% 38%",
+    talk: talks.pavel
+  },
+  {
+    name: "Jon Mudge",
+    aff: "European Bioinformatics Institute",
+    city: "Hinxton, UK",
+    photo: "/photos/Jon_Mudge_headshot.jpg",
+    photoPosition: "50% 44%",
+    talk: talks.jon
+  },
+  {
+    name: "Tomasz Włodarski",
+    aff: "Institute of Biochemistry and Biophysics, PAS",
+    city: "Warsaw, Poland",
+    photo: "/photos/Tomasz_Wlodarski.png",
+    photoPosition: "50% 36%",
+    talk: talks.tomasz
+  },
+  {
+    name: "Beáta Grallert",
+    aff: "Oslo University Hospital",
+    city: "Oslo, Norway",
+    talk: talks.beata
+  },
+  {
+    name: "Jack Tierney",
+    aff: "European Bioinformatics Institute",
+    city: "Hinxton, UK",
+    photo: "/photos/Jack_Tierney.jpg",
+    photoPosition: "50% 35%",
+    talk: talks.jack
+  },
+  {
+    name: "Martina Yordanova",
+    aff: "University College Cork",
+    city: "Cork, Ireland",
+    photo: "/photos/Martina_Yordanova.png",
+    photoPosition: "50% 28%",
+    talk: talks.martina
+  },
+  {
+    name: "Wiktoria Orzeł",
+    aff: "University of Warsaw / IIMCB",
+    city: "Warsaw, Poland",
+    photo: "/photos/Wiktoria_Orzel_headshot.jpg",
+    photoPosition: "50% 50%",
+    talk: talks.wiktoria
+  },
+  {
+    name: "Maria Bożko",
+    aff: "University of Warsaw",
+    city: "Warsaw, Poland",
+    photo: "/photos/Maria_Bozko.jpeg",
+    photoPosition: "42% 52%",
+    photoScale: "1.12"
+  }
+];
+
+const scheduleDays = [
+  {
+    heading: "Monday, 29 June 2026",
+    bottomSpacing: true,
+    items: [
+      { type: "plain", time: "8:30 - 9:00", label: "Registration" },
+      { type: "plain", time: "9:00 - 9:15", label: "Welcome and opening remarks" },
+      { type: "session", time: "9:15 - 12:30", label: "Session 1: Regulation & Architecture", color: "blue" },
+      { type: "talk", talk: talks.pavel },
+      { type: "talk", talk: talks.beata },
+      { type: "coffee", time: "10:30 - 11:00", label: "Coffee break" },
+      { type: "talk", talk: talks.martina },
+      { type: "plainIndented", time: "11:30 - 12:30", label: "Short talks TBA" },
+      { type: "talk", talk: talks.wiktoria },
+      { type: "lunch", time: "12:30 - 14:30", label: "Lunch break" },
+      { type: "session", time: "14:30 - 17:30", label: "Session 2: Ribosome & Outputs", color: "purple" },
+      { type: "talk", talk: talks.tomasz },
+      { type: "plainIndented", time: "15:00 - 16:00", label: "Short talks TBA" },
+      { type: "coffee", time: "16:00 - 16:30", label: "Coffee break" },
+      { type: "plainIndented", time: "16:30 - 17:30", label: "Short talks TBA" }
+    ]
+  },
+  {
+    heading: "Tuesday, 30 June 2026",
+    items: [
+      { type: "plain", time: "10:00 - 10:15", label: "Welcome and opening remarks" },
+      { type: "session", time: "10:15 - 13:30", label: "Session 3: Detection & Annotation", color: "indigo" },
+      { type: "talk", talk: talks.jon },
+      { type: "plainIndented", time: "11:00 - 11:30", label: "Short talks TBA" },
+      { type: "coffee", time: "11:30 - 12:00", label: "Coffee break" },
+      { type: "talk", talk: talks.jack },
+      { type: "plainIndented", time: "12:30 - 13:00", label: "Short talks TBA" },
+      { type: "lunch", time: "13:00 - 14:00", label: "Lunch break" },
+      { type: "session", time: "14:00 - 17:00", label: "Session 4: Technology & Resources", color: "cyan" },
+      { type: "plainIndented", time: "14:00 - 14:45", label: "Keynote Lecture TBA" },
+      { type: "plainIndented", time: "14:45 - 15:30", label: "Short talks TBA" },
+      { type: "coffee", time: "15:30 - 16:00", label: "Coffee break" },
+      { type: "plainIndented", time: "16:00 - 17:00", label: "Short talks TBA" },
+      { type: "plain", time: "17:00 - 17:30", label: "Roundtable discussion and closing remarks" }
+    ]
+  }
+];
+
+const sessionClassMap = {
+  blue: {
+    wrapper: "bg-blue-50/80 border border-blue-100",
+    time: "text-blue-800",
+    title: "text-blue-900"
+  },
+  purple: {
+    wrapper: "bg-purple-50/80 border border-purple-100",
+    time: "text-purple-800",
+    title: "text-purple-900"
+  },
+  indigo: {
+    wrapper: "bg-indigo-50/80 border border-indigo-100",
+    time: "text-indigo-800",
+    title: "text-indigo-900"
+  },
+  cyan: {
+    wrapper: "bg-cyan-50/80 border border-cyan-100",
+    time: "text-cyan-800",
+    title: "text-cyan-900"
+  }
+};
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -264,7 +481,6 @@ import '../styles/global.css';
 
       <div class="hero-actions flex flex-col sm:flex-row gap-4">
         <a href="https://forms.gle/WFGbpDe3ohwNFnW16" target="_blank" rel="noopener noreferrer" class="hero-action btn-shine text-center bg-purple-600 text-white px-8 py-4 rounded-full font-bold hover:bg-purple-700 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-purple-500/30">Register</a>
-        <button class="hero-action bg-white/80 backdrop-blur text-blue-700 border-2 border-blue-100 px-8 py-4 rounded-full font-bold hover:bg-blue-50 hover:border-blue-200 transition-all duration-300 shadow-sm">Abstract Book (Coming Soon)</button>
       </div>
     </section>
 
@@ -296,58 +512,57 @@ import '../styles/global.css';
       </h2>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-        {[
-          {
-            name: "Pavel Baranov",
-            aff: "University College Cork",
-            city: "Cork, Ireland",
-            photo: "/photos/Pavel_Baranov.png",
-            photoPosition: "50% 38%",
-            detailTitle: "Keynote lecture",
-            talk: "Enigmatic Translons - Animalcules of Molecular Biology?"
-          },
-          { name: "Tomasz Włodarski", aff: "Institute of Biochemistry and Biophysics, PAS", city: "Warsaw, Poland", photo: "/photos/Tomasz_Wlodarski.png", photoPosition: "50% 36%", detailTitle: "Talk", talk: "Co-translational protein folding in the light of ribosome evolution" },
-          { name: "Jon Mudge", aff: "European Bioinformatics Institute", city: "Hinxton, UK", detailTitle: "Talk", talk: "TBA" },
-          { name: "Jack Tierney", aff: "European Bioinformatics Institute", city: "Hinxton, UK", photo: "/photos/Jack_Tierney.jpg", photoPosition: "50% 35%", detailTitle: "Talk", talk: "Representing Translation Within Genome Annotation" },
-          { name: "Martina Yordanova", aff: "University College Cork", city: "Cork, Ireland", photo: "/photos/Martina_Yordanova.png", photoPosition: "50% 28%", detailTitle: "Talk", talk: "An evolutionarily conserved translon mediates start-site selection in BAG1 mRNA." },
-          { name: "Maria Bożko", aff: "University of Warsaw", city: "Warsaw, Poland", photo: "/photos/Maria_Bozko.jpeg", photoPosition: "42% 52%", photoScale: "1.12", detailTitle: "Talk", talk: "" }
-        ].map((speaker, index) => (
+        {speakers.map((speaker, index) => (
           <div
-            class="speaker-card reveal p-4 md:p-5 border border-slate-100 rounded-2xl bg-white/60 hover:bg-white hover:-translate-y-1 hover:shadow-xl hover:border-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-300 transition-all duration-300 group cursor-pointer"
+            class={`speaker-card reveal p-4 md:p-5 border border-slate-100 rounded-2xl bg-white/60 hover:bg-white hover:-translate-y-1 hover:shadow-xl hover:border-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-300 transition-all duration-300 group ${speaker.talk ? "cursor-pointer" : ""}`}
             style={`transition-delay: ${index * 100}ms`}
-            role="button"
-            tabindex="0"
-            aria-expanded="false"
-            aria-controls={`speaker-talk-${index}`}
-            data-detail-card
+            role={speaker.talk ? "button" : undefined}
+            tabindex={speaker.talk ? "0" : undefined}
+            aria-expanded={speaker.talk ? "false" : undefined}
+            aria-controls={speaker.talk ? `speaker-talk-${speaker.talk.id}` : undefined}
+            data-talk-cycle={speaker.talk ? "" : undefined}
           >
             <div class="flex items-center gap-4 md:gap-5">
               <div class="w-14 h-14 md:w-16 md:h-16 min-w-[3.5rem] md:min-w-[4rem] bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center text-purple-600 font-black text-xl shadow-inner overflow-hidden border border-white/80 group-hover:scale-110 transition-transform duration-300">
                 {speaker.photo ? (
-	                  <img
-	                    src={speaker.photo}
-	                    alt={speaker.name}
-	                    class="w-full h-full object-cover"
-	                    style={`object-position: ${speaker.photoPosition}; transform: scale(${speaker.photoScale || "1"});`}
-	                    loading="lazy"
-	                  />
-	                ) : (
-	                  speaker.name.charAt(0)
-	                )}
+                  <img
+                    src={speaker.photo}
+                    alt={speaker.name}
+                    class="w-full h-full object-cover"
+                    style={`object-position: ${speaker.photoPosition}; transform: scale(${speaker.photoScale || "1"});`}
+                    loading="lazy"
+                  />
+                ) : (
+                  speaker.name.charAt(0)
+                )}
               </div>
               <div class="flex-1 min-w-0">
                 <div class="font-bold text-base md:text-lg text-slate-800 truncate">{speaker.name}</div>
                 <div class="text-xs md:text-sm text-slate-500 font-medium truncate">{speaker.aff}</div>
                 <div class="flex flex-wrap justify-between items-end mt-2 gap-2">
                   <div class="text-xs text-slate-400 uppercase tracking-wide">{speaker.city}</div>
-                  <div class="detail-toggle-label text-xs text-purple-500/80 font-medium">Talk details</div>
+                  {speaker.talk ? (
+                    <div class="detail-toggle-label text-xs text-purple-500/80 font-medium" data-label-hidden="Talk details" data-label-title="Show abstract" data-label-abstract="Hide details">Talk details</div>
+                  ) : (
+                    <div class="text-xs text-slate-400 font-medium">Talk TBA</div>
+                  )}
                 </div>
               </div>
             </div>
-            <div id={`speaker-talk-${index}`} class="speaker-talk hidden mt-4 md:ml-[5.25rem] rounded-xl border border-purple-100 bg-purple-50/70 px-4 py-3 text-sm leading-relaxed text-slate-700" data-speaker-talk>
-              <span class="block text-xs font-bold tracking-wide text-purple-600 mb-1">{speaker.detailTitle}</span>
-              {speaker.talk}
-            </div>
+            {speaker.talk && (
+              <div id={`speaker-talk-${speaker.talk.id}`} class="talk-panel hidden mt-4 md:ml-[5.25rem] rounded-xl border border-purple-100 bg-purple-50/70 px-4 py-3 text-sm leading-relaxed text-slate-700">
+                <div data-talk-title-content class="hidden">
+                  <span class="block text-xs font-bold tracking-wide text-purple-600 mb-1">{speaker.talk.detailTitle}</span>
+                  <span class="block text-xs font-semibold text-slate-500 mb-2">{speaker.talk.day} · {speaker.talk.time}</span>
+                  <span class="talk-title block text-slate-800 font-semibold cursor-pointer" data-talk-cycle-trigger>{speaker.talk.title}</span>
+                </div>
+                <div data-talk-abstract-content class="hidden mt-3 space-y-3 border-t border-purple-100 pt-3 text-slate-600">
+                  {speaker.talk.abstract.map((paragraph) => (
+                    <p>{paragraph}</p>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         ))}
       </div>
@@ -415,7 +630,7 @@ import '../styles/global.css';
         </div>
         <div class="reveal p-6 bg-gradient-to-br from-purple-50 to-white rounded-2xl border border-purple-100 shadow-sm hover:shadow-md transition-shadow" style="transition-delay: 100ms">
           <h3 class="font-bold text-purple-800 mb-3 flex items-center gap-2">
-            <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">2</span> Ribosome & Products
+            <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">2</span> Ribosome & Outputs
           </h3>
           <p class="text-sm text-slate-600 leading-relaxed"><strong>Focus:</strong> nascent-chain biology, exit-tunnel events, pausing, stalling, elongation dynamics, termination, quality control, microproteins, peptides, antigens, and ribosome-mediated translon functions.</p>
         </div>
@@ -433,131 +648,70 @@ import '../styles/global.css';
         </div>
       </div>
 
-      <!-- Day 1 Schedule -->
-      <h3 class="text-2xl font-bold text-purple-800 border-b-2 border-purple-100 pb-3 mb-6">Monday, 29 June 2026</h3>
-      <div class="space-y-3 mb-16 reveal">
-        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-          <div class="font-semibold text-slate-500 bg-slate-100 inline-block px-3 py-1 rounded-full w-max">8:30 - 9:00</div>
-          <div class="text-slate-700">Registration</div>
-        </div>
-        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-          <div class="font-semibold text-slate-500 bg-slate-100 inline-block px-3 py-1 rounded-full w-max">9:00 - 9:15</div>
-          <div class="text-slate-700">Welcome and opening remarks</div>
-        </div>
-        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm bg-blue-50/80 border border-blue-100 p-3 rounded-lg items-center">
-          <div class="font-bold text-blue-800">9:15 - 12:30</div>
-          <div class="font-bold text-blue-900 md:text-base">Session 1: Regulation & Architecture</div>
-        </div>
-        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-          <div class="font-semibold text-slate-500">9:15 - 10:00</div>
-	          <div class="text-slate-800 font-medium"><span class="text-purple-600 font-bold md:mr-2 block md:inline">Keynote Lecture:</span> Pavel Baranov <span class="block text-slate-500 font-normal mt-1">Enigmatic Translons - Animalcules of Molecular Biology?</span></div>
-        </div>
-        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-          <div class="font-semibold text-slate-500">10:00 - 10:30</div>
-          <div class="text-slate-600">Short talks TBA</div>
-        </div>
-        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-          <div class="font-semibold text-amber-800 bg-amber-50 px-3 py-1 rounded-full w-max">10:30 - 11:00</div>
-          <div class="text-amber-900 font-medium flex items-center gap-2">☕ Coffee break</div>
-        </div>
-        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-          <div class="font-semibold text-slate-500">11:00 - 11:30</div>
-	          <div class="text-slate-800 font-medium">Martina Yordanova <span class="block text-slate-500 font-normal mt-1">An evolutionarily conserved translon mediates start-site selection in BAG1 mRNA.</span></div>
-        </div>
-        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-          <div class="font-semibold text-slate-500">11:30 - 12:30</div>
-          <div class="text-slate-600">Short talks TBA</div>
-        </div>
-	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-		          <div class="font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full w-max">12:30 - 14:00</div>
-		          <div class="text-green-700 font-medium flex items-center gap-2">🍽️ Lunch break</div>
-		        </div>
-		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm bg-purple-50/80 border border-purple-100 p-3 rounded-lg items-center">
-		          <div class="font-bold text-purple-800">14:00 - 17:00</div>
-		          <div class="font-bold text-purple-900 md:text-base">Session 2: Ribosome & Products</div>
-		        </div>
-		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-		          <div class="font-semibold text-slate-500">14:00 - 14:30</div>
-		          <div class="text-slate-800 font-medium">Tomasz Włodarski <span class="block text-slate-500 font-normal mt-1">Co-translational protein folding in the light of ribosome evolution</span></div>
-		        </div>
-		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-		          <div class="font-semibold text-slate-500">14:30 - 15:30</div>
-		          <div class="text-slate-600">Short talks TBA</div>
-		        </div>
-		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-		          <div class="font-semibold text-amber-800 bg-amber-50 px-3 py-1 rounded-full w-max">15:30 - 16:00</div>
-		          <div class="text-amber-900 font-medium flex items-center gap-2">☕ Coffee break</div>
-		        </div>
-		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-		          <div class="font-semibold text-slate-500">16:00 - 17:00</div>
-		          <div class="text-slate-600">Short talks TBA</div>
-		        </div>
-		        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-		          <div class="font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-max">17:00 - 18:30</div>
-		          <div class="text-slate-700 font-medium">Poster session and informal discussion</div>
-		        </div>
-		      </div>
+      {scheduleDays.map((day) => (
+        <>
+          <h3 class="text-2xl font-bold text-purple-800 border-b-2 border-purple-100 pb-3 mb-6">{day.heading}</h3>
+          <div class={`space-y-3 ${day.bottomSpacing ? "mb-16" : ""} reveal`}>
+            {day.items.map((item) => {
+              const sessionStyle = item.type === "session" ? sessionClassMap[item.color] : null;
 
-	      <!-- Day 2 Schedule -->
-	      <h3 class="text-2xl font-bold text-purple-800 border-b-2 border-purple-100 pb-3 mb-6">Tuesday, 30 June 2026</h3>
-	      <div class="space-y-3 reveal">
-	        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-			          <div class="font-semibold text-slate-500 bg-slate-100 inline-block px-3 py-1 rounded-full w-max">9:30 - 9:45</div>
-			          <div class="text-slate-700">Welcome and day 2 introduction</div>
-			        </div>
-			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm bg-indigo-50/80 border border-indigo-100 p-3 rounded-lg items-center">
-			          <div class="font-bold text-indigo-800">9:45 - 13:00</div>
-			          <div class="font-bold text-indigo-900 md:text-base">Session 3: Detection & Annotation</div>
-			        </div>
-			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-			          <div class="font-semibold text-slate-500">9:45 - 10:30</div>
-			          <div class="text-slate-800 font-medium"><span class="text-purple-600 font-bold md:mr-2 block md:inline">Keynote Lecture:</span> TBA</div>
-			        </div>
-			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-			          <div class="font-semibold text-slate-500">10:30 - 11:00</div>
-			          <div class="text-slate-600">Short talks TBA</div>
-			        </div>
-			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-			          <div class="font-semibold text-amber-800 bg-amber-50 px-3 py-1 rounded-full w-max">11:00 - 11:30</div>
-			          <div class="text-amber-900 font-medium flex items-center gap-2">☕ Coffee break</div>
-			        </div>
-			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-			          <div class="font-semibold text-slate-500">11:30 - 12:00</div>
-			          <div class="text-slate-800 font-medium">Jack Tierney <span class="block text-slate-500 font-normal mt-1">Representing Translation Within Genome Annotation</span></div>
-			        </div>
-			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-			          <div class="font-semibold text-slate-500">12:00 - 13:00</div>
-			          <div class="text-slate-600">Short talks TBA</div>
-			        </div>
-			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-			          <div class="font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full w-max">13:00 - 14:00</div>
-			          <div class="text-green-700 font-medium flex items-center gap-2">🍽️ Lunch break</div>
-			        </div>
-			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm bg-cyan-50/80 border border-cyan-100 p-3 rounded-lg items-center">
-			          <div class="font-bold text-cyan-800">14:00 - 17:30</div>
-			          <div class="font-bold text-cyan-900 md:text-base">Session 4: Technology & Resources</div>
-			        </div>
-			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-			          <div class="font-semibold text-slate-500">14:00 - 14:45</div>
-			          <div class="text-slate-800 font-medium"><span class="text-purple-600 font-bold md:mr-2 block md:inline">Keynote Lecture:</span> TBA</div>
-			        </div>
-			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-			          <div class="font-semibold text-slate-500">14:45 - 15:30</div>
-			          <div class="text-slate-600">Short talks TBA</div>
-			        </div>
-			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-			          <div class="font-semibold text-amber-800 bg-amber-50 px-3 py-1 rounded-full w-max">15:30 - 16:00</div>
-			          <div class="text-amber-900 font-medium flex items-center gap-2">☕ Coffee break</div>
-			        </div>
-			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center md:pl-4">
-			          <div class="font-semibold text-slate-500">16:00 - 16:45</div>
-			          <div class="text-slate-600">Short talks TBA</div>
-			        </div>
-			        <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
-			          <div class="font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-max">16:45 - 17:30</div>
-			          <div class="text-slate-700 font-medium">Roundtable discussion and closing remarks</div>
-			        </div>
-	      </div>
+              return item.type === "session" ? (
+                <div class={`grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm p-3 rounded-lg items-center ${sessionStyle.wrapper}`}>
+                  <div class={`font-bold ${sessionStyle.time}`}>{item.time}</div>
+                  <div class={`font-bold md:text-base ${sessionStyle.title}`}>{item.label}</div>
+                </div>
+              ) : item.type === "talk" ? (
+                <div
+                  class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-start md:pl-4 rounded-lg hover:bg-white/60 focus:outline-none focus:ring-2 focus:ring-indigo-300 transition-colors cursor-pointer"
+                  role="button"
+                  tabindex="0"
+                  aria-expanded="false"
+                  aria-controls={`programme-talk-${item.talk.id}`}
+                  data-talk-cycle
+                  data-talk-title-visible
+                >
+                  <div class="font-semibold text-slate-500">{item.talk.time}</div>
+                  <div class="text-slate-800 font-medium min-w-0">
+                    {item.talk.detailTitle.toLowerCase().includes("keynote") && (
+                      <span class="text-purple-600 font-bold md:mr-2 block md:inline">{item.talk.detailTitle}:</span>
+                    )}
+                    {!item.talk.detailTitle.toLowerCase().includes("keynote") && (
+                      <span class="text-slate-500 font-semibold md:mr-2 block md:inline">{item.talk.detailTitle}:</span>
+                    )}
+                    {item.talk.speakerName}
+                    <div id={`programme-talk-${item.talk.id}`} class="talk-panel mt-2 rounded-xl border border-indigo-100 bg-indigo-50/60 px-4 py-3 leading-relaxed">
+                      <div data-talk-title-content>
+                        <span class="talk-title block text-slate-600 font-normal cursor-pointer" data-talk-cycle-trigger>{item.talk.title}</span>
+                      </div>
+                      <div class="detail-toggle-label text-xs text-indigo-500/80 font-medium mt-2" data-label-hidden="Show abstract" data-label-title="Show abstract" data-label-abstract="Hide abstract">Show abstract</div>
+                      <div data-talk-abstract-content class="hidden mt-3 space-y-3 border-t border-indigo-100 pt-3 text-slate-600 font-normal">
+                        {item.talk.abstract.map((paragraph) => (
+                          <p>{paragraph}</p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : item.type === "coffee" ? (
+                <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+                  <div class="font-semibold text-amber-800 bg-amber-50 px-3 py-1 rounded-full w-max">{item.time}</div>
+                  <div class="text-amber-900 font-medium flex items-center gap-2">☕ {item.label}</div>
+                </div>
+              ) : item.type === "lunch" ? (
+                <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+                  <div class="font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full w-max">{item.time}</div>
+                  <div class="text-green-700 font-medium flex items-center gap-2">🍽️ {item.label}</div>
+                </div>
+              ) : (
+                <div class={`grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center ${item.type === "plainIndented" ? "md:pl-4" : ""}`}>
+                  <div class={item.type === "plainIndented" ? "font-semibold text-slate-500" : "font-semibold text-slate-500 bg-slate-100 inline-block px-3 py-1 rounded-full w-max"}>{item.time}</div>
+                  <div class={item.type === "plainIndented" ? "text-slate-600" : "text-slate-700"}>{item.label}</div>
+                </div>
+              );
+            })}
+          </div>
+        </>
+      ))}
 	    </section>
 
     <!-- PRACTICAL INFO SECTION -->
@@ -571,11 +725,6 @@ import '../styles/global.css';
           <h4 class="font-bold text-purple-900 mb-3 text-lg">🎟️ Registration</h4>
           <p class="text-sm text-slate-600 mb-4">Registration free but required due to limited capacity.</p>
           <a href="https://forms.gle/WFGbpDe3ohwNFnW16" target="_blank" rel="noopener noreferrer" class="inline-block bg-purple-600 text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-purple-700 transition shadow">Registration Form</a>
-        </div>
-
-        <div class="reveal bg-gradient-to-br from-blue-50 to-white p-6 rounded-2xl border border-blue-100 shadow-sm" style="transition-delay: 100ms">
-          <h4 class="font-bold text-blue-900 mb-3 text-lg">📄 Abstracts</h4>
-          <button disabled class="inline-block bg-white text-blue-600 border border-blue-200 px-5 py-2 rounded-full text-sm font-bold opacity-70 cursor-not-allowed">Abstract Book (Coming Soon)</button>
         </div>
 
         <div class="reveal p-6 border border-slate-100 rounded-2xl bg-white/50" style="transition-delay: 200ms">
@@ -623,6 +772,46 @@ import '../styles/global.css';
 
       mobileMenuToggle.addEventListener('click', toggleMenu);
       mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+      document.querySelectorAll('[data-talk-cycle]').forEach(element => {
+        const panelId = element.getAttribute('aria-controls');
+        const panel = panelId ? document.getElementById(panelId) : element.querySelector('.talk-panel');
+        const titleContent = element.querySelector('[data-talk-title-content]');
+        const abstractContent = element.querySelector('[data-talk-abstract-content]');
+        const label = element.querySelector('.detail-toggle-label');
+        const titleVisible = element.hasAttribute('data-talk-title-visible');
+        let state = titleVisible ? 1 : 0;
+
+        function setTalkState(nextState) {
+          state = nextState;
+          element.setAttribute('aria-expanded', (titleVisible ? state === 2 : state !== 0).toString());
+          if (panel) panel.classList.toggle('hidden', !titleVisible && state === 0);
+          if (titleContent) titleContent.classList.toggle('hidden', !titleVisible && state === 0);
+          if (abstractContent) abstractContent.classList.toggle('hidden', state !== 2);
+          if (label) {
+            if (state === 0) label.textContent = label.dataset.labelHidden || 'Talk details';
+            if (state === 1) label.textContent = label.dataset.labelTitle || 'Show abstract';
+            if (state === 2) label.textContent = label.dataset.labelAbstract || 'Hide details';
+          }
+        }
+
+        function advanceTalkState(event) {
+          const target = event.target instanceof Element ? event.target : null;
+          const interactiveTarget = target ? target.closest('a, button') : null;
+          if (interactiveTarget && !interactiveTarget.hasAttribute('data-talk-cycle-trigger')) return;
+          setTalkState(titleVisible ? (state === 2 ? 1 : 2) : (state === 2 ? 0 : state + 1));
+        }
+
+        setTalkState(state);
+
+        element.addEventListener('click', advanceTalkState);
+        element.addEventListener('keydown', event => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            setTalkState(titleVisible ? (state === 2 ? 1 : 2) : (state === 2 ? 0 : state + 1));
+          }
+        });
+      });
 
       document.querySelectorAll('[data-detail-card]').forEach(card => {
         const panelId = card.getAttribute('aria-controls');
