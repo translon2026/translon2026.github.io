@@ -6,7 +6,7 @@ Welcome and opening remarks
 9:15 - 12:30
 Session 1: Regulation & Architecture
 9:15 - 10:00
-Keynote Lecture:
+Keynote Lecture: 
 Pavel Baranov
 Enigmatic Translons - Animalcules of Molecular Biology?
 10:00 - 10:30
@@ -18,30 +18,31 @@ From Stress Responses to Translation Regulation: Notes from the Outskirts
 Martina Yordanova
 An evolutionary conserved translon mediates start site selection in BAG1 mRNA.
 11:30 - 12:30
-Short talks TBA
-11:50 - 12:10
+Short talks TBA	
 Wiktoria Orzeł
 Uncovering a cellular mechanism that enhances mRNA vaccines
-12:30 - 14:30
-🍽️ Lunch break
+11:50-12:10
 
-14:30 - 17:30
+12:30 - 14:30
+🍽️ Lunch break 
+
+14:30-17:30
 Session 2: Ribosome & Outputs
-14:30 - 15:00
+14:30-15:00
 Tomasz Włodarski
 Co-translational protein folding in the light of ribosome evolution
-15:00 - 16:00
+15:00-16:00
 Short talks TBA
 16:00 - 16:30
 ☕ Coffee break
-16:30 - 17:30
+16:30-17:30
 Short talks TBA
 
 Tuesday, 30 June
-10:00 - 10:15
+10:00- 10:15
 Welcome and opening remarks
 10:15 - 13:30
-Session 3: Detection & Annotation
+Session 3: Annotation & Resources
 10:15 - 11:00
 Keynote Lecture:
 Jon Mudge
@@ -55,17 +56,7 @@ Jack Tierney
 Representing Translation Within Genome Annotation
 12:30 - 13:00
 Short talks TBA
-13:00 - 14:00
-🍽️ Lunch break
-14:00 - 17:00
-Session 4: Technology & Resources
-14:00 - 14:45
-Keynote Lecture TBA
-14:45 - 15:30
-Short talks TBA
-15:30 - 16:00
-☕ Coffee break
-16:00 - 17:00
-Short talks TBA
-17:00 - 17:30
+13:00 - 13:30
 Roundtable discussion and closing remarks
+
+
