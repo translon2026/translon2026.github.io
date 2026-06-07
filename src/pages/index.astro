@@ -36,15 +36,30 @@ const talks = {
       `In the cell, proteins begin to fold co-translationally as they emerge from the ribosome's exit tunnel during biosynthesis. This process is fundamental to cellular homeostasis; disruptions can drive protein misfolding, which is implicated in severe pathologies including cystic fibrosis, alpha-1 antitrypsin deficiency, and a wide spectrum of protein aggregation diseases. Despite its critical importance, co-translational folding (co-TF) remains poorly understood, as capturing high-resolution structural data using experimental methods alone is a significant challenge. Consequently, integrating accurate computational techniques with experimental data is crucial. Furthermore, because most of our current understanding stems from E. coli, there is a significant knowledge gap regarding evolutionary variations in ribosome structure and their impact on co-TF. In my talk, I will describe an integrative structural biology approach to study co-TF, combining molecular dynamics (MD) simulations with structural restraints from NMR data and cryo-EM maps. I will also demonstrate how we can use bioinformatics and MD simulations to analyse ribosome heterogeneity and its influence on nascent chain pathways inside the ribosomal tunnel. Ultimately, this research sheds light on the intricate dynamics of co-TF and paves the way for a deeper understanding of how evolutionary variations in the ribosome shape protein folding across different organisms.`
     ]
   },
+  joanna: {
+    id: "joanna-kufel",
+    speakerName: "Joanna Kufel",
+    detailTitle: "Short talk",
+    day: "Monday, 29 June 2026",
+    time: "15:00 - 15:20",
+    title: "Non-canonical translation events in the yeast Saccharomyces cerevisiae",
+    abstract: [
+      `In addition to standard mechanisms, translation regulation also involves non-canonical events, including non-AUG initiation, stop-codon readthrough or programmed ribosomal frameshifting. These events result in the the production of protein variants with different characteristics, such as subcellular localization or function, thus expanding the translatome and the proteome diversity and regulating protein synthesis in different cellular or environmental conditions. The identification of such rare non-canonical events, which are more common than previously predicted, has been enabled by the availability of a growing number of Ribo-seq datasets.`,
+      `Analysis of large Ribo-seq dataset collections for yeast Saccharomyces cerevisiae using the RiboCrypt browser revealed several unexpected findings. Notably, we observed a characteristic signature of translation termination on standard stop codons within the ORFs. The presence of specific termination signature enabled the detection of potential translation termination events in many protein-coding genes. Using standard biochemical assays, we have observed premature ribosome dissociation occurring in some cases with an efficiency as high as 40% and most often at positions near-cognate to stop codons. Our preliminary results suggest that the mechanism responsible for this phenomenon does not depend on ribosome release factors but to some extent is linked to Ribosome-associated protein Quality Control (RQC) mechanism.`
+    ]
+  },
   jon: {
     id: "jon-mudge",
     speakerName: "Jon Mudge",
     detailTitle: "Keynote lecture",
     day: "Tuesday, 30 June 2026",
     time: "10:15 - 11:00",
-    title: "Peptideins: a new annotation category for the dark proteome",
+    title: "Peptideins and the hidden coding landscape of the 5′ UTR",
     abstract: [
-      `The drive to interpret human biology and disease is supported by ongoing efforts to elucidate protein function. Today, new scientific insights allow us to understand far more about proteins than was possible when genome annotation efforts began. However, paradigm shifts, while improving the granularity with which proteins are understood, may clash with existing classification systems. This is exemplified by the 'dark proteome', a term sometimes used for unannotated protein-like molecules that are experimentally detected but functionally ambiguous. Advances in ribosome profiling, proteogenomics and immunopeptidomics now provide evidence that such translation products are widespread. Reference annotation projects want to classify such molecules in order to aid their study, especially because they are of emerging interest in disease biology. However, their unusual nature has led to them being held back, even though certain canonical proteins share similar characteristics. Here we see parallels with the case of Pluto, which lost its planetary status as new insights into its unusual nature and the discovery of similar objects made this designation untenable. Thus, we present a unified framework to address this classification problem within protein annotation. While the term 'protein' will still apply to molecules for which function is known or can be confidently predicted, we introduce the new classification of 'peptidein' for experimentally detected translation products that remain functionally obscure at present. Crucially, this framework allows experimentally supported translation products to be incorporated into reference annotation resources, and the implications of this decision will be widespread across science and medicine.`
+      `Advances in ribosome profiling, proteogenomics and immunopeptidomics have revealed a vast population of translated molecules that remain largely invisible to gene annotation. Although experimentally detected, they lack sufficient evidence to be classified as proteins under current frameworks. To address this component of the ‘dark proteome’, we recently proposed the term peptidein: an experimentally detected translation product for which biological function cannot yet be confidently inferred.`,
+      `Where do peptideins come from? The majority identified thus far originate from regions of the genome that have historically been viewed as non-coding, particularly the 5′ untranslated regions (5′ UTRs) of mRNAs, where thousands of upstream open reading frames (uORFs) are now known to be translated in human. Thus, I will argue that understanding peptideins requires a broader framework for understanding transcript architecture. The 5′ UTR is not merely a regulatory sequence positioned upstream of a coding sequence (CDS). Rather, it is a dynamic translational compartment whose structure is determined by transcription start site (TSS) selection, alternative splicing and the translation of upstream open reading frames (uORFs). Together, these processes generate alternative transcript leaders with distinct translational properties, allowing a single gene to occupy multiple translational states.`,
+      `Particular emphasis will be placed on the relationship between transcription start site (TSS) switching and uORF translation. By modifying the sequence encountered by the scanning ribosome, alternative transcript architectures can alter both the translation of canonical proteins and the expression of 5′ UTR-derived translons. This creates a direct link between transcript architecture, protein dosage control and the production of peptideins. I will discuss evidence suggesting that such mechanisms are widespread throughout the human genome and may represent a fundamental - yet still largely underappreciated - layer of gene regulation.`,
+      `Finally, I will explore the implications of this framework for evolution and disease. The 5′ UTR appears to provide a fertile substrate for the emergence of novel CDS, with peptideins potentially representing evolutionary intermediates between regulatory translons and established proteins. At the same time, dysregulation of transcript architecture is increasingly implicated in cancer and other diseases, creating new opportunities for biomarker discovery and immunotherapeutic targeting. Collectively, these observations suggest that the hidden coding landscape of the 5′ UTR is not a biological curiosity, but a major source of proteomic and functional diversity whose significance is only beginning to be understood.`
     ]
   },
   jack: {
@@ -58,6 +73,17 @@ const talks = {
       `Large-scale translatomics initiatives, including TransCODE, are rapidly expanding our view of translation across genomes and transcriptomes. At the same time, reference annotation projects such as Ensembl/GENCODE face growing challenges in how these signals can be consistently represented within existing genome annotation frameworks. While current annotation models were largely developed around relatively stable CDS structures, translatomics data increasingly reveal complex and overlapping translational landscapes that are difficult to capture using CDS-centric models.`,
       `In this talk, I will discuss challenges associated with integrating translation-aware annotation into large-scale genome resources. These include the representation of overlapping and alternative translated regions, transcript-specific translational outcomes, evidence integration, and the relationship between structural translation annotation and downstream biological interpretation.`,
       `I will present ongoing work within Ensembl/GENCODE and the broader TransCODE initiative towards more explicit representation of translation within reference annotations. This includes the use of translons as structural annotation units for translated regions and the development of Ribosome Decision Graphs (RDGs) as a framework for representing interacting and context-dependent translational architectures within transcripts. Together, these efforts aim to support richer and more scalable integration of translatomics data into future genome annotation resources.`
+    ]
+  },
+  kornel: {
+    id: "kornel-labun",
+    speakerName: "Kornel Labun",
+    detailTitle: "Short talk",
+    day: "Tuesday, 30 June 2026",
+    time: "12:30 - 12:45",
+    title: "Practical tools for genome engineering with CRISPR",
+    abstract: [
+      `Moving CRISPR from basic discovery to research in the RNA space, requires tools that prioritize precision, safety, and lab-ready outputs. This talk provides a rapid overview of the crisprtools.org suite, a free, interconnected ecosystem designed to solve daily genome engineering bottlenecks. We will briefly highlight how to move from rapid guide design (CHOPCHOP) to rigorous, bulge-aware safety screening (CHOPOFF), and demonstrate automated, nuclease-resistant HDR template generation for precision edits (SNIPSNP). Highlighting utility for RNA translational research, we will also showcase Dual Cas13a, a specialized tool for building highly mismatch-sensitive RNA detection and diagnostic assays. Finally, we will introduce OVERHANG, a dedicated platform for community troubleshooting. Attendees will discover how to quickly integrate these tools to save time and improve experimental outcomes at the bench.`
     ]
   },
   martina: {
@@ -98,8 +124,8 @@ const speakers = [
   },
   {
     name: "Jon Mudge",
-    aff: "European Bioinformatics Institute",
-    city: "Hinxton, UK",
+    aff: "Institute of Cancer Research",
+    city: "London, UK",
     photo: "/photos/Jon_Mudge_headshot.jpg",
     photoPosition: "50% 44%",
     talk: talks.jon
@@ -133,6 +159,22 @@ const speakers = [
     photo: "/photos/Martina_Yordanova.png",
     photoPosition: "50% 28%",
     talk: talks.martina
+  },
+  {
+    name: "Joanna Kufel",
+    aff: "University of Warsaw",
+    city: "Warsaw, Poland",
+    photo: "/photos/Joanna_Kufel.png",
+    photoPosition: "50% 50%",
+    talk: talks.joanna
+  },
+  {
+    name: "Kornel Labun",
+    aff: "University of Warsaw",
+    city: "Warsaw, Poland",
+    photo: "/photos/Kornel_Labun.webp",
+    photoPosition: "50% 50%",
+    talk: talks.kornel
   },
   {
     name: "Wiktoria Orzeł",
@@ -169,7 +211,8 @@ const scheduleDays = [
       { type: "lunch", time: "12:30 - 14:30", label: "Lunch break" },
       { type: "session", time: "14:30 - 17:30", label: "Session 2: Ribosome & Outputs", color: "purple" },
       { type: "talk", talk: talks.tomasz },
-      { type: "plainIndented", time: "15:00 - 16:00", label: "Short talks TBA" },
+      { type: "talk", talk: talks.joanna },
+      { type: "plainIndented", time: "15:20 - 16:00", label: "Short talks TBA" },
       { type: "coffee", time: "16:00 - 16:30", label: "Coffee break" },
       { type: "plainIndented", time: "16:30 - 17:30", label: "Short talks TBA" }
     ]
@@ -183,7 +226,8 @@ const scheduleDays = [
       { type: "plainIndented", time: "11:00 - 11:30", label: "Short talks TBA" },
       { type: "coffee", time: "11:30 - 12:00", label: "Coffee break" },
       { type: "talk", talk: talks.jack },
-      { type: "plainIndented", time: "12:30 - 13:00", label: "Short talks TBA" },
+      { type: "talk", talk: talks.kornel },
+      { type: "plainIndented", time: "12:45 - 13:00", label: "Short talk TBA" },
       { type: "plain", time: "13:00 - 13:30", label: "Roundtable discussion and closing remarks" }
     ]
   }

@@ -31,7 +31,10 @@ Session 2: Ribosome & Outputs
 14:30-15:00
 Tomasz Włodarski
 Co-translational protein folding in the light of ribosome evolution
-15:00-16:00
+15:00-15:20
+Non-canonical translation events in the yeast Saccharomyces cerevisiae.
+Joanna Kufel
+15:20-16:00
 Short talks TBA
 16:00 - 16:30
 ☕ Coffee break
@@ -46,7 +49,7 @@ Session 3: Annotation & Resources
 10:15 - 11:00
 Keynote Lecture:
 Jon Mudge
-Peptideins: a new annotation category for the dark proteome
+Peptideins and the hidden coding landscape of the 5′ UTR
 11:00 - 11:30
 Short talks TBA
 11:30 - 12:00
@@ -54,9 +57,11 @@ Short talks TBA
 12:00 - 12:30
 Jack Tierney
 Representing Translation Within Genome Annotation
-12:30 - 13:00
-Short talks TBA
+12:30 - 12:45
+Practical tools for genome engineering with CRISPR
+Kornel Labun
+12:45 - 13:00
+Short talk TBA
 13:00 - 13:30
 Roundtable discussion and closing remarks
-
 
