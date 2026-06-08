@@ -25,6 +25,15 @@ const talks = {
       `The cellular response to stress often includes translational downregulation, which is widely attributed to phosphorylation of eIF2α. Studies of UV-induced stress responses in fission yeast prompted a re-examination of the relationship between eIF2α phosphorylation and global translational repression. In this talk, I will discuss observations from fission yeast and mammalian systems that challenge this simple model of translation control, briefly touch upon emerging non-canonical links between stress signalling and translation, and present evidence linking translational responses to stress with actin cytoskeleton dynamics.`
     ]
   },
+  thomas: {
+    id: "thomas-birkballe-hansen",
+    speakerName: "Thomas Birkballe Hansen",
+    detailTitle: "Talk",
+    day: "Monday, 29 June 2026",
+    time: "11:30 - 12:00",
+    title: "Virtual talk TBA",
+    abstract: []
+  },
   tomasz: {
     id: "tomasz-wlodarski",
     speakerName: "Tomasz Włodarski",
@@ -39,13 +48,25 @@ const talks = {
   joanna: {
     id: "joanna-kufel",
     speakerName: "Joanna Kufel",
-    detailTitle: "Short talk",
+    detailTitle: "Talk",
     day: "Monday, 29 June 2026",
     time: "15:00 - 15:20",
     title: "Non-canonical translation events in the yeast Saccharomyces cerevisiae",
     abstract: [
       `In addition to standard mechanisms, translation regulation also involves non-canonical events, including non-AUG initiation, stop-codon readthrough or programmed ribosomal frameshifting. These events result in the the production of protein variants with different characteristics, such as subcellular localization or function, thus expanding the translatome and the proteome diversity and regulating protein synthesis in different cellular or environmental conditions. The identification of such rare non-canonical events, which are more common than previously predicted, has been enabled by the availability of a growing number of Ribo-seq datasets.`,
       `Analysis of large Ribo-seq dataset collections for yeast Saccharomyces cerevisiae using the RiboCrypt browser revealed several unexpected findings. Notably, we observed a characteristic signature of translation termination on standard stop codons within the ORFs. The presence of specific termination signature enabled the detection of potential translation termination events in many protein-coding genes. Using standard biochemical assays, we have observed premature ribosome dissociation occurring in some cases with an efficiency as high as 40% and most often at positions near-cognate to stop codons. Our preliminary results suggest that the mechanism responsible for this phenomenon does not depend on ribosome release factors but to some extent is linked to Ribosome-associated protein Quality Control (RQC) mechanism.`
+    ]
+  },
+  michalMarcinkowski: {
+    id: "michal-marcinkowski",
+    speakerName: "Michał Marcinkowski",
+    detailTitle: "Talk",
+    day: "Monday, 29 June 2026",
+    time: "15:20 - 15:40",
+    title: "Isoforms of mitochondrially-localized Lsm proteins affect the respiratory capacity of Saccharomyces cerevisiae cells",
+    abstract: [
+      `Cellular translation undergoes dynamic changes in response to environmental conditions, leading to the production of diverse proteoforms, often synthesized by non-canonical translation. Identification of such rare translation events has recently become possible thanks to the availability of a growing number of ribosome profiling datasets. Using Ribocrypt.org we identified genes that, through translation initiation at non-AUG codons, generate N-terminally extended (NTE) protein variants containing mitochondrial targeting signal (MTS) in their NTE. This analysis identified components of the LSM complexes that normally localize to the nucleus (Lsm2-Lsm8) or cytoplasm (Lsm1-Lsm7). We confirmed that all Lsm proteins, except Lsm6, are indeed targeted to mitochondria. We focused on Lsm1 because its alternative NTE isoform contains a strong MTS, and several uORFs in the LSM1 5’UTR are translated, suggesting uORF-mediated translation regulation. In addition, deletion of LSM1 impairs yeast respiratory growth.`,
+      `To assess the biological relevance of these observations, we generated a set of constructs expressing different LSM1 variants carrying specific changes in the 5’UTR, start codons and NTE-MTS. We checked mitochondrial localization of the resulting proteins and their impact on respiratory capacity and thermosensitivity. These tests confirmed that the Lsm1 NTE is responsible for its mitochondrial targeting, and showed that elements within the LSM1 5’UTR contribute to the LSM1-dependent thermotolerance. This demonstrates that translatome analyses enable systematic exploration of an alternative cellular proteome that shapes adaptation to changing environmental conditions.`
     ]
   },
   jon: {
@@ -78,9 +99,9 @@ const talks = {
   kornel: {
     id: "kornel-labun",
     speakerName: "Kornel Labun",
-    detailTitle: "Short talk",
+    detailTitle: "Talk",
     day: "Tuesday, 30 June 2026",
-    time: "12:30 - 12:45",
+    time: "12:45 - 13:00",
     title: "Practical tools for genome engineering with CRISPR",
     abstract: [
       `Moving CRISPR from basic discovery to research in the RNA space, requires tools that prioritize precision, safety, and lab-ready outputs. This talk provides a rapid overview of the crisprtools.org suite, a free, interconnected ecosystem designed to solve daily genome engineering bottlenecks. We will briefly highlight how to move from rapid guide design (CHOPCHOP) to rigorous, bulge-aware safety screening (CHOPOFF), and demonstrate automated, nuclease-resistant HDR template generation for precision edits (SNIPSNP). Highlighting utility for RNA translational research, we will also showcase Dual Cas13a, a specialized tool for building highly mismatch-sensitive RNA detection and diagnostic assays. Finally, we will introduce OVERHANG, a dedicated platform for community troubleshooting. Attendees will discover how to quickly integrate these tools to save time and improve experimental outcomes at the bench.`
@@ -105,10 +126,34 @@ const talks = {
     speakerName: "Wiktoria Orzeł",
     detailTitle: "Talk",
     day: "Monday, 29 June 2026",
-    time: "11:50 - 12:10",
+    time: "12:00 - 12:25",
     title: "Uncovering a cellular mechanism that enhances mRNA vaccines",
     abstract: [
       `TENT5 proteins function as non-canonical poly(A) polymerases that selectively re-adenylate mRNAs encoding secreted proteins, enhancing their stability and translation. Following our previous work on TENT5 function in immunity, we investigated how TENT5A influences the efficacy of mRNA therapeutics. Using primary macrophages and vaccines encoding viral and parasitic antigens, we assessed mRNA poly(A) tail dynamics, antigen output, and immune response. We also evaluated the spatial dependency of re-adenylation in the endoplasmic reticulum (ER) by disrupting the interaction with FNDC3, a docking protein critical for TENT5A localisation. Upon delivery, TENT5A-dependent re-adenylation enhanced mRNA stability, resulting in increased antigen production and elevated IgG levels. The ER localisation of TENT5A via FNDC3 proved essential for this process, highlighting a previously unrecognised spatial dimension of post-transcriptional regulation. To further explore translational outcomes, we applied the ribosome profiling (Ribo-seq) method to quantify ribosome occupancy and distribution across different mRNA constructs. Interestingly, our Ribo-seq data revealed distinct translational dynamics between two clinically approved SARS-CoV-2 vaccines, suggesting that subtle differences in mRNA design affect translational efficiency in vivo.`
+    ]
+  },
+  maria: {
+    id: "maria-bozko",
+    speakerName: "Maria Bożko",
+    detailTitle: "Talk",
+    day: "Monday, 29 June 2026",
+    time: "12:25 - 12:45",
+    title: "Novel +1 frameshift signals and context-dependent enhancers in yeast",
+    abstract: [
+      `Programmed ribosomal frameshifting expands coding capacity by allowing ribosomes to switch reading frame during translation. However, the sequence features that determine whether a potential frameshift site is utilized remain poorly understood. Here, we characterize two novel +1 frameshift signals in yeasts. First, we investigate a frameshift site identified at the KLMX_30357 locus in Kluyveromyces marxianus, which promotes efficient +1 frameshifting when tested in Saccharomyces cerevisiae. Mutational analyses revealed that efficient frameshifting depends not only on the heptameric shift site but also on a downstream enhancer element comprising a conserved di-proline motif and a predicted RNA secondary structure. Second, we describe a hybrid frameshift heptamer, GCG_A.GGC, combining features of the canonical TY1 and TY3 frameshift signals. In addition, genome-wide analysis of known frameshift heptamers and ribosome profiling data revealed numerous instances in which predicted frameshift signals do not exhibit detectable frame switching. Together, these findings demonstrate that the presence of a frameshift heptamer alone is insufficient to drive efficient recoding and highlight the critical role of local sequence context in determining frameshift utilization.`
+    ]
+  },
+  harsh: {
+    id: "harsh-chhajer",
+    speakerName: "Harsh Chhajer",
+    detailTitle: "Talk",
+    day: "Tuesday, 30 June 2026",
+    time: "12:30 - 12:45",
+    title: "Recovering Hidden Translation Signals from Noisy Ribosome Profiling Data",
+    abstract: [
+      `Ribosome profiling (RiboSeq) provides a nucleotide-resolution snapshot of ribosome movement along transcripts. Because ribosomes decode mRNA in three-nucleotide increments, translation is expected to exhibit a characteristic three-nucleotide periodicity corresponding to the translated reading frame. In practice, however, this periodicity is often weak or obscured due to experimental biases introduced during library preparation, sequencing, and downstream processing steps such as A-site assignment. Furthermore, simultaneous translation of overlapping reading frames can produce composite signals that complicate the identification of bone-fide translated regions, many of which play important regulatory roles and contribute to cellular stress responses.`,
+      `To address these challenges, we developed two complementary algorithms, RiboScout and RiboRefine, that exploit translation signatures learned from predominantly non-overlapping translated regions. RiboFrame uses these signatures together with local RiboSeq profiles as input features to a random forest classifier for identifying translated reading frames. RiboRefine uses the same learned signatures to optimize a linear transformation that suppresses systematic noise while preserving biologically meaningful translational patterns.`,
+      `Using synthetic datasets that emulate RiboSeq signals, both methods demonstrate strong performance. RiboScout accurately identifies translated reading frames, while RiboRefine substantially enhances periodic translation signals without distorting underlying ribosome occupancy trends. Together, these approaches provide a framework for improving the interpretation of ribosome profiling data and facilitating the detection of internal and overlapping ORFs that may otherwise remain hidden within noisy translational landscapes.`
     ]
   }
 };
@@ -145,6 +190,12 @@ const speakers = [
     talk: talks.beata
   },
   {
+    name: "Thomas Birkballe Hansen",
+    aff: "Circio",
+    city: "Oslo, Norway",
+    talk: talks.thomas
+  },
+  {
     name: "Jack Tierney",
     aff: "European Bioinformatics Institute",
     city: "Hinxton, UK",
@@ -169,12 +220,13 @@ const speakers = [
     talk: talks.joanna
   },
   {
-    name: "Kornel Labun",
+    name: "Maria Bożko",
     aff: "University of Warsaw",
     city: "Warsaw, Poland",
-    photo: "/photos/Kornel_Labun.webp",
-    photoPosition: "50% 50%",
-    talk: talks.kornel
+    photo: "/photos/Maria_Bozko.jpeg",
+    photoPosition: "42% 52%",
+    photoScale: "1.12",
+    talk: talks.maria
   },
   {
     name: "Wiktoria Orzeł",
@@ -185,12 +237,33 @@ const speakers = [
     talk: talks.wiktoria
   },
   {
-    name: "Maria Bożko",
+    name: "Kornel Labun",
     aff: "University of Warsaw",
     city: "Warsaw, Poland",
-    photo: "/photos/Maria_Bozko.jpeg",
-    photoPosition: "42% 52%",
-    photoScale: "1.12"
+    photo: "/photos/Kornel_Labun.webp",
+    photoPosition: "50% 50%",
+    talk: talks.kornel
+  },
+  {
+    name: "Harsh Chhajer",
+    aff: "University of Oslo",
+    city: "Oslo, Norway",
+    talk: talks.harsh
+  },
+  {
+    name: "Michał Marcinkowski",
+    aff: "University of Warsaw",
+    city: "Warsaw, Poland",
+    photo: "/photos/Michal_Marcinkowski.png",
+    photoPosition: "50% 42%",
+    talk: talks.michalMarcinkowski
+  },
+  {
+    name: "Kyle Meiklejohn",
+    aff: "University College Cork",
+    city: "Cork, Ireland",
+    photo: "/photos/Kyle_Meiklejohn.jpeg",
+    photoPosition: "50% 42%"
   }
 ];
 
@@ -206,15 +279,17 @@ const scheduleDays = [
       { type: "talk", talk: talks.beata },
       { type: "coffee", time: "10:30 - 11:00", label: "Coffee break" },
       { type: "talk", talk: talks.martina },
-      { type: "plainIndented", time: "11:30 - 12:30", label: "Short talks TBA" },
+      { type: "talk", talk: talks.thomas },
       { type: "talk", talk: talks.wiktoria },
-      { type: "lunch", time: "12:30 - 14:30", label: "Lunch break" },
+      { type: "talk", talk: talks.maria },
+      { type: "lunch", time: "12:45 - 14:30", label: "Lunch break" },
       { type: "session", time: "14:30 - 17:30", label: "Session 2: Ribosome & Outputs", color: "purple" },
       { type: "talk", talk: talks.tomasz },
       { type: "talk", talk: talks.joanna },
-      { type: "plainIndented", time: "15:20 - 16:00", label: "Short talks TBA" },
+      { type: "talk", talk: talks.michalMarcinkowski },
+      { type: "plainIndented", time: "15:40 - 16:00", label: "Talk TBA" },
       { type: "coffee", time: "16:00 - 16:30", label: "Coffee break" },
-      { type: "plainIndented", time: "16:30 - 17:30", label: "Short talks TBA" }
+      { type: "plainIndented", time: "16:30 - 17:30", label: "Talks TBA" }
     ]
   },
   {
@@ -223,11 +298,11 @@ const scheduleDays = [
       { type: "plain", time: "10:00 - 10:15", label: "Welcome and opening remarks" },
       { type: "session", time: "10:15 - 13:30", label: "Session 3: Annotation & Resources", color: "indigo" },
       { type: "talk", talk: talks.jon },
-      { type: "plainIndented", time: "11:00 - 11:30", label: "Short talks TBA" },
+      { type: "plainIndented", time: "11:00 - 11:30", label: "Talks TBA" },
       { type: "coffee", time: "11:30 - 12:00", label: "Coffee break" },
       { type: "talk", talk: talks.jack },
+      { type: "talk", talk: talks.harsh },
       { type: "talk", talk: talks.kornel },
-      { type: "plainIndented", time: "12:45 - 13:00", label: "Short talk TBA" },
       { type: "plain", time: "13:00 - 13:30", label: "Roundtable discussion and closing remarks" }
     ]
   }
@@ -544,16 +619,17 @@ const sessionClassMap = {
         <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-lg shrink-0">2</span> Speakers
       </h2>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start mb-16">
+      <div id="speaker-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start mb-6">
         {speakers.map((speaker, index) => (
           <div
-            class={`speaker-card reveal p-4 md:p-5 border border-slate-100 rounded-2xl bg-white/60 hover:bg-white hover:-translate-y-1 hover:shadow-xl hover:border-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-300 transition-all duration-300 group ${speaker.talk ? "cursor-pointer" : ""}`}
-            style={`transition-delay: ${index * 100}ms`}
+            class={`speaker-card reveal p-4 md:p-5 border border-slate-100 rounded-2xl bg-white/60 hover:bg-white hover:-translate-y-1 hover:shadow-xl hover:border-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-300 transition-all duration-300 group ${speaker.talk ? "cursor-pointer" : ""} ${index >= 10 ? "hidden" : ""}`}
+            style={`transition-delay: ${(index % 10) * 100}ms`}
             role={speaker.talk ? "button" : undefined}
             tabindex={speaker.talk ? "0" : undefined}
             aria-expanded={speaker.talk ? "false" : undefined}
             aria-controls={speaker.talk ? `speaker-talk-${speaker.talk.id}` : undefined}
             data-talk-cycle={speaker.talk ? "" : undefined}
+            data-speaker-extra={index >= 10 ? "" : undefined}
           >
             <div class="flex items-center gap-4 md:gap-5">
               <div class="w-14 h-14 md:w-16 md:h-16 min-w-[3.5rem] md:min-w-[4rem] bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center text-purple-600 font-black text-xl shadow-inner overflow-hidden border border-white/80 group-hover:scale-110 transition-transform duration-300">
@@ -588,18 +664,35 @@ const sessionClassMap = {
                   <span class="block text-xs font-bold tracking-wide text-purple-600 mb-1">{speaker.talk.detailTitle}</span>
                   <span class="block text-xs font-semibold text-slate-500 mb-2">{speaker.talk.day} · {speaker.talk.time}</span>
                   <span class="talk-title block text-slate-800 font-semibold cursor-pointer" data-talk-cycle-trigger>{speaker.talk.title}</span>
-                  <div class="detail-toggle-label mt-3 inline-flex max-w-full items-center rounded-full border border-purple-200 bg-white px-3 py-1.5 text-xs font-bold text-purple-700 shadow-sm shadow-purple-100/70 transition-colors group-hover:border-purple-300" data-label-hidden="Talk details" data-label-title="Show abstract" data-label-abstract="Hide details">Show abstract</div>
+                  {speaker.talk.abstract.length > 0 && (
+                    <div class="detail-toggle-label mt-3 inline-flex max-w-full items-center rounded-full border border-purple-200 bg-white px-3 py-1.5 text-xs font-bold text-purple-700 shadow-sm shadow-purple-100/70 transition-colors group-hover:border-purple-300" data-label-hidden="Talk details" data-label-title="Show abstract" data-label-abstract="Hide details">Show abstract</div>
+                  )}
                 </div>
-                <div data-talk-abstract-content class="hidden mt-3 space-y-3 border-t border-purple-100 pt-3 text-slate-600">
-                  {speaker.talk.abstract.map((paragraph) => (
-                    <p>{paragraph}</p>
-                  ))}
-                </div>
+                {speaker.talk.abstract.length > 0 && (
+                  <div data-talk-abstract-content class="hidden mt-3 space-y-3 border-t border-purple-100 pt-3 text-slate-600">
+                    {speaker.talk.abstract.map((paragraph) => (
+                      <p>{paragraph}</p>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
           </div>
         ))}
       </div>
+      {speakers.length > 10 && (
+        <div class="flex justify-center mb-16" data-more-speakers-wrap>
+          <button
+            type="button"
+            class="inline-flex items-center justify-center rounded-full border border-purple-200 bg-white px-5 py-2.5 text-sm font-bold text-purple-700 shadow-sm shadow-purple-100/70 hover:border-purple-300 hover:bg-purple-50 focus:outline-none focus:ring-2 focus:ring-purple-300 transition"
+            aria-expanded="false"
+            aria-controls="speaker-grid"
+            data-more-speakers-button
+          >
+            More speakers
+          </button>
+        </div>
+      )}
 
       <h3 class="text-2xl font-bold text-blue-800 mb-6 border-t border-slate-200/50 pt-10">Organizers</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -711,12 +804,16 @@ const sessionClassMap = {
                       <div data-talk-title-content>
                         <span class="talk-title block text-slate-600 font-normal cursor-pointer" data-talk-cycle-trigger>{item.talk.title}</span>
                       </div>
-                      <div class="detail-toggle-label text-xs text-indigo-500/80 font-medium mt-2" data-label-hidden="Show abstract" data-label-title="Show abstract" data-label-abstract="Hide abstract">Show abstract</div>
-                      <div data-talk-abstract-content class="hidden mt-3 space-y-3 border-t border-indigo-100 pt-3 text-slate-600 font-normal">
-                        {item.talk.abstract.map((paragraph) => (
-                          <p>{paragraph}</p>
-                        ))}
-                      </div>
+                      {item.talk.abstract.length > 0 && (
+                        <div class="detail-toggle-label text-xs text-indigo-500/80 font-medium mt-2" data-label-hidden="Show abstract" data-label-title="Show abstract" data-label-abstract="Hide abstract">Show abstract</div>
+                      )}
+                      {item.talk.abstract.length > 0 && (
+                        <div data-talk-abstract-content class="hidden mt-3 space-y-3 border-t border-indigo-100 pt-3 text-slate-600 font-normal">
+                          {item.talk.abstract.map((paragraph) => (
+                            <p>{paragraph}</p>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -796,6 +893,22 @@ const sessionClassMap = {
       mobileMenuToggle.addEventListener('click', toggleMenu);
       mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
 
+      const moreSpeakersButton = document.querySelector('[data-more-speakers-button]');
+      if (moreSpeakersButton) {
+        const extraSpeakerCards = document.querySelectorAll('[data-speaker-extra]');
+
+        moreSpeakersButton.addEventListener('click', () => {
+          const isExpanded = moreSpeakersButton.getAttribute('aria-expanded') === 'true';
+
+          extraSpeakerCards.forEach(card => {
+            card.classList.toggle('hidden', isExpanded);
+            if (!isExpanded) card.classList.add('active');
+          });
+          moreSpeakersButton.setAttribute('aria-expanded', (!isExpanded).toString());
+          moreSpeakersButton.textContent = isExpanded ? 'More speakers' : 'Hide speakers';
+        });
+      }
+
       document.querySelectorAll('[data-talk-cycle]').forEach(element => {
         const panelId = element.getAttribute('aria-controls');
         const panel = panelId ? document.getElementById(panelId) : element.querySelector('.talk-panel');
@@ -804,6 +917,7 @@ const sessionClassMap = {
         const label = element.querySelector('.detail-toggle-label');
         const collapsedLabel = element.querySelector('[data-talk-collapsed-label]');
         const titleVisible = element.hasAttribute('data-talk-title-visible');
+        const hasAbstract = Boolean(abstractContent);
         let state = titleVisible ? 1 : 0;
 
         function setTalkState(nextState) {
@@ -820,11 +934,17 @@ const sessionClassMap = {
           }
         }
 
+        function getNextTalkState() {
+          if (titleVisible) return hasAbstract && state !== 2 ? 2 : 1;
+          if (!hasAbstract) return state === 0 ? 1 : 0;
+          return state === 2 ? 0 : state + 1;
+        }
+
         function advanceTalkState(event) {
           const target = event.target instanceof Element ? event.target : null;
           const interactiveTarget = target ? target.closest('a, button') : null;
           if (interactiveTarget && !interactiveTarget.hasAttribute('data-talk-cycle-trigger')) return;
-          setTalkState(titleVisible ? (state === 2 ? 1 : 2) : (state === 2 ? 0 : state + 1));
+          setTalkState(getNextTalkState());
         }
 
         setTalkState(state);
@@ -833,7 +953,7 @@ const sessionClassMap = {
         element.addEventListener('keydown', event => {
           if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();
-            setTalkState(titleVisible ? (state === 2 ? 1 : 2) : (state === 2 ? 0 : state + 1));
+            setTalkState(getNextTalkState());
           }
         });
       });

@@ -17,13 +17,16 @@ From Stress Responses to Translation Regulation: Notes from the Outskirts
 11:00 - 11:30
 Martina Yordanova
 An evolutionary conserved translon mediates start site selection in BAG1 mRNA.
-11:30 - 12:30
-Short talks TBA	
+11:30 - 12:00
+Thomas Birkballe Hansen
+Virtual talk TBA
+12:00 - 12:25
 Wiktoria Orzeł
 Uncovering a cellular mechanism that enhances mRNA vaccines
-11:50-12:10
-
-12:30 - 14:30
+12:25-12:45
+Maria Bożko
+Novel +1 frameshift signals and context-dependent enhancers in yeast
+12:45 - 14:30
 🍽️ Lunch break 
 
 14:30-17:30
@@ -34,12 +37,16 @@ Co-translational protein folding in the light of ribosome evolution
 15:00-15:20
 Non-canonical translation events in the yeast Saccharomyces cerevisiae.
 Joanna Kufel
-15:20-16:00
-Short talks TBA
+15:20-15:40
+Isoforms of mitochondrially-localized Lsm proteins affect the respiratory capacity of
+Saccharomyces cerevisiae cells
+Michał Marcinkowski
+15:40-16:00
+Talk TBA
 16:00 - 16:30
 ☕ Coffee break
 16:30-17:30
-Short talks TBA
+Talks TBA
 
 Tuesday, 30 June
 10:00- 10:15
@@ -49,19 +56,20 @@ Session 3: Annotation & Resources
 10:15 - 11:00
 Keynote Lecture:
 Jon Mudge
-Peptideins and the hidden coding landscape of the 5′ UTR
+Peptideins: a new annotation category for the dark proteome
 11:00 - 11:30
-Short talks TBA
+Talks TBA
 11:30 - 12:00
 ☕ Coffee break
 12:00 - 12:30
 Jack Tierney
 Representing Translation Within Genome Annotation
 12:30 - 12:45
+Recovering Hidden Translation Signals from Noisy Ribosome Profiling Data
+Harsh Chhajer
+12:45 - 13:00
 Practical tools for genome engineering with CRISPR
 Kornel Labun
-12:45 - 13:00
-Short talk TBA
 13:00 - 13:30
 Roundtable discussion and closing remarks
 
