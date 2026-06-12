@@ -101,10 +101,21 @@ const talks = {
     speakerName: "Kornel Labun",
     detailTitle: "Talk",
     day: "Tuesday, 30 June 2026",
-    time: "12:45 - 13:00",
+    time: "13:00 - 13:15",
     title: "Practical tools for genome engineering with CRISPR",
     abstract: [
       `Moving CRISPR from basic discovery to research in the RNA space, requires tools that prioritize precision, safety, and lab-ready outputs. This talk provides a rapid overview of the crisprtools.org suite, a free, interconnected ecosystem designed to solve daily genome engineering bottlenecks. We will briefly highlight how to move from rapid guide design (CHOPCHOP) to rigorous, bulge-aware safety screening (CHOPOFF), and demonstrate automated, nuclease-resistant HDR template generation for precision edits (SNIPSNP). Highlighting utility for RNA translational research, we will also showcase Dual Cas13a, a specialized tool for building highly mismatch-sensitive RNA detection and diagnostic assays. Finally, we will introduce OVERHANG, a dedicated platform for community troubleshooting. Attendees will discover how to quickly integrate these tools to save time and improve experimental outcomes at the bench.`
+    ]
+  },
+  kyle: {
+    id: "kyle-meiklejohn",
+    speakerName: "Kyle Meiklejohn",
+    detailTitle: "Talk",
+    day: "Tuesday, 30 June 2026",
+    time: "12:45 - 13:00",
+    title: "Representing the Dynamics of Translation with Dynamic RDGs",
+    abstract: [
+      `The information in an mRNA transcript is decoded by the ribosome in order to create proteins. The advent of ribosome profiling has shown that a single transcript may have multiple alternative start sites which lead to transcripts with complex translon architectures. Each translon can serve to produce a functional peptide, regulate the translation of other translons or may even perform both functions. Ribosome Decision Graphs (RDGs) (Tierney et al., 2024) allow the representation of the choices of a ribosome as it reads a transcript, by presenting translon architecture as a single graph object. Here we present Dynamic RDGs as an update to this concept. These extend the usefulness of the original RDGs by providing information about the proportion of ribosomes that choose a particular path. They differ also by considering the particular state and nucleotide position of the ribosome as a unique position in a theoretical ribosomal phase space. Paths of ribosomes are mapped onto this space, which can be infinitely extended to include all possible states of the ribosome. We show how this framework can be used to model the progression of ribosomes through different states as they move along the transcript. We also present a package that enables the easy generation, manipulation and visualisation of these graph structures.`
     ]
   },
   martina: {
@@ -265,7 +276,8 @@ const speakers = [
     aff: "University College Cork",
     city: "Cork, Ireland",
     photo: "/photos/Kyle_Meiklejohn.jpeg",
-    photoPosition: "50% 42%"
+    photoPosition: "50% 42%",
+    talk: talks.kyle
   }
 ];
 
@@ -304,8 +316,9 @@ const scheduleDays = [
       { type: "coffee", time: "11:30 - 12:00", label: "Coffee break" },
       { type: "talk", talk: talks.jack },
       { type: "talk", talk: talks.harsh },
+      { type: "talk", talk: talks.kyle },
       { type: "talk", talk: talks.kornel },
-      { type: "plain", time: "13:00 - 13:30", label: "Roundtable discussion and closing remarks" }
+      { type: "plain", time: "13:30 - 14:00", label: "Roundtable discussion and closing remarks" }
     ]
   }
 ];
