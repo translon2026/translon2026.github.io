@@ -42,37 +42,39 @@ Isoforms of mitochondrially-localized Lsm proteins affect the respiratory capaci
 Saccharomyces cerevisiae cells
 Michał Marcinkowski
 15:40-16:00
-Talk TBA
+Cellular energy levels tune nucleolar phase separation to regulate ribosome biogenesis
+Evdokiia Potolitsyna
 16:00 - 16:30
 ☕ Coffee break
 16:30-17:30
 Talks TBA
 
 Tuesday, 30 June
-10:00- 10:15
+9:00 - 9:15
 Welcome and opening remarks
-10:15 - 13:30
+9:15 - 12:30
 Session 3: Annotation & Resources
-10:15 - 11:00
+9:15 - 10:00
 Keynote Lecture:
 Jon Mudge
 Peptideins: a new annotation category for the dark proteome
-11:00 - 11:30
+10:00 - 10:30
 Talks TBA
-11:30 - 12:00
+10:30 - 11:00
 ☕ Coffee break
-12:00 - 12:30
+11:00 - 11:30
 Jack Tierney
 Representing Translation Within Genome Annotation
-12:30 - 12:45
+11:30 - 11:45
 Recovering Hidden Translation Signals from Noisy Ribosome Profiling Data
 Harsh Chhajer
-12:45 - 13:00
+11:45 - 12:00
 Representing the Dynamics of Translation with Dynamic RDGs
 Kyle Meiklejohn
-13:00 - 13:15
+12:00 - 12:15
 Practical tools for genome engineering with CRISPR
 Kornel Labun
-13:30 - 14:00
+12:15 - 12:45
 Roundtable discussion and closing remarks
-
+12:45 - 13:30
+🍽️ Lunch break 

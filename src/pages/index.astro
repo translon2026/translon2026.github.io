@@ -69,12 +69,23 @@ const talks = {
       `To assess the biological relevance of these observations, we generated a set of constructs expressing different LSM1 variants carrying specific changes in the 5’UTR, start codons and NTE-MTS. We checked mitochondrial localization of the resulting proteins and their impact on respiratory capacity and thermosensitivity. These tests confirmed that the Lsm1 NTE is responsible for its mitochondrial targeting, and showed that elements within the LSM1 5’UTR contribute to the LSM1-dependent thermotolerance. This demonstrates that translatome analyses enable systematic exploration of an alternative cellular proteome that shapes adaptation to changing environmental conditions.`
     ]
   },
+  evdokiia: {
+    id: "evdokiia-potolitsyna",
+    speakerName: "Evdokiia Potolitsyna",
+    detailTitle: "Talk",
+    day: "Monday, 29 June 2026",
+    time: "15:40 - 16:00",
+    title: "Cellular energy levels tune nucleolar phase separation to regulate ribosome biogenesis",
+    abstract: [
+      `Eukaryotic cells adjust biochemical pathways in response to environmental stress, stalling energetically costly processes such as protein synthesis and ribosome biogenesis. Ribosome biogenesis occurs within the multiphase nucleolus, which contains distinct layers corresponding to rRNA transcription, processing, and assembly. While nucleolar perturbations induced by drugs and optogenetic gelation impair ribosome biogenesis, it remains unclear whether nucleolar properties are actively tuned in response to metabolic cues. Here, we show that cells adjust ribosome biogenesis to physiological needs by remodeling nucleolar material properties. Live-cell imaging reveals a tight relationship between the dynamics of the major nucleolar scaffolding protein NPM1 and nutrient availability. Under nutrient deprivation, NPM1 becomes enriched within the nucleolus, indicating enhanced phase separation and a more gel-like state. This change is accompanied by retention of ribosomal intermediates, reduced rRNA diffusivity, and contraction of nucleolar meshwork. Mechanistically, these changes are linked to cellular ATP levels, which broadly affect the energetically demanding process of ribosome biogenesis. Upon nutrient reintroduction, nucleolar composition recovers within minutes, indicating active regulation. Together, our findings reveal that nucleolar material properties are dynamically remodeled by cellular energy levels, linking phase separation to metabolic control of ribosome biogenesis.`
+    ]
+  },
   jon: {
     id: "jon-mudge",
     speakerName: "Jon Mudge",
     detailTitle: "Keynote lecture",
     day: "Tuesday, 30 June 2026",
-    time: "10:15 - 11:00",
+    time: "9:15 - 10:00",
     title: "Peptideins and the hidden coding landscape of the 5′ UTR",
     abstract: [
       `Advances in ribosome profiling, proteogenomics and immunopeptidomics have revealed a vast population of translated molecules that remain largely invisible to gene annotation. Although experimentally detected, they lack sufficient evidence to be classified as proteins under current frameworks. To address this component of the ‘dark proteome’, we recently proposed the term peptidein: an experimentally detected translation product for which biological function cannot yet be confidently inferred.`,
@@ -88,7 +99,7 @@ const talks = {
     speakerName: "Jack Tierney",
     detailTitle: "Talk",
     day: "Tuesday, 30 June 2026",
-    time: "12:00 - 12:30",
+    time: "11:00 - 11:30",
     title: "Representing Translation Within Genome Annotation",
     abstract: [
       `Large-scale translatomics initiatives, including TransCODE, are rapidly expanding our view of translation across genomes and transcriptomes. At the same time, reference annotation projects such as Ensembl/GENCODE face growing challenges in how these signals can be consistently represented within existing genome annotation frameworks. While current annotation models were largely developed around relatively stable CDS structures, translatomics data increasingly reveal complex and overlapping translational landscapes that are difficult to capture using CDS-centric models.`,
@@ -101,7 +112,7 @@ const talks = {
     speakerName: "Kornel Labun",
     detailTitle: "Talk",
     day: "Tuesday, 30 June 2026",
-    time: "13:00 - 13:15",
+    time: "12:00 - 12:15",
     title: "Practical tools for genome engineering with CRISPR",
     abstract: [
       `Moving CRISPR from basic discovery to research in the RNA space, requires tools that prioritize precision, safety, and lab-ready outputs. This talk provides a rapid overview of the crisprtools.org suite, a free, interconnected ecosystem designed to solve daily genome engineering bottlenecks. We will briefly highlight how to move from rapid guide design (CHOPCHOP) to rigorous, bulge-aware safety screening (CHOPOFF), and demonstrate automated, nuclease-resistant HDR template generation for precision edits (SNIPSNP). Highlighting utility for RNA translational research, we will also showcase Dual Cas13a, a specialized tool for building highly mismatch-sensitive RNA detection and diagnostic assays. Finally, we will introduce OVERHANG, a dedicated platform for community troubleshooting. Attendees will discover how to quickly integrate these tools to save time and improve experimental outcomes at the bench.`
@@ -112,7 +123,7 @@ const talks = {
     speakerName: "Kyle Meiklejohn",
     detailTitle: "Talk",
     day: "Tuesday, 30 June 2026",
-    time: "12:45 - 13:00",
+    time: "11:45 - 12:00",
     title: "Representing the Dynamics of Translation with Dynamic RDGs",
     abstract: [
       `The information in an mRNA transcript is decoded by the ribosome in order to create proteins. The advent of ribosome profiling has shown that a single transcript may have multiple alternative start sites which lead to transcripts with complex translon architectures. Each translon can serve to produce a functional peptide, regulate the translation of other translons or may even perform both functions. Ribosome Decision Graphs (RDGs) (Tierney et al., 2024) allow the representation of the choices of a ribosome as it reads a transcript, by presenting translon architecture as a single graph object. Here we present Dynamic RDGs as an update to this concept. These extend the usefulness of the original RDGs by providing information about the proportion of ribosomes that choose a particular path. They differ also by considering the particular state and nucleotide position of the ribosome as a unique position in a theoretical ribosomal phase space. Paths of ribosomes are mapped onto this space, which can be infinitely extended to include all possible states of the ribosome. We show how this framework can be used to model the progression of ribosomes through different states as they move along the transcript. We also present a package that enables the easy generation, manipulation and visualisation of these graph structures.`
@@ -159,7 +170,7 @@ const talks = {
     speakerName: "Harsh Chhajer",
     detailTitle: "Talk",
     day: "Tuesday, 30 June 2026",
-    time: "12:30 - 12:45",
+    time: "11:30 - 11:45",
     title: "Recovering Hidden Translation Signals from Noisy Ribosome Profiling Data",
     abstract: [
       `Ribosome profiling (RiboSeq) provides a nucleotide-resolution snapshot of ribosome movement along transcripts. Because ribosomes decode mRNA in three-nucleotide increments, translation is expected to exhibit a characteristic three-nucleotide periodicity corresponding to the translated reading frame. In practice, however, this periodicity is often weak or obscured due to experimental biases introduced during library preparation, sequencing, and downstream processing steps such as A-site assignment. Furthermore, simultaneous translation of overlapping reading frames can produce composite signals that complicate the identification of bone-fide translated regions, many of which play important regulatory roles and contribute to cellular stress responses.`,
@@ -272,6 +283,14 @@ const speakers = [
     talk: talks.michalMarcinkowski
   },
   {
+    name: "Evdokiia Potolitsyna",
+    aff: "University of Oslo",
+    city: "Oslo, Norway",
+    photo: "/photos/Evdokiia_Potolitsyna.jpg",
+    photoPosition: "50% 33%",
+    talk: talks.evdokiia
+  },
+  {
     name: "Kyle Meiklejohn",
     aff: "University College Cork",
     city: "Cork, Ireland",
@@ -301,7 +320,7 @@ const scheduleDays = [
       { type: "talk", talk: talks.tomasz },
       { type: "talk", talk: talks.joanna },
       { type: "talk", talk: talks.michalMarcinkowski },
-      { type: "plainIndented", time: "15:40 - 16:00", label: "Talk TBA" },
+      { type: "talk", talk: talks.evdokiia },
       { type: "coffee", time: "16:00 - 16:30", label: "Coffee break" },
       { type: "plainIndented", time: "16:30 - 17:30", label: "Talks TBA" }
     ]
@@ -309,16 +328,17 @@ const scheduleDays = [
   {
     heading: "Tuesday, 30 June 2026",
     items: [
-      { type: "plain", time: "10:00 - 10:15", label: "Welcome and opening remarks" },
-      { type: "session", time: "10:15 - 13:30", label: "Session 3: Annotation & Resources", color: "indigo" },
+      { type: "plain", time: "9:00 - 9:15", label: "Welcome and opening remarks" },
+      { type: "session", time: "9:15 - 12:30", label: "Session 3: Annotation & Resources", color: "indigo" },
       { type: "talk", talk: talks.jon },
-      { type: "plainIndented", time: "11:00 - 11:30", label: "Talks TBA" },
-      { type: "coffee", time: "11:30 - 12:00", label: "Coffee break" },
+      { type: "plainIndented", time: "10:00 - 10:30", label: "Talks TBA" },
+      { type: "coffee", time: "10:30 - 11:00", label: "Coffee break" },
       { type: "talk", talk: talks.jack },
       { type: "talk", talk: talks.harsh },
       { type: "talk", talk: talks.kyle },
       { type: "talk", talk: talks.kornel },
-      { type: "plain", time: "13:30 - 14:00", label: "Roundtable discussion and closing remarks" }
+      { type: "plain", time: "12:15 - 12:45", label: "Roundtable discussion and closing remarks" },
+      { type: "lunch", time: "12:45 - 13:30", label: "Lunch break" }
     ]
   }
 ];
@@ -664,7 +684,9 @@ const sessionClassMap = {
                 <div class="font-bold text-base md:text-lg text-slate-800 truncate">{speaker.name}</div>
                 <div class="text-xs md:text-sm text-slate-500 font-medium truncate">{speaker.aff}</div>
                 <div class="flex flex-wrap justify-between items-end mt-2 gap-2">
-                  <div class="text-xs text-slate-400 uppercase tracking-wide">{speaker.city}</div>
+                  {speaker.city && (
+                    <div class="text-xs text-slate-400 uppercase tracking-wide">{speaker.city}</div>
+                  )}
                   {speaker.talk ? (
                     <div class="text-xs text-purple-500/80 font-medium" data-talk-collapsed-label>Talk details</div>
                   ) : (
