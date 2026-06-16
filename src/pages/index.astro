@@ -37,7 +37,7 @@ const talks = {
   tomasz: {
     id: "tomasz-wlodarski",
     speakerName: "Tomasz Włodarski",
-    detailTitle: "Talk",
+    detailTitle: "Keynote lecture",
     day: "Monday, 29 June 2026",
     time: "14:30 - 15:00",
     title: "Co-translational protein folding in the light of ribosome evolution",
@@ -50,11 +50,22 @@ const talks = {
     speakerName: "Joanna Kufel",
     detailTitle: "Talk",
     day: "Monday, 29 June 2026",
-    time: "15:00 - 15:20",
+    time: "15:20 - 15:40",
     title: "Non-canonical translation events in the yeast Saccharomyces cerevisiae",
     abstract: [
       `In addition to standard mechanisms, translation regulation also involves non-canonical events, including non-AUG initiation, stop-codon readthrough or programmed ribosomal frameshifting. These events result in the the production of protein variants with different characteristics, such as subcellular localization or function, thus expanding the translatome and the proteome diversity and regulating protein synthesis in different cellular or environmental conditions. The identification of such rare non-canonical events, which are more common than previously predicted, has been enabled by the availability of a growing number of Ribo-seq datasets.`,
       `Analysis of large Ribo-seq dataset collections for yeast Saccharomyces cerevisiae using the RiboCrypt browser revealed several unexpected findings. Notably, we observed a characteristic signature of translation termination on standard stop codons within the ORFs. The presence of specific termination signature enabled the detection of potential translation termination events in many protein-coding genes. Using standard biochemical assays, we have observed premature ribosome dissociation occurring in some cases with an efficiency as high as 40% and most often at positions near-cognate to stop codons. Our preliminary results suggest that the mechanism responsible for this phenomenon does not depend on ribosome release factors but to some extent is linked to Ribosome-associated protein Quality Control (RQC) mechanism.`
+    ]
+  },
+  joannaKrupka: {
+    id: "joanna-krupka",
+    speakerName: "Joanna Krupka",
+    detailTitle: "Talk",
+    day: "Monday, 29 June 2026",
+    time: "12:25 - 12:45",
+    title: "Systematic base-editing screen of translon start codons in human tissues",
+    abstract: [
+      `The human transcriptome contains thousands of previously unannotated translons, yet functional validation lags behind the Ribo-Seq evidence for their translation. Standard CRISPR-Cas9 screens are poorly suited to these compact ORFs, where few targetable sites exist and frameshifting indels disrupt them stochastically and unpredictably. Base editing overcomes this by introducing precise point mutations - disrupting start codons or creating premature stop codons - without double-stranded DNA breaks. We first leveraged almost 4,000 Ribo-Seq libraries (Ribocrypt, protected repositories, and in-house data) to map human translation with tissue specificity and isoform resolution. Translons were called robustly using three independent callers with quality-feature-aware filtering and independent scoring, enabling an in-depth survey of contextual expression, evolutionary conservation, and co-expression via network analysis. We designed and optimised a versatile base-editing library targeting non-canonical start codons, benchmarking base editors and sgRNA design strategies for editing efficiency in a pilot screen, and scaled this to a targeted survey of all start codons across human tissues. Together, this pairs a transcriptome-wide translation map with a scalable platform for systematic functional dissection of translons.`
     ]
   },
   michalMarcinkowski: {
@@ -62,7 +73,7 @@ const talks = {
     speakerName: "Michał Marcinkowski",
     detailTitle: "Talk",
     day: "Monday, 29 June 2026",
-    time: "15:20 - 15:40",
+    time: "15:40 - 16:00",
     title: "Isoforms of mitochondrially-localized Lsm proteins affect the respiratory capacity of Saccharomyces cerevisiae cells",
     abstract: [
       `Cellular translation undergoes dynamic changes in response to environmental conditions, leading to the production of diverse proteoforms, often synthesized by non-canonical translation. Identification of such rare translation events has recently become possible thanks to the availability of a growing number of ribosome profiling datasets. Using Ribocrypt.org we identified genes that, through translation initiation at non-AUG codons, generate N-terminally extended (NTE) protein variants containing mitochondrial targeting signal (MTS) in their NTE. This analysis identified components of the LSM complexes that normally localize to the nucleus (Lsm2-Lsm8) or cytoplasm (Lsm1-Lsm7). We confirmed that all Lsm proteins, except Lsm6, are indeed targeted to mitochondria. We focused on Lsm1 because its alternative NTE isoform contains a strong MTS, and several uORFs in the LSM1 5’UTR are translated, suggesting uORF-mediated translation regulation. In addition, deletion of LSM1 impairs yeast respiratory growth.`,
@@ -74,7 +85,7 @@ const talks = {
     speakerName: "Evdokiia Potolitsyna",
     detailTitle: "Talk",
     day: "Monday, 29 June 2026",
-    time: "15:40 - 16:00",
+    time: "16:30 - 16:50",
     title: "Cellular energy levels tune nucleolar phase separation to regulate ribosome biogenesis",
     abstract: [
       `Eukaryotic cells adjust biochemical pathways in response to environmental stress, stalling energetically costly processes such as protein synthesis and ribosome biogenesis. Ribosome biogenesis occurs within the multiphase nucleolus, which contains distinct layers corresponding to rRNA transcription, processing, and assembly. While nucleolar perturbations induced by drugs and optogenetic gelation impair ribosome biogenesis, it remains unclear whether nucleolar properties are actively tuned in response to metabolic cues. Here, we show that cells adjust ribosome biogenesis to physiological needs by remodeling nucleolar material properties. Live-cell imaging reveals a tight relationship between the dynamics of the major nucleolar scaffolding protein NPM1 and nutrient availability. Under nutrient deprivation, NPM1 becomes enriched within the nucleolus, indicating enhanced phase separation and a more gel-like state. This change is accompanied by retention of ribosomal intermediates, reduced rRNA diffusivity, and contraction of nucleolar meshwork. Mechanistically, these changes are linked to cellular ATP levels, which broadly affect the energetically demanding process of ribosome biogenesis. Upon nutrient reintroduction, nucleolar composition recovers within minutes, indicating active regulation. Together, our findings reveal that nucleolar material properties are dynamically remodeled by cellular energy levels, linking phase separation to metabolic control of ribosome biogenesis.`
@@ -159,7 +170,7 @@ const talks = {
     speakerName: "Maria Bożko",
     detailTitle: "Talk",
     day: "Monday, 29 June 2026",
-    time: "12:25 - 12:45",
+    time: "15:00 - 15:20",
     title: "Novel +1 frameshift signals and context-dependent enhancers in yeast",
     abstract: [
       `Programmed ribosomal frameshifting expands coding capacity by allowing ribosomes to switch reading frame during translation. However, the sequence features that determine whether a potential frameshift site is utilized remain poorly understood. Here, we characterize two novel +1 frameshift signals in yeasts. First, we investigate a frameshift site identified at the KLMX_30357 locus in Kluyveromyces marxianus, which promotes efficient +1 frameshifting when tested in Saccharomyces cerevisiae. Mutational analyses revealed that efficient frameshifting depends not only on the heptameric shift site but also on a downstream enhancer element comprising a conserved di-proline motif and a predicted RNA secondary structure. Second, we describe a hybrid frameshift heptamer, GCG_A.GGC, combining features of the canonical TY1 and TY3 frameshift signals. In addition, genome-wide analysis of known frameshift heptamers and ribosome profiling data revealed numerous instances in which predicted frameshift signals do not exhibit detectable frame switching. Together, these findings demonstrate that the presence of a frameshift heptamer alone is insufficient to drive efficient recoding and highlight the critical role of local sequence context in determining frameshift utilization.`
@@ -228,6 +239,14 @@ const speakers = [
     talk: talks.jack
   },
   {
+    name: "Joanna Krupka",
+    aff: "University of Cambridge",
+    city: "Cambridge, UK",
+    photo: "/photos/Joanna_Krupka.png",
+    photoPosition: "50% 42%",
+    talk: talks.joannaKrupka
+  },
+  {
     name: "Martina Yordanova",
     aff: "University College Cork",
     city: "Cork, Ireland",
@@ -272,6 +291,9 @@ const speakers = [
     name: "Harsh Chhajer",
     aff: "University of Oslo",
     city: "Oslo, Norway",
+    photo: "/photos/Harsh_Chhajer.png",
+    photoPosition: "50% 30%",
+    photoScale: "1.12",
     talk: talks.harsh
   },
   {
@@ -314,15 +336,16 @@ const scheduleDays = [
       { type: "talk", talk: talks.martina },
       { type: "talk", talk: talks.thomas },
       { type: "talk", talk: talks.wiktoria },
-      { type: "talk", talk: talks.maria },
+      { type: "talk", talk: talks.joannaKrupka },
       { type: "lunch", time: "12:45 - 14:30", label: "Lunch break" },
       { type: "session", time: "14:30 - 17:30", label: "Session 2: Ribosome & Outputs", color: "purple" },
       { type: "talk", talk: talks.tomasz },
+      { type: "talk", talk: talks.maria },
       { type: "talk", talk: talks.joanna },
       { type: "talk", talk: talks.michalMarcinkowski },
-      { type: "talk", talk: talks.evdokiia },
       { type: "coffee", time: "16:00 - 16:30", label: "Coffee break" },
-      { type: "plainIndented", time: "16:30 - 17:30", label: "Talks TBA" }
+      { type: "talk", talk: talks.evdokiia },
+      { type: "plainIndented", time: "16:50 - 17:30", label: "Talks TBA" }
     ]
   },
   {

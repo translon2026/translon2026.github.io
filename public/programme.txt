@@ -24,29 +24,33 @@ Virtual talk TBA
 Wiktoria Orzeł
 Uncovering a cellular mechanism that enhances mRNA vaccines
 12:25-12:45
-Maria Bożko
-Novel +1 frameshift signals and context-dependent enhancers in yeast
+Joanna Krupka
+Systematic base-editing screen of translon start codons in human tissues
 12:45 - 14:30
 🍽️ Lunch break 
 
 14:30-17:30
 Session 2: Ribosome & Outputs
 14:30-15:00
+Keynote Lecture:
 Tomasz Włodarski
 Co-translational protein folding in the light of ribosome evolution
 15:00-15:20
+Maria Bożko
+Novel +1 frameshift signals and context-dependent enhancers in yeast
+15:20-15:40
 Non-canonical translation events in the yeast Saccharomyces cerevisiae.
 Joanna Kufel
-15:20-15:40
+15:40-16:00
 Isoforms of mitochondrially-localized Lsm proteins affect the respiratory capacity of
 Saccharomyces cerevisiae cells
 Michał Marcinkowski
-15:40-16:00
-Cellular energy levels tune nucleolar phase separation to regulate ribosome biogenesis
-Evdokiia Potolitsyna
 16:00 - 16:30
 ☕ Coffee break
-16:30-17:30
+16:30-16:50
+Cellular energy levels tune nucleolar phase separation to regulate ribosome biogenesis
+Evdokiia Potolitsyna
+16:50-17:30
 Talks TBA
 
 Tuesday, 30 June
