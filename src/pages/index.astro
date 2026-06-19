@@ -28,11 +28,17 @@ const talks = {
   thomas: {
     id: "thomas-birkballe-hansen",
     speakerName: "Thomas Birkballe Hansen",
-    detailTitle: "Talk",
+    detailTitle: "Virtual talk",
     day: "Monday, 29 June 2026",
-    time: "11:30 - 12:00",
-    title: "Virtual talk TBA",
-    abstract: []
+    time: "15:00 - 15:30",
+    title: "AAV-based gene therapy using protein-coding circRNA",
+    abstract: [
+      `Circular RNAs (circRNAs) are endogenous RNA transcripts characterized by intrinsic resistance to exonucleolytic degradation, resulting in prolonged intracellular stability compared to linear mRNA. Although endogenously expressed circRNAs are typically non-coding, flaws in statistical analyses may have in some cases falsely classified a subset of circRNAs as protein-coding, underscoring the importance of rigorous evaluation of the coding potential of non-canonical RNA species.`,
+      `However, recent advances in circRNA engineering have enabled effective cap-independent translation of circRNAs and positioned the circRNA technology as a promising next-generation therapeutic modality capable of durable protein expression at low doses.`,
+      `At Circio, we are developing circVec, a modular gene expression platform engineered to enhance payload expression through intracellular generation of protein-coding circRNA. circVec leverages spliceosome-mediated circRNA biogenesis from viral and non-viral DNA vectors, enabling sustained gene expression through the intrinsic stability and exonuclease resistance of circRNA transcripts. Systematic optimization of circVec architecture identified key regulatory elements that markedly improve expression efficiency. The latest-generation construct, circVec4.0, achieves up to 37x higher protein expression compared with early constructs and outperforms conventional linear mRNA expression vectors (mVec) in both expression magnitude and durability.`,
+      `In vivo, circVec enables robust, dose-dependent enhancement of AAV transgene expression across tissues, serotypes, and promoters. In both heart and eye, circVec-AAV vectors yield markedly higher luciferase expression than mVec-AAV across all dose levels with a significant increase of RNA steady state levels. These findings indicate that the enhanced expression is driven primarily by increased RNA stability and transcript accumulation rather than improved transduction efficiency. Moreover, circVec shows higher on-tissue expression, likely due to reduced circRNA stability in the liver, and despite the enhanced expression profile, cellular stress pathways, such as the unfolded protein response (UPR), are unaffected or less activated compared to the benchmark mVec-AAV.`,
+      `The therapeutic efficacy of adeno-associated virus (AAV) gene therapy is often constrained by inefficient and variable transgene expression, necessitating high clinical doses which can cause severe toxicities and narrow the therapeutic window. However, by using circVec-based AAV gene expression as a next-generation gene therapy platform, may enable substantial transgene expression enhancements with reduced cellular stress and dose reduction potential, supporting the development of safer and more effective therapies for rare and chronic diseases, particularly within the heart and eye.`
+    ]
   },
   tomasz: {
     id: "tomasz-wlodarski",
@@ -50,7 +56,7 @@ const talks = {
     speakerName: "Joanna Kufel",
     detailTitle: "Talk",
     day: "Monday, 29 June 2026",
-    time: "15:20 - 15:40",
+    time: "11:45 - 12:05",
     title: "Non-canonical translation events in the yeast Saccharomyces cerevisiae",
     abstract: [
       `In addition to standard mechanisms, translation regulation also involves non-canonical events, including non-AUG initiation, stop-codon readthrough or programmed ribosomal frameshifting. These events result in the the production of protein variants with different characteristics, such as subcellular localization or function, thus expanding the translatome and the proteome diversity and regulating protein synthesis in different cellular or environmental conditions. The identification of such rare non-canonical events, which are more common than previously predicted, has been enabled by the availability of a growing number of Ribo-seq datasets.`,
@@ -62,7 +68,7 @@ const talks = {
     speakerName: "Joanna Krupka",
     detailTitle: "Talk",
     day: "Monday, 29 June 2026",
-    time: "12:25 - 12:45",
+    time: "12:05 - 12:25",
     title: "Systematic base-editing screen of translon start codons in human tissues",
     abstract: [
       `The human transcriptome contains thousands of previously unannotated translons, yet functional validation lags behind the Ribo-Seq evidence for their translation. Standard CRISPR-Cas9 screens are poorly suited to these compact ORFs, where few targetable sites exist and frameshifting indels disrupt them stochastically and unpredictably. Base editing overcomes this by introducing precise point mutations - disrupting start codons or creating premature stop codons - without double-stranded DNA breaks. We first leveraged almost 4,000 Ribo-Seq libraries (Ribocrypt, protected repositories, and in-house data) to map human translation with tissue specificity and isoform resolution. Translons were called robustly using three independent callers with quality-feature-aware filtering and independent scoring, enabling an in-depth survey of contextual expression, evolutionary conservation, and co-expression via network analysis. We designed and optimised a versatile base-editing library targeting non-canonical start codons, benchmarking base editors and sgRNA design strategies for editing efficiency in a pilot screen, and scaled this to a targeted survey of all start codons across human tissues. Together, this pairs a transcriptome-wide translation map with a scalable platform for systematic functional dissection of translons.`
@@ -73,7 +79,7 @@ const talks = {
     speakerName: "Michał Marcinkowski",
     detailTitle: "Talk",
     day: "Monday, 29 June 2026",
-    time: "15:40 - 16:00",
+    time: "16:50 - 17:10",
     title: "Isoforms of mitochondrially-localized Lsm proteins affect the respiratory capacity of Saccharomyces cerevisiae cells",
     abstract: [
       `Cellular translation undergoes dynamic changes in response to environmental conditions, leading to the production of diverse proteoforms, often synthesized by non-canonical translation. Identification of such rare translation events has recently become possible thanks to the availability of a growing number of ribosome profiling datasets. Using Ribocrypt.org we identified genes that, through translation initiation at non-AUG codons, generate N-terminally extended (NTE) protein variants containing mitochondrial targeting signal (MTS) in their NTE. This analysis identified components of the LSM complexes that normally localize to the nucleus (Lsm2-Lsm8) or cytoplasm (Lsm1-Lsm7). We confirmed that all Lsm proteins, except Lsm6, are indeed targeted to mitochondria. We focused on Lsm1 because its alternative NTE isoform contains a strong MTS, and several uORFs in the LSM1 5’UTR are translated, suggesting uORF-mediated translation regulation. In addition, deletion of LSM1 impairs yeast respiratory growth.`,
@@ -110,7 +116,7 @@ const talks = {
     speakerName: "Jack Tierney",
     detailTitle: "Talk",
     day: "Tuesday, 30 June 2026",
-    time: "11:00 - 11:30",
+    time: "10:00 - 10:30",
     title: "Representing Translation Within Genome Annotation",
     abstract: [
       `Large-scale translatomics initiatives, including TransCODE, are rapidly expanding our view of translation across genomes and transcriptomes. At the same time, reference annotation projects such as Ensembl/GENCODE face growing challenges in how these signals can be consistently represented within existing genome annotation frameworks. While current annotation models were largely developed around relatively stable CDS structures, translatomics data increasingly reveal complex and overlapping translational landscapes that are difficult to capture using CDS-centric models.`,
@@ -134,7 +140,7 @@ const talks = {
     speakerName: "Kyle Meiklejohn",
     detailTitle: "Talk",
     day: "Tuesday, 30 June 2026",
-    time: "11:45 - 12:00",
+    time: "11:00 - 11:15",
     title: "Representing the Dynamics of Translation with Dynamic RDGs",
     abstract: [
       `The information in an mRNA transcript is decoded by the ribosome in order to create proteins. The advent of ribosome profiling has shown that a single transcript may have multiple alternative start sites which lead to transcripts with complex translon architectures. Each translon can serve to produce a functional peptide, regulate the translation of other translons or may even perform both functions. Ribosome Decision Graphs (RDGs) (Tierney et al., 2024) allow the representation of the choices of a ribosome as it reads a transcript, by presenting translon architecture as a single graph object. Here we present Dynamic RDGs as an update to this concept. These extend the usefulness of the original RDGs by providing information about the proportion of ribosomes that choose a particular path. They differ also by considering the particular state and nucleotide position of the ribosome as a unique position in a theoretical ribosomal phase space. Paths of ribosomes are mapped onto this space, which can be infinitely extended to include all possible states of the ribosome. We show how this framework can be used to model the progression of ribosomes through different states as they move along the transcript. We also present a package that enables the easy generation, manipulation and visualisation of these graph structures.`
@@ -159,7 +165,7 @@ const talks = {
     speakerName: "Wiktoria Orzeł",
     detailTitle: "Talk",
     day: "Monday, 29 June 2026",
-    time: "12:00 - 12:25",
+    time: "15:30 - 16:00",
     title: "Uncovering a cellular mechanism that enhances mRNA vaccines",
     abstract: [
       `TENT5 proteins function as non-canonical poly(A) polymerases that selectively re-adenylate mRNAs encoding secreted proteins, enhancing their stability and translation. Following our previous work on TENT5 function in immunity, we investigated how TENT5A influences the efficacy of mRNA therapeutics. Using primary macrophages and vaccines encoding viral and parasitic antigens, we assessed mRNA poly(A) tail dynamics, antigen output, and immune response. We also evaluated the spatial dependency of re-adenylation in the endoplasmic reticulum (ER) by disrupting the interaction with FNDC3, a docking protein critical for TENT5A localisation. Upon delivery, TENT5A-dependent re-adenylation enhanced mRNA stability, resulting in increased antigen production and elevated IgG levels. The ER localisation of TENT5A via FNDC3 proved essential for this process, highlighting a previously unrecognised spatial dimension of post-transcriptional regulation. To further explore translational outcomes, we applied the ribosome profiling (Ribo-seq) method to quantify ribosome occupancy and distribution across different mRNA constructs. Interestingly, our Ribo-seq data revealed distinct translational dynamics between two clinically approved SARS-CoV-2 vaccines, suggesting that subtle differences in mRNA design affect translational efficiency in vivo.`
@@ -170,7 +176,7 @@ const talks = {
     speakerName: "Maria Bożko",
     detailTitle: "Talk",
     day: "Monday, 29 June 2026",
-    time: "15:00 - 15:20",
+    time: "11:30 - 11:45",
     title: "Novel +1 frameshift signals and context-dependent enhancers in yeast",
     abstract: [
       `Programmed ribosomal frameshifting expands coding capacity by allowing ribosomes to switch reading frame during translation. However, the sequence features that determine whether a potential frameshift site is utilized remain poorly understood. Here, we characterize two novel +1 frameshift signals in yeasts. First, we investigate a frameshift site identified at the KLMX_30357 locus in Kluyveromyces marxianus, which promotes efficient +1 frameshifting when tested in Saccharomyces cerevisiae. Mutational analyses revealed that efficient frameshifting depends not only on the heptameric shift site but also on a downstream enhancer element comprising a conserved di-proline motif and a predicted RNA secondary structure. Second, we describe a hybrid frameshift heptamer, GCG_A.GGC, combining features of the canonical TY1 and TY3 frameshift signals. In addition, genome-wide analysis of known frameshift heptamers and ribosome profiling data revealed numerous instances in which predicted frameshift signals do not exhibit detectable frame switching. Together, these findings demonstrate that the presence of a frameshift heptamer alone is insufficient to drive efficient recoding and highlight the critical role of local sequence context in determining frameshift utilization.`
@@ -181,12 +187,24 @@ const talks = {
     speakerName: "Harsh Chhajer",
     detailTitle: "Talk",
     day: "Tuesday, 30 June 2026",
-    time: "11:30 - 11:45",
+    time: "11:15 - 11:30",
     title: "Recovering Hidden Translation Signals from Noisy Ribosome Profiling Data",
     abstract: [
       `Ribosome profiling (RiboSeq) provides a nucleotide-resolution snapshot of ribosome movement along transcripts. Because ribosomes decode mRNA in three-nucleotide increments, translation is expected to exhibit a characteristic three-nucleotide periodicity corresponding to the translated reading frame. In practice, however, this periodicity is often weak or obscured due to experimental biases introduced during library preparation, sequencing, and downstream processing steps such as A-site assignment. Furthermore, simultaneous translation of overlapping reading frames can produce composite signals that complicate the identification of bone-fide translated regions, many of which play important regulatory roles and contribute to cellular stress responses.`,
       `To address these challenges, we developed two complementary algorithms, RiboScout and RiboRefine, that exploit translation signatures learned from predominantly non-overlapping translated regions. RiboFrame uses these signatures together with local RiboSeq profiles as input features to a random forest classifier for identifying translated reading frames. RiboRefine uses the same learned signatures to optimize a linear transformation that suppresses systematic noise while preserving biologically meaningful translational patterns.`,
       `Using synthetic datasets that emulate RiboSeq signals, both methods demonstrate strong performance. RiboScout accurately identifies translated reading frames, while RiboRefine substantially enhances periodic translation signals without distorting underlying ribosome occupancy trends. Together, these approaches provide a framework for improving the interpretation of ribosome profiling data and facilitating the detection of internal and overlapping ORFs that may otherwise remain hidden within noisy translational landscapes.`
+    ]
+  },
+  ieva: {
+    id: "ieva-rauluseviciute",
+    speakerName: "Ieva Rauluseviciute",
+    detailTitle: "Talk",
+    day: "Tuesday, 30 June 2026",
+    time: "11:45 - 12:00",
+    title: "JASPAR and UniBind: open-access resources for transcription factor binding profiles and genome-wide TF-DNA interaction annotations",
+    abstract: [
+      `JASPAR and UniBind are open-access FAIR resources that support the investigation of transcriptional regulation and its downstream impact on gene expression. JASPAR provides a curated, non-redundant collection of transcription factor (TF) binding profiles, represented as position frequency matrices (PFMs) and deep learning models derived from experimental data across species. UniBind builds on JASPAR and provides genome-wide maps of TF-DNA interactions, generated by uniformly processing large-scale ChIP-seq datasets to produce high-confidence TF binding site annotations across diverse cell types.`,
+      `Together, these resources bridge sequence-level binding preferences with in vivo TF binding, facilitating the study of transcriptional regulation in different cellular contexts. By enabling precise mapping of TF-bound regulatory elements, JASPAR and UniBind support analyses of how transcriptional programs are established and modulated, ultimately shaping mRNA abundance and influencing translational output. Their accessibility, interoperability, and regular updates make them valuable tools for dissecting gene regulatory mechanisms`
     ]
   }
 };
@@ -297,6 +315,14 @@ const speakers = [
     talk: talks.harsh
   },
   {
+    name: "Ieva Rauluseviciute",
+    aff: "University of Oslo",
+    city: "Oslo, Norway",
+    photo: "/photos/ieva-rauluseviciute.jpeg",
+    photoPosition: "50% 50%",
+    talk: talks.ieva
+  },
+  {
     name: "Michał Marcinkowski",
     aff: "University of Warsaw",
     city: "Warsaw, Poland",
@@ -329,36 +355,35 @@ const scheduleDays = [
     items: [
       { type: "plain", time: "8:30 - 9:00", label: "Registration" },
       { type: "plain", time: "9:00 - 9:15", label: "Welcome and opening remarks" },
-      { type: "session", time: "9:15 - 12:30", label: "Session 1: Regulation & Architecture", color: "blue" },
+      { type: "session", time: "9:15 - 12:30", label: "Session 1: Regulation & Architecture", chair: "Eivind Valen", color: "blue" },
       { type: "talk", talk: talks.pavel },
       { type: "talk", talk: talks.beata },
       { type: "coffee", time: "10:30 - 11:00", label: "Coffee break" },
       { type: "talk", talk: talks.martina },
-      { type: "talk", talk: talks.thomas },
-      { type: "talk", talk: talks.wiktoria },
-      { type: "talk", talk: talks.joannaKrupka },
-      { type: "lunch", time: "12:45 - 14:30", label: "Lunch break" },
-      { type: "session", time: "14:30 - 17:30", label: "Session 2: Ribosome & Outputs", color: "purple" },
-      { type: "talk", talk: talks.tomasz },
       { type: "talk", talk: talks.maria },
       { type: "talk", talk: talks.joanna },
-      { type: "talk", talk: talks.michalMarcinkowski },
+      { type: "talk", talk: talks.joannaKrupka },
+      { type: "lunch", time: "12:30 - 14:30", label: "Lunch break" },
+      { type: "session", time: "14:30 - 17:30", label: "Session 2: Ribosome & Outputs", color: "purple" },
+      { type: "talk", talk: talks.tomasz },
+      { type: "talk", talk: talks.thomas },
+      { type: "talk", talk: talks.wiktoria },
       { type: "coffee", time: "16:00 - 16:30", label: "Coffee break" },
       { type: "talk", talk: talks.evdokiia },
-      { type: "plainIndented", time: "16:50 - 17:30", label: "Talks TBA" }
+      { type: "talk", talk: talks.michalMarcinkowski }
     ]
   },
   {
     heading: "Tuesday, 30 June 2026",
     items: [
       { type: "plain", time: "9:00 - 9:15", label: "Welcome and opening remarks" },
-      { type: "session", time: "9:15 - 12:30", label: "Session 3: Annotation & Resources", color: "indigo" },
+      { type: "session", time: "9:15 - 12:30", label: "Session 3: Annotation & Resources", chair: "Rein Aasland", color: "indigo" },
       { type: "talk", talk: talks.jon },
-      { type: "plainIndented", time: "10:00 - 10:30", label: "Talks TBA" },
-      { type: "coffee", time: "10:30 - 11:00", label: "Coffee break" },
       { type: "talk", talk: talks.jack },
-      { type: "talk", talk: talks.harsh },
+      { type: "coffee", time: "10:30 - 11:00", label: "Coffee break" },
       { type: "talk", talk: talks.kyle },
+      { type: "talk", talk: talks.harsh },
+      { type: "talk", talk: talks.ieva },
       { type: "talk", talk: talks.kornel },
       { type: "plain", time: "12:15 - 12:45", label: "Roundtable discussion and closing remarks" },
       { type: "lunch", time: "12:45 - 13:30", label: "Lunch break" }
@@ -638,7 +663,7 @@ const sessionClassMap = {
       
       <div class="hero-meta space-y-3 mb-10 text-base md:text-lg font-medium text-slate-700 bg-white/50 inline-block p-6 rounded-2xl border border-slate-100/50">
         <p class="flex items-center gap-3"><span class="text-xl">📅</span> 29–30 June 2026</p>
-        <p class="flex items-start gap-3 leading-tight"><span class="text-xl mt-1">📍</span> <span>University of Oslo, Department of Biosciences<br><a href="https://www.google.com/maps/search/?api=1&query=Kristine+Bonnevies+hus%2C+Blindernveien+31%2C+Oslo%2C+Norway" target="_blank" rel="noopener noreferrer" class="inline-block mt-1 text-sm md:text-base font-bold text-purple-600 hover:text-purple-800 hover:underline transition">Kristine Bonnevies hus</a><br><span class="text-slate-500 text-sm md:text-base font-normal">Oslo, Norway</span></span></p>
+        <p class="flex items-start gap-3 leading-tight"><span class="text-xl mt-1">📍</span> <span>University of Oslo, Department of Biosciences<br><a href="https://www.google.com/maps/search/?api=1&query=Bikuben%2C+Kristine+Bonnevies+Hus%2C+Blindernveien+31%2C+Oslo%2C+Norway" target="_blank" rel="noopener noreferrer" class="inline-block mt-1 text-sm md:text-base font-bold text-purple-600 hover:text-purple-800 hover:underline transition">Bikuben, Kristine Bonnevies Hus</a><br><span class="text-slate-500 text-sm md:text-base font-normal">Oslo, Norway</span></span></p>
       </div>
 
       <p class="hero-copy text-lg md:text-xl text-slate-600 mb-10 leading-relaxed font-light">
@@ -839,7 +864,12 @@ const sessionClassMap = {
               return item.type === "session" ? (
                 <div class={`grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm p-3 rounded-lg items-center ${sessionStyle.wrapper}`}>
                   <div class={`font-bold ${sessionStyle.time}`}>{item.time}</div>
-                  <div class={`font-bold md:text-base ${sessionStyle.title}`}>{item.label}</div>
+                  <div>
+                    <div class={`font-bold md:text-base ${sessionStyle.title}`}>{item.label}</div>
+                    {item.chair && (
+                      <div class="mt-1 text-xs font-semibold text-slate-500">Chair: {item.chair}</div>
+                    )}
+                  </div>
                 </div>
               ) : item.type === "talk" ? (
                 <div
@@ -914,12 +944,12 @@ const sessionClassMap = {
 
         <div class="reveal p-6 border border-slate-100 rounded-2xl bg-white/50" style="transition-delay: 200ms">
           <h4 class="font-bold text-slate-800 mb-3 text-lg">📍 Venue</h4>
-          <p class="text-sm text-slate-600 leading-relaxed"><a href="https://www.uio.no/om/finn-fram/omrader/blindern/bl18/" target="_blank" rel="noopener noreferrer" class="font-bold text-purple-600 hover:text-purple-800 hover:underline transition">Kristine Bonnevies hus</a><br>Department of Biosciences<br>University of Oslo<br>Oslo, Norway<br><span class="inline-block mt-2 text-xs font-medium bg-slate-100 px-2 py-1 rounded text-slate-500">Room details TBA</span></p>
+          <p class="text-sm text-slate-600 leading-relaxed"><a href="https://www.uio.no/om/finn-fram/omrader/blindern/bl18/" target="_blank" rel="noopener noreferrer" class="font-bold text-purple-600 hover:text-purple-800 hover:underline transition">Bikuben, Kristine Bonnevies Hus</a><br>Department of Biosciences<br>University of Oslo<br>Oslo, Norway</p>
         </div>
         
         <div class="reveal p-6 border border-slate-100 rounded-2xl bg-white/50" style="transition-delay: 300ms">
           <h4 class="font-bold text-slate-800 mb-3 text-lg">🚆 Getting There</h4>
-          <p class="text-sm text-slate-600 leading-relaxed">Easily accessible via public transport from central Oslo and Oslo Airport.<br><a href="https://www.google.com/maps/dir/?api=1&origin=Oslo+Airport%2C+Gardermoen%2C+Norway&destination=Kristine+Bonnevies+hus%2C+Blindernveien+31%2C+Oslo%2C+Norway&travelmode=transit" target="_blank" rel="noopener noreferrer" class="inline-block mt-2 font-bold text-purple-600 hover:text-purple-800 hover:underline transition">Route from Oslo Airport</a></p>
+          <p class="text-sm text-slate-600 leading-relaxed">Easily accessible via public transport from central Oslo and Oslo Airport.<br><a href="https://www.google.com/maps/dir/?api=1&origin=Oslo+Airport%2C+Gardermoen%2C+Norway&destination=Bikuben%2C+Kristine+Bonnevies+Hus%2C+Blindernveien+31%2C+Oslo%2C+Norway&travelmode=transit" target="_blank" rel="noopener noreferrer" class="inline-block mt-2 font-bold text-purple-600 hover:text-purple-800 hover:underline transition">Route from Oslo Airport</a></p>
         </div>
         
         <div class="reveal p-6 border border-slate-100 rounded-2xl bg-white/50" style="transition-delay: 400ms">
