@@ -18,21 +18,22 @@ From Stress Responses to Translation Regulation: Notes from the Outskirts
 11:00 - 11:30
 Martina Yordanova
 An evolutionary conserved translon mediates start site selection in BAG1 mRNA.
-11:30 - 11:45
+11:30 - 11:50
 Maria Bożko
 Novel +1 frameshift signals and context-dependent enhancers in yeast
-11:45 - 12:05
+11:50 - 12:10
 Non-canonical translation events in the yeast Saccharomyces cerevisiae.
 Joanna Kufel
-12:05-12:25
+12:10 - 12:30
 Joanna Krupka
 Systematic base-editing screen of translon start codons in human tissues
-12:30 - 14:30
+12:30 - 14:15
 🍽️ Lunch break 
 
-14:30-17:30
+14:15 - 17:30
 Session 2: Ribosome & Outputs
-14:30-15:00
+chair: Pavel Baranov
+14:15 - 15:00
 Keynote Lecture:
 Tomasz Włodarski
 Co-translational protein folding in the light of ribosome evolution
@@ -40,18 +41,20 @@ Co-translational protein folding in the light of ribosome evolution
 Virtual talk:
 Thomas Birkballe Hansen
 AAV-based gene therapy using protein-coding circRNA
-15:30-16:00
+15:30 - 16:00
+☕ Coffee break
+16:00 - 16:30
 Wiktoria Orzeł
 Uncovering a cellular mechanism that enhances mRNA vaccines
-16:00 - 16:30
-☕ Coffee break
-16:30-16:50
+16:30 - 16:50
 Cellular energy levels tune nucleolar phase separation to regulate ribosome biogenesis
 Evdokiia Potolitsyna
-16:50-17:10
+16:50 - 17:10
 Isoforms of mitochondrially-localized Lsm proteins affect the respiratory capacity of
 Saccharomyces cerevisiae cells
 Michał Marcinkowski
+18:00
+🍽️ Dinner at Barcode Street Food
 
 Tuesday, 30 June
 9:00 - 9:15
@@ -85,3 +88,5 @@ Kornel Labun
 Roundtable discussion and closing remarks
 12:45 - 13:30
 🍽️ Lunch break 
+After lunch
+🚶 Walk in Vigelandsparken with international guests

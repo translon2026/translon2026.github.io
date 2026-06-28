@@ -45,7 +45,7 @@ const talks = {
     speakerName: "Tomasz Włodarski",
     detailTitle: "Keynote lecture",
     day: "Monday, 29 June 2026",
-    time: "14:30 - 15:00",
+    time: "14:15 - 15:00",
     title: "Co-translational protein folding in the light of ribosome evolution",
     abstract: [
       `In the cell, proteins begin to fold co-translationally as they emerge from the ribosome's exit tunnel during biosynthesis. This process is fundamental to cellular homeostasis; disruptions can drive protein misfolding, which is implicated in severe pathologies including cystic fibrosis, alpha-1 antitrypsin deficiency, and a wide spectrum of protein aggregation diseases. Despite its critical importance, co-translational folding (co-TF) remains poorly understood, as capturing high-resolution structural data using experimental methods alone is a significant challenge. Consequently, integrating accurate computational techniques with experimental data is crucial. Furthermore, because most of our current understanding stems from E. coli, there is a significant knowledge gap regarding evolutionary variations in ribosome structure and their impact on co-TF. In my talk, I will describe an integrative structural biology approach to study co-TF, combining molecular dynamics (MD) simulations with structural restraints from NMR data and cryo-EM maps. I will also demonstrate how we can use bioinformatics and MD simulations to analyse ribosome heterogeneity and its influence on nascent chain pathways inside the ribosomal tunnel. Ultimately, this research sheds light on the intricate dynamics of co-TF and paves the way for a deeper understanding of how evolutionary variations in the ribosome shape protein folding across different organisms.`
@@ -56,7 +56,7 @@ const talks = {
     speakerName: "Joanna Kufel",
     detailTitle: "Talk",
     day: "Monday, 29 June 2026",
-    time: "11:45 - 12:05",
+    time: "11:50 - 12:10",
     title: "Non-canonical translation events in the yeast Saccharomyces cerevisiae",
     abstract: [
       `In addition to standard mechanisms, translation regulation also involves non-canonical events, including non-AUG initiation, stop-codon readthrough or programmed ribosomal frameshifting. These events result in the the production of protein variants with different characteristics, such as subcellular localization or function, thus expanding the translatome and the proteome diversity and regulating protein synthesis in different cellular or environmental conditions. The identification of such rare non-canonical events, which are more common than previously predicted, has been enabled by the availability of a growing number of Ribo-seq datasets.`,
@@ -68,7 +68,7 @@ const talks = {
     speakerName: "Joanna Krupka",
     detailTitle: "Talk",
     day: "Monday, 29 June 2026",
-    time: "12:05 - 12:25",
+    time: "12:10 - 12:30",
     title: "Systematic base-editing screen of translon start codons in human tissues",
     abstract: [
       `The human transcriptome contains thousands of previously unannotated translons, yet functional validation lags behind the Ribo-Seq evidence for their translation. Standard CRISPR-Cas9 screens are poorly suited to these compact ORFs, where few targetable sites exist and frameshifting indels disrupt them stochastically and unpredictably. Base editing overcomes this by introducing precise point mutations - disrupting start codons or creating premature stop codons - without double-stranded DNA breaks. We first leveraged almost 4,000 Ribo-Seq libraries (Ribocrypt, protected repositories, and in-house data) to map human translation with tissue specificity and isoform resolution. Translons were called robustly using three independent callers with quality-feature-aware filtering and independent scoring, enabling an in-depth survey of contextual expression, evolutionary conservation, and co-expression via network analysis. We designed and optimised a versatile base-editing library targeting non-canonical start codons, benchmarking base editors and sgRNA design strategies for editing efficiency in a pilot screen, and scaled this to a targeted survey of all start codons across human tissues. Together, this pairs a transcriptome-wide translation map with a scalable platform for systematic functional dissection of translons.`
@@ -165,7 +165,7 @@ const talks = {
     speakerName: "Wiktoria Orzeł",
     detailTitle: "Talk",
     day: "Monday, 29 June 2026",
-    time: "15:30 - 16:00",
+    time: "16:00 - 16:30",
     title: "Uncovering a cellular mechanism that enhances mRNA vaccines",
     abstract: [
       `TENT5 proteins function as non-canonical poly(A) polymerases that selectively re-adenylate mRNAs encoding secreted proteins, enhancing their stability and translation. Following our previous work on TENT5 function in immunity, we investigated how TENT5A influences the efficacy of mRNA therapeutics. Using primary macrophages and vaccines encoding viral and parasitic antigens, we assessed mRNA poly(A) tail dynamics, antigen output, and immune response. We also evaluated the spatial dependency of re-adenylation in the endoplasmic reticulum (ER) by disrupting the interaction with FNDC3, a docking protein critical for TENT5A localisation. Upon delivery, TENT5A-dependent re-adenylation enhanced mRNA stability, resulting in increased antigen production and elevated IgG levels. The ER localisation of TENT5A via FNDC3 proved essential for this process, highlighting a previously unrecognised spatial dimension of post-transcriptional regulation. To further explore translational outcomes, we applied the ribosome profiling (Ribo-seq) method to quantify ribosome occupancy and distribution across different mRNA constructs. Interestingly, our Ribo-seq data revealed distinct translational dynamics between two clinically approved SARS-CoV-2 vaccines, suggesting that subtle differences in mRNA design affect translational efficiency in vivo.`
@@ -176,7 +176,7 @@ const talks = {
     speakerName: "Maria Bożko",
     detailTitle: "Talk",
     day: "Monday, 29 June 2026",
-    time: "11:30 - 11:45",
+    time: "11:30 - 11:50",
     title: "Novel +1 frameshift signals and context-dependent enhancers in yeast",
     abstract: [
       `Programmed ribosomal frameshifting expands coding capacity by allowing ribosomes to switch reading frame during translation. However, the sequence features that determine whether a potential frameshift site is utilized remain poorly understood. Here, we characterize two novel +1 frameshift signals in yeasts. First, we investigate a frameshift site identified at the KLMX_30357 locus in Kluyveromyces marxianus, which promotes efficient +1 frameshifting when tested in Saccharomyces cerevisiae. Mutational analyses revealed that efficient frameshifting depends not only on the heptameric shift site but also on a downstream enhancer element comprising a conserved di-proline motif and a predicted RNA secondary structure. Second, we describe a hybrid frameshift heptamer, GCG_A.GGC, combining features of the canonical TY1 and TY3 frameshift signals. In addition, genome-wide analysis of known frameshift heptamers and ribosome profiling data revealed numerous instances in which predicted frameshift signals do not exhibit detectable frame switching. Together, these findings demonstrate that the presence of a frameshift heptamer alone is insufficient to drive efficient recoding and highlight the critical role of local sequence context in determining frameshift utilization.`
@@ -363,14 +363,15 @@ const scheduleDays = [
       { type: "talk", talk: talks.maria },
       { type: "talk", talk: talks.joanna },
       { type: "talk", talk: talks.joannaKrupka },
-      { type: "lunch", time: "12:30 - 14:30", label: "Lunch break" },
-      { type: "session", time: "14:30 - 17:30", label: "Session 2: Ribosome & Outputs", color: "purple" },
+      { type: "lunch", time: "12:30 - 14:15", label: "Lunch break" },
+      { type: "session", time: "14:15 - 17:30", label: "Session 2: Ribosome & Outputs", chair: "Pavel Baranov", color: "purple" },
       { type: "talk", talk: talks.tomasz },
       { type: "talk", talk: talks.thomas },
+      { type: "coffee", time: "15:30 - 16:00", label: "Coffee break" },
       { type: "talk", talk: talks.wiktoria },
-      { type: "coffee", time: "16:00 - 16:30", label: "Coffee break" },
       { type: "talk", talk: talks.evdokiia },
-      { type: "talk", talk: talks.michalMarcinkowski }
+      { type: "talk", talk: talks.michalMarcinkowski },
+      { type: "dinner", time: "18:00", label: "Dinner at Barcode Street Food" }
     ]
   },
   {
@@ -386,7 +387,8 @@ const scheduleDays = [
       { type: "talk", talk: talks.ieva },
       { type: "talk", talk: talks.kornel },
       { type: "plain", time: "12:15 - 12:45", label: "Roundtable discussion and closing remarks" },
-      { type: "lunch", time: "12:45 - 13:30", label: "Lunch break" }
+      { type: "lunch", time: "12:45 - 13:30", label: "Lunch break" },
+      { type: "social", time: "After lunch", label: "Walk in Vigelandsparken with international guests" }
     ]
   }
 ];
@@ -844,7 +846,7 @@ const sessionClassMap = {
           <h3 class="font-bold text-purple-800 mb-3 flex items-center gap-2">
             <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded">2</span> Ribosome & Outputs
           </h3>
-          <p class="text-sm text-slate-600 leading-relaxed"><strong>Focus:</strong> nascent-chain biology, exit-tunnel events, pausing, stalling, elongation dynamics, termination, quality control, microproteins, peptides, antigens, and ribosome-mediated translon functions.</p>
+          <p class="text-sm text-slate-600 leading-relaxed"><strong>Focus:</strong> nascent-chain biology, exit-tunnel events, pausing, stalling, elongation dynamics, termination, quality control, microproteins, peptides, antigens, therapeutics, and ribosome-mediated translon functions.</p>
         </div>
         <div class="reveal p-6 bg-gradient-to-br from-indigo-50 to-white rounded-2xl border border-indigo-100 shadow-sm hover:shadow-md transition-shadow" style="transition-delay: 200ms">
           <h3 class="font-bold text-indigo-800 mb-3 flex items-center gap-2">
@@ -917,6 +919,16 @@ const sessionClassMap = {
                   <div class="font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full w-max">{item.time}</div>
                   <div class="text-green-700 font-medium flex items-center gap-2">🍽️ {item.label}</div>
                 </div>
+              ) : item.type === "dinner" ? (
+                <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+                  <div class="font-semibold text-rose-700 bg-rose-50 px-3 py-1 rounded-full w-max">{item.time}</div>
+                  <div class="text-rose-800 font-medium flex items-center gap-2">🍽️ {item.label}</div>
+                </div>
+              ) : item.type === "social" ? (
+                <div class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center">
+                  <div class="font-semibold text-sky-700 bg-sky-50 px-3 py-1 rounded-full w-max">{item.time}</div>
+                  <div class="text-sky-800 font-medium flex items-center gap-2">🚶 {item.label}</div>
+                </div>
               ) : (
                 <div class={`grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] gap-4 text-sm border-b border-slate-100 pb-3 items-center ${item.type === "plainIndented" ? "md:pl-4" : ""}`}>
                   <div class={item.type === "plainIndented" ? "font-semibold text-slate-500" : "font-semibold text-slate-500 bg-slate-100 inline-block px-3 py-1 rounded-full w-max"}>{item.time}</div>
@@ -956,6 +968,18 @@ const sessionClassMap = {
           <h4 class="font-bold text-slate-800 mb-3 text-lg">✉️ Contact</h4>
           <p class="text-sm text-slate-600">For questions, please contact:<br><a href="mailto:michal.swirski@ibv.uio.io" class="inline-block mt-2 text-blue-600 font-medium hover:text-blue-800 hover:underline transition truncate break-all">michal.swirski@ibv.uio.io</a></p>
         </div>
+      </div>
+    </section>
+
+    <section id="sponsors" class="scroll-mt-28 mb-24 reveal">
+      <h2 class="text-2xl md:text-3xl font-bold text-blue-900 mb-8">Sponsors</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+        <a href="https://www.forskningsradet.no/en/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center rounded-2xl border border-slate-100 bg-white/80 p-8 shadow-sm hover:shadow-md hover:border-blue-100 transition">
+          <img src="/logos/research-council-norway.svg" alt="The Research Council of Norway" class="h-16 md:h-20 max-w-full" loading="lazy" />
+        </a>
+        <a href="https://www.uio.no/english/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center rounded-2xl border border-slate-100 bg-white/80 p-8 shadow-sm hover:shadow-md hover:border-blue-100 transition">
+          <img src="/logos/university-of-oslo.svg" alt="University of Oslo" class="h-16 md:h-20 max-w-full" loading="lazy" />
+        </a>
       </div>
     </section>
 
